@@ -20,7 +20,7 @@ const NavBar = () => {
             <ul className={styles.navUl}>
                 <li className={styles.home}>
                     <img src={icon} className={styles.icon}></img>
-                    <p>Gamebnb</p>
+                    {/* <p>Gamebnb</p> */}
                 </li>
                 <li>
                     <NavLink to={`/users/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
