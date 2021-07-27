@@ -1,1 +1,18 @@
 /* TODO Add site wide styles */
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 90%;
+    width: 100%;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}

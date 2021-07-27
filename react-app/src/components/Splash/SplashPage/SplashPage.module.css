@@ -1,0 +1,18 @@
+
+
+.splashPageContainer {
+    height: 98%;
+    width: 100%;
+    background-image: url(../../../assets/img/splash-zelda2.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.header {
+    color: #eefd1d;
+    margin-top: 35px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
