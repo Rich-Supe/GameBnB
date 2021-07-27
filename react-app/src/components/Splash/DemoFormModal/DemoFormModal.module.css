@@ -1,0 +1,18 @@
+.demoFormContainer {
+    height: 100%;
+    width: 100%;
+    
+    font-family: Dosis, Helvetica, sans-serif;
+    color: #eefd1d;
+    text-shadow: 1px 1px #070505;
+    font-size: 125%;
+    text-align: center;
+    /* opacity: 0.2; */
+    border: 2px solid #eefd1d;
+    background-color: rgba(8, 4, 4, 0.178);
+}
+
+.demoFormContainer h1 {
+    opacity: none;
+}
+

@@ -1,0 +1,39 @@
+
+.navbarContainer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.navUl {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 90%;
+    list-style-type: none;
+    margin: 0;
+}
+
+.home {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    color: #F53240;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.home p {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+.navP {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
