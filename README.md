@@ -6,6 +6,7 @@
   * Backend Routes - https://github.com/Rich-Supe/GameBnB/wiki/Backend-API-Routes
   * Frontend Routes - https://github.com/Rich-Supe/GameBnB/wiki/Frontend-Routes
   * Database Schema - https://dbdiagram.io/d/60ff1a4428da596eb54e3281
+  * Wireframe - https://wireframepro.mockflow.com/view/gamebnb
 
  ## Technologies Used
 
