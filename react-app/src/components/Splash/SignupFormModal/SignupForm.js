@@ -14,10 +14,13 @@ const SignupForm = () => {
   // const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+  const host = false;
+
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(name, username, email, password));
+      const data = await dispatch(signUp(name, username, email, password, host));
+    //   console.log(data);
       if (data) {
         setErrors(data)
       }
@@ -38,6 +41,7 @@ const SignupForm = () => {
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
+    // console.log(password)
   };
 
   const updateRepeatPassword = (e) => {

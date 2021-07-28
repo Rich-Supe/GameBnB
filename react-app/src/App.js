@@ -7,6 +7,8 @@ import NavBar from './components/Navbar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import SplashPage from './components/Splash/SplashPage';
 import Home from './components/Home';
+import Listings from './components/Listings';
+import Profile from './components/Profile';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
 import { authenticate } from './store/session';
@@ -35,6 +37,12 @@ return (
         </Route>
         <Route path="/home" exact={true}>
             <Home />
+        </Route>
+        <Route path="/listings">
+            <Listings />
+        </Route>
+        <Route path="/users/:id">
+            <Profile />
         </Route>
         {/* <Route path='/login' exact={true}>
         <LoginForm />
