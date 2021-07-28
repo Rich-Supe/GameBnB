@@ -39,7 +39,6 @@ def create_listing(user_id):
             sq_ft=form.sq_ft.data,
             has_kitchen=form.has_kitchen.data,
             has_internet=form.has_internet.data,
-            images=form.images.data,
             latlang=form.latlang.data,)
         db.session.add(listing)
         db.session.commit()
