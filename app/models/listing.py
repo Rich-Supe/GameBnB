@@ -2,7 +2,7 @@ from .db import db
 from .user import likes_table
 
 class Listing(db.Model):
-    __tablename__ = 'listing'
+    __tablename__ = 'listings'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String, nullable=False)
@@ -14,26 +14,26 @@ class Listing(db.Model):
     images = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     latlang = db.Column(db.String, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     reservations = db.relationship('Reservation', back_populates='listing')
     reviews = db.relationship('Review', back_populates='listing')
     user = db.relationship('User', back_populates='listings', lazy=True)
-    likes_listing = db.relationship('User', secondary=likes_table, backref='likes_user')
+    likes_listing = db.relationship('User', secondary=likes_table, back_populates='likes_user')
 
 
-    def __init__(self, name, description, price, user_id, total_bedrooms, total_bathrooms, has_kitchen, has_internet, sq_ft, images, latlang):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.user_id = user_id
-        self.total_bedrooms = total_bedrooms
-        self.total_bathrooms = total_bathrooms
-        self.has_kitchen = has_kitchen
-        self.has_internet = has_internet
-        self.images = images
-        self.latlang = latlang
-        self.sq_ft = sq_ft
+    # def __init__(self, name, description, price, user_id, total_bedrooms, total_bathrooms, has_kitchen, has_internet, sq_ft, images, latlang):
+    #     self.name = name
+    #     self.description = description
+    #     self.price = price
+    #     self.user_id = user_id
+    #     self.total_bedrooms = total_bedrooms
+    #     self.total_bathrooms = total_bathrooms
+    #     self.has_kitchen = has_kitchen
+    #     self.has_internet = has_internet
+    #     self.images = images
+    #     self.latlang = latlang
+    #     self.sq_ft = sq_ft
 
     def __repr__(self):
         return '<Listing %r>' % self.name

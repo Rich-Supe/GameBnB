@@ -33,6 +33,9 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
+    def __repr__(self):
+        return '<User %r>' % self.username
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -40,6 +43,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'host': self.host,
             'profile_image': self.profile_image,
+            'hashed_password': self.hashed_password,
             'biography': self.biography,
         }
 

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.forms import ListingForm
+from app.forms import NewListingForm
 from app.models import Listing, db
 
 listing_routes = Blueprint('listings', __name__)

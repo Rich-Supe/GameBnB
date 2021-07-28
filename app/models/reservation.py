@@ -14,12 +14,12 @@ class Reservation(db.Model):
     user = db.relationship('User', back_populates='reservations')
     listing = db.relationship('Listing', back_populates='reservations')
 
-    def __init__(self, user_id, listing_id, start_date, end_date, price):
-        self.user_id = user_id
-        self.listing_id = listing_id
-        self.start_date = start_date
-        self.end_date = end_date
-        self.price = price
+    # def __init__(self, user_id, listing_id, start_date, end_date, price):
+    #     self.user_id = user_id
+    #     self.listing_id = listing_id
+    #     self.start_date = start_date
+    #     self.end_date = end_date
+    #     self.price = price
         
     def __repr__(self):
         return '<Reservation %r>' % self.id
