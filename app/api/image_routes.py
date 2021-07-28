@@ -1,8 +1,9 @@
 
 from flask import Blueprint, jsonify, request
 from app.aws import (upload_file_to_s3, get_unique_filename, allowed_file)
-from models import db
-images_routes = Blueprint('images', __name__)
+from app.models import db, Image
+
+image_routes = Blueprint('images', __name__)
 
 # get images by listing id
 # @images_routes.route('/<int:listing_id>', methods=['GET'])
@@ -10,7 +11,7 @@ images_routes = Blueprint('images', __name__)
 
 
 # create images to append to a listing
-@images_routes.route('/<int:listing_id>', methods=['POST'])
+@image_routes.route('/<int:listing_id>', methods=['POST'])
 def create_images(listing_id):
 
     images = [request.files[image] for image in request.files]
