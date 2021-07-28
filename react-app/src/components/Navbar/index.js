@@ -7,19 +7,27 @@ import LoginFormModal from '../Splash/LoginFormModal';
 import SignupFormModal from '../Splash/SignupFormModal';
 import DemoFormModal from '../Splash/DemoFormModal'
 
+import { useHistory } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import icon from '../../assets/img/favicon4.jpg'
 
+
 const NavBar = () => {
+    const history = useHistory()
     const user = useSelector(state => state.session.user);
     let userId = user ? user.id : null;
+
+    function home() {
+        history.push('/home');
+    }
+
     
     return (
         <nav className={styles.navbarContainer}>
         {user ? (
             <ul className={styles.navUl}>
                 <li className={styles.home}>
-                    <img src={icon} className={styles.icon}></img>
+                    <img src={icon} className={styles.icon} onClick={() => {home()}}></img>
                     {/* <p>Gamebnb</p> */}
                 </li>
                 <li>
