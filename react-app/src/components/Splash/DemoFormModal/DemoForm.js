@@ -13,7 +13,7 @@ const DemoForm = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     await dispatch(login(email, password));
-    history.push(`/users/1`)
+    history.push(`/home`)
   }
 
   return (
