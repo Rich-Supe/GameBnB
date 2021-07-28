@@ -42,10 +42,10 @@ return (
         <Route path="/listings">
             <Listings />
         </Route>
-        <Route path="/users/:id">
+        <Route path="/users/:userId">
             <Profile />
         </Route>
-        <Route path='/new-listing/:id'>
+        <Route path='/new-listing/:userId'>
             <NewListing />
         </Route>
         {/* <Route path='/login' exact={true}>

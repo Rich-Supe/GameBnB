@@ -1,7 +1,7 @@
-const SET_LISTING = 'SET_LISTING';
-const SET_ALL_LISTINGS = 'SET_ALL_LISTINGS';
-const ADD_LISTING = 'ADD_LISTING';
-const UPDATE_LISTING = 'UPDATE_LISTING';
+const SET_LISTING = 'listings/SET_LISTING';
+const SET_ALL_LISTINGS = 'listings/SET_ALL_LISTINGS';
+const ADD_LISTING = 'listings/ADD_LISTING';
+const UPDATE_LISTING = 'listings/UPDATE_LISTING';
 
 const setListing = (id) => ({
     type: SET_LISTING,
@@ -38,8 +38,9 @@ export const getListing = (id) => async (dispatch) => {
 }
 
 // add listing
-export const createListing = (listing, userId) => async (dispatch) => {
-    const response = await fetch(`/api/listings/${userId}`, {
+export const createListing = (listing, images, userId) => async (dispatch) => {
+    console.log("Is this working????")
+    const listingResponse = await fetch(`/api/listings/create/${userId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -47,18 +48,34 @@ export const createListing = (listing, userId) => async (dispatch) => {
         body: JSON.stringify(listing)
     });
 
-    if (response.ok) {
-        const listing = await response.json();
-        dispatch(addListing(listing));
-        return listing;
+    console.log("listing:::::", listingResponse)
+    
+    if (listingResponse.ok) {
+        const listing = await listingResponse.json();
+        
+        const listingId = listing.id.id;
+        const imageResponse = await fetch(`/api/listings/${listingId}`, {
+            method: 'POST',
+            body: images
+        });
+
+        console.log("img:::::", imageResponse)
+        
+        if (imageResponse.ok) {
+            const newImages = await imageResponse.json();
+            const listingImg = { ...listing, newImages };
+            dispatch(addListing(listingImg));
+            return listingImg;
+        }
+        
     }
     else {
-        ['An error occurred. Please try again.']
+        return ['An error occurred. Please try again.']
     }
 };
 
 // edit a listing
-export const updateListing = (listing, listingId) => async (dispatch) => {
+export const editListing = (listing, listingId) => async (dispatch) => {
     const response = await fetch(`/api/listings/update/${listingId}`, {
         method: 'PUT',
         headers: {
@@ -73,7 +90,7 @@ export const updateListing = (listing, listingId) => async (dispatch) => {
         return listing;
     }
     else {
-        ['An error occurred. Please try again.']
+        return ['An error occurred. Please try again.']
     }
 }
 

@@ -2,12 +2,13 @@
 import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { createListing } from '../../store/listing'
 import styles from './NewListing.module.css'
 
 function NewListing(){
     const history = useHistory();
     const dispatch = useDispatch();
-    const userId = useParams();
+    const { userId } = useParams();
 
     const [ name, setName ] = useState('');
     const [ description, setDescription ] = useState('');
@@ -15,11 +16,13 @@ function NewListing(){
     const [ totalBedrooms, setTotalBedrooms ] = useState('');
     const [ totalBathrooms, setTotalBathrooms ] = useState('');
     const [ sqFt, setSqFt ] = useState('');
-    const [ hasKitchen, setHasKitchen ] = useState('');
-    const [ hasInternet, setHasInternet ] = useState('');
+    const [ hasKitchen, setHasKitchen ] = useState(true);
+    const [ hasInternet, setHasInternet ] = useState(true);
     const [ imageLoading, setImageLoading ] = useState(false);
 
     const currentImages = [];
+
+    console.log("userid", userId);
     
     const addImage = (e) => {
         const file = e.target.files[0];
@@ -36,24 +39,12 @@ function NewListing(){
 
         setImageLoading(true);
 
-        const res = await fetch('/api/images', {
-            method: "POST",
-            body: formData,
-        });
-
-        if (res.ok) {
-            await res.json();
-            setImageLoading(false);
-            history.push("/images");
-        }
-
-        else {
-            setImageLoading(false);
-            console.log("error");
-        }
+        // const res = await fetch('/api/images', {
+        //     method: "POST",
+        //     body: formData,
+        // });
 
         const payload = {
-            userId,
             name,
             description,
             price,
@@ -64,16 +55,17 @@ function NewListing(){
             hasInternet,
         };
 
-        // const listing = await dispatch(createListing(payload));
-        console.log('submitted!', payload)
-        // if (listing) {
-        //     history.push('/listings')
-        // }
+        console.log('submitted!', payload, formData, userId)
+        const listing = await dispatch(createListing(payload, formData, userId));
+        setImageLoading(false);
+        if (listing) {
+            history.push('/listings')
+        }
     };
 
     return (
         <div className={styles.newListingPage}>
-            <h2>New Listing</h2>
+            <h1 className={styles.header}>New Listing</h1>
             <form className={styles.form} onSubmit={onSubmit}>
                 <div className={styles.formGroup}>
                     <label htmlFor="name">Name:</label>
