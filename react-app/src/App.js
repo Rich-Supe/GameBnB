@@ -9,6 +9,7 @@ import SplashPage from './components/Splash/SplashPage';
 import Home from './components/Home';
 import Listings from './components/Listings';
 import Profile from './components/Profile';
+import NewListing from './components/NewListing';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
 import { authenticate } from './store/session';
@@ -41,8 +42,11 @@ return (
         <Route path="/listings">
             <Listings />
         </Route>
-        <Route path="/users/:id">
+        <Route path="/users/:userId">
             <Profile />
+        </Route>
+        <Route path='/new-listing/:userId'>
+            <NewListing />
         </Route>
         {/* <Route path='/login' exact={true}>
         <LoginForm />
