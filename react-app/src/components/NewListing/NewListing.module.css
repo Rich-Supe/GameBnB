@@ -19,8 +19,14 @@
     width: 70%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     border: 3px solid rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(255, 255, 255, 0.842);
+}
+
+.form > div {
+    margin: 5px;
+
 }
 
 .formGroup {
@@ -47,7 +53,7 @@
     justify-self: center;
     align-self: center;
     width: 50%;
-    /* height: ; */
+    height: 30px;
 }
 
 .formNums {
@@ -56,19 +62,54 @@
     justify-content: space-around;
 }
 
+.formNums input {
+    width: 50%;
+    height: 30px;
+    margin-left: 2px;
+}
+
 .formCheck {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
+.formCheck input {
+    /* width: 50%; */
+    /* height: 50px; */
+}
 
+.formImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.formImg input {
+    margin-left: 10px;
+}
+
+.formDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formDescription textarea {
+    width: 50%;
+    height: 50px;
+}
 
 .formBtn {
     display: flex;
-    flex-direction: column;
-    margin-top: 200px;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* margin-top: 100px; */
+    width: 100%;
+    margin: 0px;
 }
+
 
 .button {
     background-color: #4CAF50;
@@ -78,8 +119,12 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 19px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    /* padding-bottom: 0px; */
+    width: 30%;
 }
 

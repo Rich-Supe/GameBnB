@@ -39,7 +39,7 @@ export const getListing = (id) => async (dispatch) => {
 
 // add listing
 export const createListing = (listing, images, userId) => async (dispatch) => {
-    console.log("Is this working????")
+    console.log("Is this working????", listing)
     const listingResponse = await fetch(`/api/listings/create/${userId}`, {
         method: 'POST',
         headers: {
@@ -52,9 +52,8 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
     
     if (listingResponse.ok) {
         const listing = await listingResponse.json();
-        
-        const listingId = listing.id.id;
-        const imageResponse = await fetch(`/api/listings/${listingId}`, {
+        const listingId = listing.id;
+        const imageResponse = await fetch(`/api/images/${listingId}`, {
             method: 'POST',
             body: images
         });

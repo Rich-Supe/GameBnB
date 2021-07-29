@@ -11,7 +11,6 @@ class Listing(db.Model):
     has_kitchen = db.Column(db.Boolean, nullable=False)
     has_internet = db.Column(db.Boolean, nullable=False)
     sq_ft = db.Column(db.Integer, nullable=False)
-    images = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     latlang = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)

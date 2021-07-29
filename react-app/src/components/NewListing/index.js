@@ -12,43 +12,49 @@ function NewListing(){
 
     const [ name, setName ] = useState('');
     const [ description, setDescription ] = useState('');
-    const [ price, setPrice ] = useState('');
-    const [ totalBedrooms, setTotalBedrooms ] = useState('');
-    const [ totalBathrooms, setTotalBathrooms ] = useState('');
-    const [ sqFt, setSqFt ] = useState('');
+    const [ price, setPrice ] = useState(0);
+    const [ totalBedrooms, setTotalBedrooms ] = useState(0);
+    const [ totalBathrooms, setTotalBathrooms ] = useState(0);
+    const [ sqFt, setSqFt ] = useState(0);
     const [ hasKitchen, setHasKitchen ] = useState(false);
     const [ hasInternet, setHasInternet ] = useState(false);
     const [ imageLoading, setImageLoading ] = useState(false);
+    const [ currentImages, setCurrentImages ] = useState([]);
 
-    const currentImages = [];
-    
+    // console.log("price:", typeof(parseInt(price), 10), "totalBedrooms:", typeof(totalBedrooms), "totalBathrooms:", totalBathrooms, "sqFt:", sqFt, "hasKitchen:", hasKitchen, "hasInternet:", hasInternet)
+    console.log("CurrentImgarray", currentImages)
     const addImage = (e) => {
         const file = e.target.files[0];
-        currentImages.push(file)
+        if (file){
+        setCurrentImages((prevVal) => [...prevVal, file])
+        }
     }
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData();
-        currentImages.forEach((image) => {
-            formData.append('images', image);
-        });
+
+        // currentImages.forEach((image) => {
+        //     formData.append('images', image);
+        for (let i = 0; i < currentImages.length; i++) {
+            formData.append(`images`, currentImages[i]);
+        }
+        // });
+        for (var key of formData.keys()) {
+            console.log(key);
+         }
+         
 
         setImageLoading(true);
-
-        // const res = await fetch('/api/images', {
-        //     method: "POST",
-        //     body: formData,
-        // });
 
         const payload = {
             name,
             description,
-            price,
-            totalBedrooms,
-            totalBathrooms,
-            sqFt,
+            price: parseInt(price),
+            total_bedrooms: parseInt(totalBedrooms),
+            total_bathrooms: parseInt(totalBathrooms),
+            sq_ft: parseInt(sqFt),
             hasKitchen,
             hasInternet,
         };
@@ -72,7 +78,7 @@ function NewListing(){
                 <div className={styles.formNums}>
                     <div className={styles.formPrice}>
                     <label htmlFor="price">Price:</label>
-                    <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} />
                     </div>
                     <div className={styles.formPrice}>
                     <label htmlFor="sqFt">Square Foot:</label>
@@ -102,11 +108,11 @@ function NewListing(){
                     <input type="checkbox" className={styles.formInput} id="hasInternet" placeholder="Has Internet" value={hasInternet} onChange={() => setHasInternet(!hasInternet)} />
                     </div>
                 </div>
-                <div className={styles.formGroup}>
+                <div className={styles.formDescription}>
                     <label htmlFor="description">Description:</label>
                     <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
-                <div>
+                <div className={styles.formImg}>
                     <label htmlFor="images">Upload some images for your guests?</label>
                     <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
                 </div>

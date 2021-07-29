@@ -24,6 +24,30 @@ def get_unique_filename(filename):
     unique_filename = uuid.uuid4().hex
     return f"{unique_filename}.{ext}"
 
+# upload multiple files to s3
+def upload_files_to_s3(files, acl="public-read"):
+    results = []
+    for file in files:
+        if file and allowed_file(file.filename):
+            filename = get_unique_filename(file.filename)
+            try:
+                s3.upload_fileobj(
+                    file,
+                    BUCKET_NAME,
+                    filename,
+                    ExtraArgs={
+                        "ACL": acl,
+                        "ContentType": file.content_type
+                    }
+                )
+                results.append({"url": f"{S3_LOCATION}{file.filename}"})
+            except Exception as e:
+                # in case the our s3 upload fails
+                return {"errors": str(e)}
+        return results
+
+
+
 
 def upload_file_to_s3(file, acl="public-read"):
     try:

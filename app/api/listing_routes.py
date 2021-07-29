@@ -28,6 +28,7 @@ def get_listing(listing_id):
 @listing_routes.route('/create/<int:user_id>', methods=['POST'])
 def create_listing(user_id):
     form = NewListingForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         listing = Listing(
             user_id=user_id,
@@ -44,12 +45,13 @@ def create_listing(user_id):
         db.session.commit()
         return listing.to_dict()
     else:
-        return validation_errors_to_error_messages(form.errors), 400
+        return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
 # Update a listing
 @listing_routes.route('/update/<int:listing_id>', methods=['PUT'])
 def update_listing(listing_id):
     form = NewListingForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         listing = Listing.query.get(listing_id)
         listing.name = form.name.data
@@ -60,11 +62,10 @@ def update_listing(listing_id):
         listing.sq_ft = form.sq_ft.data
         listing.has_kitchen = form.has_kitchen.data
         listing.has_internet = form.has_internet.data
-        listing.images = form.images.data
         listing.latlang = form.latlang.data
         listing.user_id = form.user_id.data
         db.session.commit()
         return listing.to_dict()
     else:
-        return validation_errors_to_error_messages(form.errors), 400
+        return {"Errors", validation_errors_to_error_messages(form.errors)}, 400
 

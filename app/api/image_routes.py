@@ -13,17 +13,18 @@ image_routes = Blueprint('images', __name__)
 # create images to append to a listing
 @image_routes.route('/<int:listing_id>', methods=['POST'])
 def create_images(listing_id):
-
-    images = [request.files[image] for image in request.files]
+    images = request.files.getlist('images')
 
     for image in images:
         if image and not allowed_file(image.filename):
             return {"errors": "file type not permitted"}, 400
+
+    uploads = []
     
     for image in images:
         image.filename = get_unique_filename(image.filename)
+        uploads.append(upload_file_to_s3(image))
 
-    uploads = [upload_file_to_s3(image) for image in images]
 
     for upload in uploads:
         if "url" not in upload:
@@ -35,7 +36,7 @@ def create_images(listing_id):
     urls = [upload["url"] for upload in uploads]
     # flask_login allows us to get the current user from the request
     for url in urls:
-        db.session.add(Image(listing_id=listing_id, url=url))
+        db.session.add(Image(listing_id=listing_id, image=url))
     # new_image = Image(user=current_user, url=url)
     # db.session.add(new_image)
     db.session.commit()
