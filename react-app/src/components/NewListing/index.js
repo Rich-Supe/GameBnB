@@ -16,13 +16,11 @@ function NewListing(){
     const [ totalBedrooms, setTotalBedrooms ] = useState('');
     const [ totalBathrooms, setTotalBathrooms ] = useState('');
     const [ sqFt, setSqFt ] = useState('');
-    const [ hasKitchen, setHasKitchen ] = useState(true);
-    const [ hasInternet, setHasInternet ] = useState(true);
+    const [ hasKitchen, setHasKitchen ] = useState(false);
+    const [ hasInternet, setHasInternet ] = useState(false);
     const [ imageLoading, setImageLoading ] = useState(false);
 
     const currentImages = [];
-
-    console.log("userid", userId);
     
     const addImage = (e) => {
         const file = e.target.files[0];
@@ -67,33 +65,42 @@ function NewListing(){
         <div className={styles.newListingPage}>
             <h1 className={styles.header}>New Listing</h1>
             <form className={styles.form} onSubmit={onSubmit}>
-                <div className={styles.formGroup}>
+                <div className={styles.formName}>
                     <label htmlFor="name">Name:</label>
                     <input type="text" className={styles.formInput} id="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
-                <div className={styles.formGroup}>
+                <div className={styles.formNums}>
+                    <div className={styles.formPrice}>
                     <label htmlFor="price">Price:</label>
                     <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="totalBedrooms">Total Bedrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="totalBathrooms">Total Bathrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} />
-                </div>
-                <div className={styles.formGroup}>
+                    </div>
+                    <div className={styles.formPrice}>
                     <label htmlFor="sqFt">Square Foot:</label>
                     <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} />
+                    </div>
                 </div>
-                <div className={styles.formGroup}>
+
+                <div className={styles.formNums}>
+                    <div className={styles.formPrice}>
+                    <label htmlFor="totalBedrooms">Total Bedrooms:</label>
+                    <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} />
+                    </div>
+                {/* </div>
+                <div className={styles.formGroup}> */}
+                    <div className={styles.formPrice}>
+                    <label htmlFor="totalBathrooms">Total Bathrooms:</label>
+                    <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} />
+                    </div>
+                </div>
+                <div className={styles.formCheck}>
+                    <div>
                     <label htmlFor="hasKitchen">Has Kitchen:</label>
-                    <input type="checkbox" className={styles.formInput} id="hasKitchen" placeholder="Has Kitchen" value={hasKitchen} onChange={(e) => setHasKitchen(e.target.value)} />
-                </div>
-                <div className={styles.formGroup}>
+                    <input type="checkbox" className={styles.formInput} id="hasKitchen" placeholder="Has Kitchen" value={hasKitchen} onChange={() => setHasKitchen(!hasKitchen)} />
+                    </div>
+                    <div>
                     <label htmlFor="hasInternet">Has Internet:</label>
-                    <input type="checkbox" className={styles.formInput} id="hasInternet" placeholder="Has Internet" value={hasInternet} onChange={(e) => setHasInternet(e.target.value)} />
+                    <input type="checkbox" className={styles.formInput} id="hasInternet" placeholder="Has Internet" value={hasInternet} onChange={() => setHasInternet(!hasInternet)} />
+                    </div>
                 </div>
                 <div className={styles.formGroup}>
                     <label htmlFor="description">Description:</label>
@@ -103,7 +110,7 @@ function NewListing(){
                     <label htmlFor="images">Upload some images for your guests?</label>
                     <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
                 </div>
-                <div className={styles.formGroup}>
+                <div className={styles.formBtn}>
                     <button type="submit" className={styles.button}>Submit</button>
                 </div>
                 {(imageLoading)&& <p>Loading...</p>}
