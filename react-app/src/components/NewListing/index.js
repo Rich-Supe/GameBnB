@@ -34,9 +34,6 @@ function NewListing(){
         e.preventDefault();
 
         const formData = new FormData();
-
-        // currentImages.forEach((image) => {
-        //     formData.append('images', image);
         for (let i = 0; i < currentImages.length; i++) {
             formData.append(`images`, currentImages[i]);
         }
@@ -44,7 +41,6 @@ function NewListing(){
         for (var key of formData.keys()) {
             console.log(key);
          }
-         
 
         setImageLoading(true);
 

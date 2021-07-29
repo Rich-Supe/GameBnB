@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Listings from './components/Listings';
 import Profile from './components/Profile';
 import NewListing from './components/NewListing';
+import Host from './components/Host';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
 import { authenticate } from './store/session';
@@ -44,6 +45,9 @@ return (
         </Route>
         <Route path="/users/:userId">
             <Profile />
+        </Route>
+        <Route path="/host/:userId">
+            <Host />
         </Route>
         <Route path='/new-listing/:userId'>
             <NewListing />

@@ -41,8 +41,8 @@ const NavBar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/new-listing/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
-                        <p className={styles.navP}>NEW LISTING</p>
+                    <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
+                        <p className={styles.navP}>Hosting</p>
                     </NavLink>
                 </li>
                 <li><LogoutButton /></li>
