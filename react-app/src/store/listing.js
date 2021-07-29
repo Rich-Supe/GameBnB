@@ -27,6 +27,7 @@ const updateListing = (listing) => ({
 export const getAllListings = () => async (dispatch) => {
     const response = await fetch(`/api/listings/`);
     const listings = await response.json();
+    console.log(listings)
     dispatch(setAllListings(listings));
 };
 
@@ -102,7 +103,7 @@ export default function Reducer(state = {}, action) {
             return newState;
         case SET_ALL_LISTINGS:
             newState = { ...state };
-            action.listings.forEach((listing) => {
+            action.listings.listings.forEach((listing) => {
                 newState[listing.id] = listing;
             }
             );

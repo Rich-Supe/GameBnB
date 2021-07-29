@@ -47,9 +47,9 @@ class Listing(db.Model):
             'total_bathrooms': self.total_bathrooms,
             'has_kitchen': self.has_kitchen,
             'has_internet': self.has_internet,
-            'images': self.images,
             'price': self.price,
             'latlang': self.latlang,
             'user_id': self.user_id,
             'sq_ft': self.sq_ft,
+            'images': [image.to_dict() for image in self.images]
         }

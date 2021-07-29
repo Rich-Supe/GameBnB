@@ -1,0 +1,21 @@
+
+.listingsPage {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.mapsComponent {
+    height: 40%;
+    width: 100%;
+    background-image: url('../../assets/img/mapImg.png');
+    background-size: cover;
+}
+
+.listingsComponent {
+    height: 60%;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.178);
+}

@@ -1,10 +1,16 @@
 // constants
 const SET_USER = 'session/SET_USER';
+const GET_USER = 'session/GET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 
 const setUser = (user) => ({
   type: SET_USER,
   payload: user
+});
+
+const setUserId = (id) => ({
+    type: GET_USER,
+    payload: id
 });
 
 const removeUser = () => ({
@@ -28,6 +34,18 @@ export const authenticate = () => async (dispatch) => {
     dispatch(setUser(data));
   }
 }
+
+export const getUser = (id) => async (dispatch) => {
+    const response = await fetch(`/api/users/${id}`);
+    if (response.ok) {
+        const user = await response.json();
+        dispatch(setUserId(user));
+    }
+    else {
+        return [404, 'User not found'];
+    }
+}
+
 
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
