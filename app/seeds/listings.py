@@ -15,7 +15,7 @@ def seed_listings():
     peaches_castle = Listing(
         name='Peaches Castle',
         user_id=2,
-        description='Peaches Castle is a castle in the style of the game, The Legend of Zelda. Currently pre-occupied by a man in a red hat fighting a giant turtle.',
+        description='A gorgeous castle, beware of turtles and talking mushrooms. Currently pre-occupied by a man in a red hat fighting a giant turtle.',
         price=1400,
         total_bedrooms='14',
         total_bathrooms='10',
@@ -23,9 +23,34 @@ def seed_listings():
         has_kitchen=True,
         has_internet=False,
         latlang='40.71523,-74.00573')
+    hyrule_castle = Listing(
+        name='Hyrule Castle',
+        user_id=3,
+        description='Your stay will be both timeless and filled with adventure. Please DO NOT touch the chickens, they have a serious attitude.',
+        price=5000,
+        total_bedrooms='10',
+        total_bathrooms='7',
+        sq_ft='20000',
+        has_kitchen=True,
+        has_internet=False,
+        latlang='40.71589,-74.00597')
+    whiterun = Listing(
+        name='Whiterun',
+        user_id=2,
+        description='A beautiful city with inns, werewolves, and a village crazy pretending to be dragonborn walking around shouting at people.',
+        price=10000,
+        total_bedrooms='100',
+        total_bathrooms='1',
+        sq_ft='200000',
+        has_kitchen=True,
+        has_internet=False,
+        latlang='40.71589,-74.00597')
+
     
     db.session.add(bowsers_castle)
     db.session.add(peaches_castle)
+    db.session.add(hyrule_castle)
+    db.session.add(whiterun)
     db.session.commit()
 
 def undo_listings():

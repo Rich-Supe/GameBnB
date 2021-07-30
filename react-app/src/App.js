@@ -12,6 +12,7 @@ import Profile from './components/Profile';
 import NewListing from './components/NewListing';
 import Host from './components/Host';
 import NotHost from './components/Host/NotHost';
+import IndividualListing from './components/IndividualListing';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
 import { authenticate } from './store/session';
@@ -41,7 +42,7 @@ return (
         <Route path="/home" exact={true}>
             <Home />
         </Route>
-        <Route path="/listings">
+        <Route path="/listings" exact={true}>
             <Listings />
         </Route>
         <Route path="/users/:userId">
@@ -55,6 +56,9 @@ return (
         </Route>
         <Route path="/not-host/:userId">
             <NotHost />
+        </Route>
+        <Route path="/individual-listing/:listingId">
+            <IndividualListing />
         </Route>
         {/* <Route path='/login' exact={true}>
         <LoginForm />

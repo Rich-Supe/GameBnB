@@ -24,7 +24,7 @@ function ListingCarousel(){
     let i = 0;
     listings.forEach((listing) => {
         slides.push(
-        <SwiperSlide key={`slide:${i}`}>
+        <SwiperSlide key={`slide:${i}`} className={styles.slide}>
             <ListingCard listing={listing} />
         </SwiperSlide>
         );
@@ -32,7 +32,6 @@ function ListingCarousel(){
     })
 
     return (
-        <div className="listing-carousel">
             <div className={styles.listingCarousel}>
                 <Swiper id="main" 
                     tag="section" 
@@ -41,7 +40,7 @@ function ListingCarousel(){
                     navigation 
                     pagination 
                     spaceBetween={0} 
-                    slidesPerView={1}
+                    slidesPerView={2}
                     // onInit={(swiper) => console.log('Swiper initialized', swiper)}
                     // onSlideChange={(swiper) => {
                     //     console.log('Swiper slide: ', swiper)
@@ -49,7 +48,6 @@ function ListingCarousel(){
                     // onReachEnd={() => console.log("Swiper end")}
                 >{slides}</Swiper>
             </div>
-        </div>
     )
 }
 
