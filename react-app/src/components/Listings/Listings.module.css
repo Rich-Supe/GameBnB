@@ -17,5 +17,45 @@
 .listingsComponent {
     height: 60%;
     width: 100%;
-    background-color: rgba(0, 0, 255, 0.178);
+    /* background-color: rgba(0, 0, 255, 0.178); */
+}
+
+section {
+    width: 80%;
+}
+
+.slide {
+    width: 400px;
+}
+
+
+/* Listing Cards */
+.listingCard {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    /* background-color: rgba(60, 60, 235, 0.212); */
+}
+
+.listingCard:hover {
+    cursor: pointer;
+}
+
+.listingCardImageDiv {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.listingCardImage {
+    display: flex;
+    height: 200px;
+    width: 300px;
+}
+
+.listingCardInfoDiv {
+    display: flex;
+    justify-content: center;
 }
