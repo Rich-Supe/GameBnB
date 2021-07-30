@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
 }
 
 .picturesContainer {
@@ -15,4 +16,12 @@
 .image {
     width: 400px;
     height: 300px;
+}
+
+.listingBottom {
+    width: 100%;
+    min-height: 1000px;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
 }

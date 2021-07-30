@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getListing,  } from '../../store/listing'
+import ListingInfo from './ListingInfo';
 
 import styles from './IndividualListing.module.css'
 
@@ -59,6 +60,9 @@ function IndividualListing(){
                         // }}
                         // onReachEnd={() => console.log("Swiper end")}
                     >{slides}</Swiper>
+            </div>
+            <div className={styles.listingBottom}>
+                <ListingInfo listing={listing}/>
             </div>
         </div>
     )}
