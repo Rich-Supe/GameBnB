@@ -16,7 +16,8 @@ def validation_errors_to_error_messages(validation_errors):
 @listing_routes.route('/', methods=['GET'])
 def get_all_listings():
     listings = Listing.query.all()
-    return listings.to_dict()
+    print("all listings:::::::::::", listings)
+    return {"listings": [listing.to_dict() for listing in listings]}
 
 # Get a single listing
 @listing_routes.route('/<int:listing_id>', methods=['GET'])
