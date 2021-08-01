@@ -1,7 +1,11 @@
 
 
 .listingInfo {
-    width: 50%;
-    height: 65%;
-    border: 2px solid #ccc;
+    width: 55%;
+    height: 100%;
+    border: 2px solid rgb(255, 98, 98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start
 }

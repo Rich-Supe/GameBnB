@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getListing,  } from '../../store/listing'
 import ListingInfo from './ListingInfo';
+import ReservationCard from './ReservationCard';
+import Reviews from './Reviews';
 
 import styles from './IndividualListing.module.css'
 
@@ -62,7 +64,13 @@ function IndividualListing(){
                     >{slides}</Swiper>
             </div>
             <div className={styles.listingBottom}>
-                <ListingInfo listing={listing}/>
+                <div className={styles.infoAndReservationDiv}>
+                    <ListingInfo listing={listing}/>
+                    <ReservationCard listing={listing}/>
+                </div>
+                <div className={styles.reviewsDiv}>
+                    <Reviews listing={listing}/>
+                </div>
             </div>
         </div>
     )}

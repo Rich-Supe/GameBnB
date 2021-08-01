@@ -25,3 +25,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.infoAndReservationDiv {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+}
