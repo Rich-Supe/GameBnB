@@ -18,6 +18,54 @@
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     font-size: 1.2em;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.guests {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guestLabel {
+    margin-right: 18px;
+    font-size: 1.1em;
+}
+
+.selectedGuests {
+    margin-left: 10px;
+}
+
+.extraInfo {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* width: 80%; */
+    height: 25%;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+
+}
+
+.infoLabel {
+    margin: 10px 0px;
+}
+
+.labelSpan {
+    margin: 10px 20px;
+}
+
+.infoDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

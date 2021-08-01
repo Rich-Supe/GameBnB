@@ -15,7 +15,7 @@ def seed_listings():
     peaches_castle = Listing(
         name='Peaches Castle',
         user_id=2,
-        description='A gorgeous castle, beware of turtles and talking mushrooms. Currently pre-occupied by a man in a red hat fighting a giant turtle. Please DO NOT attempt to jump into paintings. Surrounded with a beautil mote with accompanying drawbridge.',
+        description='A gorgeous castle, beware of turtles and talking mushrooms. Currently pre-occupied by a man in a red hat fighting a giant turtle. Please DO NOT attempt to jump into paintings. Surrounded with a beautil mote and accompanying drawbridge.',
         price=1400,
         total_bedrooms='14',
         total_bathrooms='10',
