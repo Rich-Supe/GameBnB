@@ -21,9 +21,9 @@
 .listingBottom {
     width: 100%;
     min-height: 1000px;
-    border: 2px solid #ccc;
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 .infoAndReservationDiv {
@@ -31,4 +31,5 @@
     height: 65%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }

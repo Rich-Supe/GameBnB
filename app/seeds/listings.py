@@ -2,9 +2,9 @@ from app.models import db, Listing
 
 def seed_listings():
     bowsers_castle = Listing(
-        name='Bowsers Castle',
+        name='Bowser\'s Castle',
         user_id=2,
-        description='Bowsers Castle is a castle in the style of the game, The Legend of Zelda. It is a large, dark, and spooky structure, with a dark, spooky forest surrounding it.',
+        description='A beautiful and haunting structure, locals believe it to be cursed. Beware of people playing go-karts throughout the hallways and the blue blocks that tend to smash toes. It has plenty of space for all of your largest parties! Do not take pictures on the bowser statue and please do not touch the art.',
         price=1999,
         total_bedrooms='20',
         total_bathrooms='13',
@@ -15,7 +15,7 @@ def seed_listings():
     peaches_castle = Listing(
         name='Peaches Castle',
         user_id=2,
-        description='A gorgeous castle, beware of turtles and talking mushrooms. Currently pre-occupied by a man in a red hat fighting a giant turtle.',
+        description='A gorgeous castle, beware of turtles and talking mushrooms. Currently pre-occupied by a man in a red hat fighting a giant turtle. Please DO NOT attempt to jump into paintings. Surrounded with a beautil mote with accompanying drawbridge.',
         price=1400,
         total_bedrooms='14',
         total_bathrooms='10',

@@ -12,17 +12,26 @@ function ReservationCard({listing}) {
 
 
     return (
-        <div className={styles.bookingCard}>
-            <h1>Reservation Card</h1>
-            <DateTimeRangePicker
-                onChange={(startDate, endDate) => {
-                    console.log(startDate, endDate)
-                    setStartDate(startDate)
-                    setEndDate(endDate)
-                }}
-                startDate={startDate}
-                endDate={endDate}
-            />
+        <div className={styles.reservationCardContainer}>
+            <div className={styles.reservationCard}>
+                <div className={styles.header}>
+                    <div className={styles.headerRight}>
+                        /Night
+                    </div>
+                    <div className={styles.headerLeft}>
+                        Stars
+                    </div>
+                </div>
+                <DateTimeRangePicker
+                    onChange={(startDate, endDate) => {
+                        console.log(startDate, endDate)
+                        setStartDate(startDate)
+                        setEndDate(endDate)
+                    }}
+                    startDate={startDate}
+                    endDate={endDate}
+                />
+            </div>
         </div>
 
 

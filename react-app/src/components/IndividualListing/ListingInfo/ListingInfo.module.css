@@ -3,9 +3,77 @@
 .listingInfo {
     width: 55%;
     height: 100%;
-    border: 2px solid rgb(255, 98, 98);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start
+}
+
+.listingInfoCard{
+    /* border: 1px solid rgb(0, 0, 0); */
+    border-radius: 15px;
+    box-shadow: 8px 8px 8px 3px rgba(0, 0, 0, 0.2);
+    height: 90%;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.basicInfo {
+    height: 35%;
+    width: 90%;
+    border-top:1px solid rgba(0, 0, 0, 0.212);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.212); */
+}
+
+.infoList {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0px;
+}
+
+.listItem {
+    height: 25%;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin: 0 10px;
+}
+
+.description {
+    padding: 0 10px;
+    height: 22%;
+    /* border: 1px solid black; */
+}
+
+.amenities {
+    height: 22%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.amenitiesList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.2em;
+    margin: 0px;
+}
+
+.amenityItem {
+    padding: 0 8px;
 }
