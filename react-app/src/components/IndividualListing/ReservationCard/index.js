@@ -83,6 +83,13 @@ function ReservationCard({listing}) {
                         <span className={styles.labelSpan}>{listing.total_bedrooms}</span>
                     </div>
                 </div>
+                <div className={styles.price}>
+                    <h4 className={styles.priceLabel}>Total Price:</h4>
+                    <span className={styles.priceSpan}>${totalPrice}.00</span>
+                </div>
+                <div className={styles.submit}>
+                    <button className={styles.submitButton}>Reserve</button>
+                </div>
             </div>
         </div>
 

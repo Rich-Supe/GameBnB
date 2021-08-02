@@ -10,6 +10,8 @@ class Reservation(db.Model):
     start_date = db.Column(db.String)
     end_date = db.Column(db.String)
     price = db.Column(db.Integer)
+    days = db.Column(db.Integer)
+    guests = db.Column(db.Integer)
 
     user = db.relationship('User', back_populates='reservations')
     listing = db.relationship('Listing', back_populates='reservations')
@@ -31,6 +33,8 @@ class Reservation(db.Model):
             'listing_id': self.listing_id,
             'start_date': self.start_date,
             'end_date': self.end_date,
-            'price': self.price
+            'price': self.price,
+            'days': self.days,
+            'guests': self.guests,
         }
 

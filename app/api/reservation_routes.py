@@ -22,6 +22,8 @@ def create_reservation():
             listing_id = form.listing_id.data,
             start_date = form.start_date.data,
             end_date = form.end_date.data,
+            days = form.days.data,
+            guests = form.guests.data,
             price = form.price.data
         )
         db.session.add(reservation)

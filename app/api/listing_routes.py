@@ -16,7 +16,7 @@ def validation_errors_to_error_messages(validation_errors):
 @listing_routes.route('/', methods=['GET'])
 def get_all_listings():
     listings = Listing.query.all()
-    print("all listings:::::::::::", listings)
+    # print("all listings:::::::::::", listings)
     return {"listings": [listing.to_dict() for listing in listings]}
 
 # Get a single listing
@@ -75,4 +75,13 @@ def update_listing(listing_id):
         return listing.to_dict()
     else:
         return {"Errors", validation_errors_to_error_messages(form.errors)}, 400
+
+# delete a listing
+@listing_routes.route('/delete/<int:listing_id>', methods=['DELETE'])
+def delete_listing(listing_id):
+    listing = Listing.query.get(listing_id)
+    db.session.delete(listing)
+    db.session.commit()
+    return {"message": "Listing deleted"};
+
 
