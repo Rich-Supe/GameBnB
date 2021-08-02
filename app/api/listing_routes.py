@@ -79,7 +79,9 @@ def update_listing(listing_id):
 # delete a listing
 @listing_routes.route('/delete/<int:listing_id>', methods=['DELETE'])
 def delete_listing(listing_id):
+    print("listingid------------=-=-=--==--=-=", listing_id)
     listing = Listing.query.get(listing_id)
+    print("listing------------=-=-=--==--=-=", listing)
     db.session.delete(listing)
     db.session.commit()
     return {"message": "Listing deleted"};

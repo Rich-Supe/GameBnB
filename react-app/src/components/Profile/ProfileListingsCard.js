@@ -19,7 +19,7 @@ function ProfileListingsCard({user}) {
     const listings = useSelector((state) => Object.values(state.listing));
     console.log("frontend listings:", listings);
 
-    const deleteListing = (id) => {
+    const deleteListingFunction = (id) => {
         console.log("Attemting to delete listing!", id)
         dispatch(deleteListing(id))
         history.push('/profile/listings')
@@ -41,7 +41,7 @@ function ProfileListingsCard({user}) {
                     <h3 className={styles.listingName}>{listing.name}</h3>
                 </div>
                 <div className={styles.listingButtons}>
-                    <div className={styles.deleteButton} onClick={() => {deleteListing(listingId)}}>
+                    <div className={styles.deleteButton} onClick={() => {deleteListingFunction(listingId)}}>
                         <FcDeleteDatabase className={styles.deleteIcon}/>
                     </div>
                     <div className={styles.editButton} onClick={() => {history.push(`/edit-listing/${listingId}`)}}>

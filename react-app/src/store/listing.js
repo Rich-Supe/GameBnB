@@ -168,10 +168,10 @@ export default function Reducer(state = {}, action) {
             newState = { ...state };
             newState[action.listing.id] = action.listing;
             return newState;
-        case DELETE_LISTING:
-            newState = { ...state };
-            delete newState[action.listing.id];
-            return newState;
+        case DELETE_LISTING: {}
+            // newState = { ...state };
+            // delete newState[action.listing.id];
+            // return newState;
         case UNLOAD_LISTING:
             newState = { ...state };
             return newState;
