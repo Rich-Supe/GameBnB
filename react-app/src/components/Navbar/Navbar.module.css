@@ -42,3 +42,21 @@
     margin-top: 10px;
 }
 
+.logoutBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoutBtn {
+    font-size: 22px;
+    border: none;
+    background-color: #f5323f00;
+    padding-bottom: 14px;
+}
+
+.logoutBtn:hover {
+    color: #F53240;
+    cursor: pointer;
+}
+

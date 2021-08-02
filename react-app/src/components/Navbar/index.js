@@ -42,10 +42,10 @@ const NavBar = () => {
                 </li>
                 <li>
                     <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
-                        <p className={styles.navP}>Hosting</p>
+                        <p className={styles.navP}>HOSTING</p>
                     </NavLink>
                 </li>
-                <li><LogoutButton /></li>
+                <li className={styles.logoutBtnDiv}><LogoutButton /></li>
             </ul>
         ) : (
             <ul className={styles.navUl}>

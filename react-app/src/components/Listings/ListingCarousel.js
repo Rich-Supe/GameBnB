@@ -41,7 +41,7 @@ function ListingCarousel(){
                     navigation 
                     pagination 
                     spaceBetween={0} 
-                    slidesPerView={2}
+                    slidesPerView={3}
                     // onInit={(swiper) => console.log('Swiper initialized', swiper)}
                     // onSlideChange={(swiper) => {
                     //     console.log('Swiper slide: ', swiper)

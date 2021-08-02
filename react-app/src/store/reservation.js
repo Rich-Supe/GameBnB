@@ -30,7 +30,7 @@ const deleteReservation = (reservation) => ({
     reservation
 });
 
-const unloadReservation = () => ({
+export const unloadReservation = () => ({
     type: UNLOAD_RESERVATION
 });
 
@@ -64,7 +64,7 @@ export default function Reducer(state = {}, action) {
             return newState;
         case SET_RESERVATIONS:
             newState = { ...state };
-            action.reservations.forEach((reservation) => {
+            action.reservations.reservations.forEach((reservation) => {
                 newState[reservation.id] = reservation;
             }
             );
