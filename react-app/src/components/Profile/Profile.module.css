@@ -69,6 +69,60 @@
     margin: 20px 0;
 }
 
+.profileListingsCard {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.listingHeader {
+    /* margin: 0px; */
+    margin: 15px 10px;
+}
+
+.listingCarousel {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid #F53240;
+     */
+    box-shadow: 1px solid #F53240;
+    width: 50%;
+    height: 60%;
+}
+
+.listingName {
+    margin-top: 0px;
+    margin-bottom: 9px;
+}
+
+.listingButtons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.deleteButton {
+    margin-left: 50px;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    color: #F53240;
+}
+
+.editButton {
+    margin-left: 40px;
+}
+
+.editButton:hover {
+    cursor: pointer;
+    color: #02C8A7;
+}
+
 .reservationCard {
     height: 45%;
     width: 100%;

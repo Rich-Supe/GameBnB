@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Listings from './components/Listings';
 import Profile from './components/Profile';
 import NewListing from './components/NewListing';
+import EditListing from './components/EditListing';
 import Host from './components/Host';
 import NotHost from './components/Host/NotHost';
 import IndividualListing from './components/IndividualListing';
@@ -53,6 +54,9 @@ return (
         </Route>
         <Route path='/new-listing/:userId'>
             <NewListing />
+        </Route>
+        <Route path='/edit-listing/:listingId'>
+            <EditListing />
         </Route>
         <Route path="/not-host/:userId">
             <NotHost />
