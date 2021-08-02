@@ -25,6 +25,12 @@ def get_listing(listing_id):
     listing = Listing.query.get(listing_id)
     return listing.to_dict()
 
+# Get all listings that belong to a user
+@listing_routes.route('/user/<int:user_id>', methods=['GET'])
+def get_user_listings(user_id):
+    listings = Listing.query.filter_by(user_id=user_id).all()
+    return {"listings": [listing.to_dict() for listing in listings]}
+
 # Create a new listing
 @listing_routes.route('/create/<int:user_id>', methods=['POST'])
 def create_listing(user_id):

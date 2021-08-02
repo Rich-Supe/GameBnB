@@ -1,19 +1,33 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { getUser } from '../../store/session'
 
 
 import styles from './Profile.module.css'
+import demoImg from '../../assets/img/profilepicBowser.png'
 
 function Profile(){
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const {userId} = useParams();
 
+    const user = useSelector(state => state.session.user);
+    console.log(user)
+
+    useEffect(() => {
+        dispatch(getUser(userId));
+    }, [userId]);
 
     return (
         <div className={styles.profilePage}>
             <div className={styles.profileCard}>
                 <div className={styles.profileCardImage}>
-                    <h1>Profile Img</h1>
+                    <img src={demoImg} alt="Profile Picture" className={styles.profileImg}/>
                 </div>
                 <div className={styles.profileCardContent}>
                     <div className={styles.profileName}>
-                        <h2>John Doe</h2>
+                        <h2>Demo User</h2>
                     </div>
                     <div className={styles.profileBio}>
                         <p>Bio here:</p>
@@ -23,10 +37,10 @@ function Profile(){
             </div>
             <div className={styles.infoContainer}>
                 <div className={styles.listingsCard}>
-                    <h2>Listings Card</h2>
+                    <h2>Your Listings</h2>
                 </div>
                 <div className={styles.reservationCard}>
-                    <h2>Reservations Card</h2>
+                    <h2>Your Reservations</h2>
                 </div>
             </div>
         </div>

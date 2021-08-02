@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllListings } from '../../store/listing'
+import { getAllListings, unloadListings } from '../../store/listing'
 import ListingCard from './ListingCard';
 import styles from './Listings.module.css'
 
@@ -18,6 +18,7 @@ function ListingCarousel(){
     
     useEffect(() => {
         dispatch(getAllListings());
+        dispatch(unloadListings());
     }, []);
 
     const slides = [];

@@ -1,17 +1,25 @@
 const SET_LISTING = 'listings/SET_LISTING';
 const SET_ALL_LISTINGS = 'listings/SET_ALL_LISTINGS';
+// const SET_ALL_LISTINGS_USER = 'listings/SET_ALL_LISTINGS_USER';
 const ADD_LISTING = 'listings/ADD_LISTING';
 const UPDATE_LISTING = 'listings/UPDATE_LISTING';
+const UNLOAD_LISTING = 'listings/UNLOAD_LISTING';
+const UNLOAD_LISTINGS = 'listings/UNLOAD_LISTINGS';
 
-const setListing = (id) => ({
+const setListing = (listing) => ({
     type: SET_LISTING,
-    id
+    listing
 });
 
 const setAllListings = (listings) => ({
     type: SET_ALL_LISTINGS,
     listings
 });
+
+// const setAllListingsUser = (listings) => ({
+//     type: SET_ALL_LISTINGS_USER,
+//     listings
+// });
 
 const addListing = (listing) => ({
     type: ADD_LISTING,
@@ -22,6 +30,16 @@ const updateListing = (listing) => ({
     type: UPDATE_LISTING,
     listing
 });
+
+export const unloadListing = () => ({
+    type: UNLOAD_LISTING,
+});
+
+export const unloadListings = () => ({
+    type: UNLOAD_LISTINGS,
+});
+
+
 
 // all listings
 export const getAllListings = () => async (dispatch) => {
@@ -35,8 +53,16 @@ export const getAllListings = () => async (dispatch) => {
 export const getListing = (id) => async (dispatch) => {
     const response = await fetch(`/api/listings/${id}`);
     const listing = await response.json();
-    dispatch(setListing(listing.id));
+    console.log("listing in thunk:", listing)
+    dispatch(setListing(listing));
 }
+
+// all listings for user
+export const getAllListingsUser = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/listings/user/${userId}`);
+    const listings = await response.json();
+    dispatch(setAllListings(listings));
+};
 
 // add listing
 export const createListing = (listing, images, userId) => async (dispatch) => {
@@ -94,13 +120,18 @@ export const editListing = (listing, listingId) => async (dispatch) => {
     }
 }
 
+// export const unloadAListing = (listingId) => async (dispatch) => {
+//     return "unloaded!"
+// }
+
 export default function Reducer(state = {}, action) {
     let newState
     switch (action.type) {
         case SET_LISTING:
             newState = { ...state };
-            newState[action.id] = action.listing;
+            newState[action.listing.id] = action.listing;
             return newState;
+            // return action.listing;
         case SET_ALL_LISTINGS:
             newState = { ...state };
             action.listings.listings.forEach((listing) => {
@@ -115,6 +146,12 @@ export default function Reducer(state = {}, action) {
         case UPDATE_LISTING:
             newState = { ...state };
             newState[action.listing.id] = action.listing;
+            return newState;
+        case UNLOAD_LISTING:
+            newState = { ...state };
+            return newState;
+        case UNLOAD_LISTINGS:
+            newState = { ...state };
             return newState;
         default:
             return state;
