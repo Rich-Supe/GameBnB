@@ -1,4 +1,5 @@
-# Gamebnb
+# Welcome to Gamebnb!
+## An Airbnb with a creative twist, fantasy rentals only! Make your first reservation today, or build your own listing by becoming a host!
 
 ## For a deeper dive, check the following:
   * MVP - https://github.com/Rich-Supe/GameBnB/wiki/MVP-List
