@@ -35,7 +35,7 @@ function ProfileListingsCard({user}) {
     useEffect(() => {
         dispatch(getAllListingsUser(user.id));
         dispatch(unloadListings());
-    }, []);
+    }, [dispatch]);
 
     const slides = [];
     let i = 0;
@@ -61,20 +61,20 @@ function ProfileListingsCard({user}) {
         i++;
     })
 
-    if (user.host != true) {
-        return (
-            <div className="card">
-                <h1>You need to be a host to make listings! Become one?</h1>
-                <button>Yes!</button>
-            </div>
-        );
-    };
+    // if (user.host != true) {
+    //     return (
+    //         <div className="card">
+    //             <h1>You need to be a host to make listings! Become one?</h1>
+    //             <button>Yes!</button>
+    //         </div>
+    //     );
+    // };
 
-    return (
-        <div className={styles.profileListingsCard}>
-            <h2 className={styles.listingHeader}>Your Listings</h2>
-            <div className={styles.listingCarousel}>
-                <Swiper id="main" 
+    let listingSwiper;
+
+    if (listings.length > 0) {
+        listingSwiper = (
+            <Swiper id="main" 
                     tag="section" 
                     wrapperTag="ul" 
                     className={styles.swiperContainer}
@@ -90,6 +90,21 @@ function ProfileListingsCard({user}) {
                         "shadowScale": 0.94
                     }} pagination={true}
                 >{slides}</Swiper>
+        );
+    } else {
+        listingSwiper = (
+            <div className={styles.noReservations}>
+                <h3>No Listings yet!</h3>
+                <button className={styles.noneBtn} onClick={() => {history.push(`/new-listing/${user.id}`)}}>Lets Create One!</button>
+            </div>
+        );
+    }
+
+    return (
+        <div className={styles.profileListingsCard}>
+            <h2 className={styles.listingHeader}>Your Listings</h2>
+            <div className={styles.listingCarousel}>
+                {listingSwiper}
             </div>
         </div>
     )
