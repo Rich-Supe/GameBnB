@@ -54,7 +54,6 @@ def create_images(listing_id):
         image.filename = get_unique_filename(image.filename)
         uploads.append(upload_file_to_s3(image))
 
-
     for upload in uploads:
         if "url" not in upload:
             # if the dictionary doesn't have a url key
