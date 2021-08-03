@@ -36,7 +36,7 @@
 
 ### AWS S3
 * I use S3 buckets primarily for storing all of the images that users add to their listings and their profiles.
-* Code example showing workflow from the API route that manages multiple uploads at one time, to the thunk/reducer that manages the state of the application throughout this feature. Basic error handling included.
+* Code example showing workflow from the API route that manages multiple uploads at one time, to the thunk/reducer that manages the state of the application throughout this feature. Basic error handling included, front-end components and form are in the source/components directories within the app.
 
 ##### API Route for AWS S3 bucket multiple image storage (in Python, using SQLAlchemy):
 ```python
