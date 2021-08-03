@@ -99,9 +99,18 @@
     height: 60%;
 }
 
-.slide {
+.slideL {
     display: flex;
     justify-content: center;
+    /* border: 2px solid #02C8A7; */
+    box-shadow: 1px 1px 2px 1px #02c8a780;
+}
+
+.slideR {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid #02C8A7; */
+    box-shadow: 1px 1px 2px 1px #f5323f6b;
 }
 
 .listingName {

@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllReservations, unloadReservation } from '../../store/reservation'
+import { getAllReservations, deleteReservation, unloadReservation } from '../../store/reservation'
 import styles from './Profile.module.css'
 import { FcDeleteDatabase } from 'react-icons/fc'
 import { BiEditAlt } from 'react-icons/bi'
@@ -31,18 +31,24 @@ function ProfileReservationsCard({user}) {
         dispatch(unloadReservation)
     }, [user.id]);
 
+    const deleteReservationFunction = (id) => {
+        console.log("Attemting to delete reservation!", id)
+        dispatch(deleteReservation(id))
+        history.push('/')
+    }
+
     const slides = [];
     let i = 0;
     reservations?.forEach((reservation) => {
         const reservationId = reservation.id;
         slides.push(
-            <SwiperSlide key={`slide:${i}`} className={styles.slide}>
+            <SwiperSlide key={`slide:${i}`} className={styles.slideR}>
             <div className={styles.slideContent}>
                 <div className={styles.listingHeader}>
-                    <h3 className={styles.listingName}>Reservation Name</h3>
+                    <h3 className={styles.listingName}>{reservation.name}</h3>
                 </div>
                 <div className={styles.listingButtons}>
-                    <div className={styles.deleteButton}>
+                    <div className={styles.deleteButton} onClick={() => {deleteReservationFunction(reservationId)}}>
                         <FcDeleteDatabase className={styles.deleteIcon}/>
                     </div>
                     <div className={styles.editButton} onClick={() => {history.push(`/edit-reservation/${reservationId}`)}}>

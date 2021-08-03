@@ -43,3 +43,11 @@ def create_reservation():
 
 
 # Delete a reservation
+@reservation_routes.route('/delete/<int:reservation_id>', methods=['DELETE'])
+def delete_reservation(reservation_id):
+    reservation = Reservation.query.get(reservation_id)
+    if reservation:
+        db.session.delete(reservation)
+        db.session.commit()
+        return {"message": "Reservation deleted"}
+    return {"message": "Reservation not found"}

@@ -52,7 +52,8 @@ function ReservationCard({listing}) {
             end_date: value[1],
             days: daysReserved,
             guests: parseInt(numOfGuests, 10),
-            price: totalPrice
+            price: totalPrice,
+            name: listing.name,
         }
 
         console.log("Reservation:", payload)

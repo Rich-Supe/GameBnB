@@ -42,7 +42,7 @@ function ProfileListingsCard({user}) {
     listings?.forEach((listing) => {
         const listingId = listing.id;
         slides.push(
-        <SwiperSlide key={`slide:${i}`} className={styles.slide}>
+        <SwiperSlide key={`slide:${i}`} className={styles.slideL}>
             <div className={styles.slideContent}>
                 <div className={styles.listingHeader}>
                     <h3 className={styles.listingName}>{listing.name}</h3>
@@ -82,6 +82,7 @@ function ProfileListingsCard({user}) {
                     // pagination 
                     // spaceBetween={} 
                     // slidesPerView={1}
+                    // loop={true}
                     effect={'cube'} grabCursor={true} cubeEffect={{
                         "shadow": true,
                         "slideShadows": true,
