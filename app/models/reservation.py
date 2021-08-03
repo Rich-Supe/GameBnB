@@ -12,6 +12,7 @@ class Reservation(db.Model):
     price = db.Column(db.Integer)
     days = db.Column(db.Integer)
     guests = db.Column(db.Integer)
+    name = db.Column(db.String)
 
     user = db.relationship('User', back_populates='reservations')
     listing = db.relationship('Listing', back_populates='reservations')
@@ -36,5 +37,6 @@ class Reservation(db.Model):
             'price': self.price,
             'days': self.days,
             'guests': self.guests,
+            'name': self.name,
         }
 

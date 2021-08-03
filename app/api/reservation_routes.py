@@ -30,7 +30,8 @@ def create_reservation():
             end_date = form.end_date.data,
             days = form.days.data,
             guests = form.guests.data,
-            price = form.price.data
+            price = form.price.data,
+            name = form.name.data,
         )
         db.session.add(reservation)
         db.session.commit()
@@ -42,3 +43,11 @@ def create_reservation():
 
 
 # Delete a reservation
+@reservation_routes.route('/delete/<int:reservation_id>', methods=['DELETE'])
+def delete_reservation(reservation_id):
+    reservation = Reservation.query.get(reservation_id)
+    if reservation:
+        db.session.delete(reservation)
+        db.session.commit()
+        return {"message": "Reservation deleted"}
+    return {"message": "Reservation not found"}

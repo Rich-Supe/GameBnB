@@ -25,7 +25,7 @@ const updateReservation = (reservation) => ({
     reservation
 });
 
-const deleteReservation = (reservation) => ({
+const removeReservation = (reservation) => ({
     type: DELETE_RESERVATION,
     reservation
 });
@@ -55,6 +55,23 @@ export const createReservation = (reservation) => async (dispatch) => {
     dispatch(addReservation(reservationId));
 }
 
+// update a reservation
+
+// delete a reservation
+export const deleteReservation = (reservationId) => async (dispatch) => {
+    const response = await fetch(`/api/reservations/delete/${reservationId}`, {
+        method: 'DELETE'
+    });
+    if (response.ok) {
+        const reservation = await response.json();
+        dispatch(removeReservation(reservation));
+        return reservation;
+    }
+    else {
+        throw new Error(response.statusText);
+    }
+};
+
 export default function Reducer(state = {}, action) {
     let newState;
     switch (action.type) {
@@ -77,7 +94,10 @@ export default function Reducer(state = {}, action) {
             newState = { ...state };
             newState[action.reservation.id] = action.reservation;
             return newState;
-        case DELETE_RESERVATION: {};
+        case DELETE_RESERVATION:
+            newState = { ...state };
+            delete newState[action.reservation.id];
+            return newState;
         case UNLOAD_RESERVATION:
             newState = { ...state };
             return newState;

@@ -1,29 +1,31 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { editListing } from '../../store/listing'
+import { useDispatch, useSelector } from 'react-redux';
+import { editListing, getListing } from '../../store/listing'
 import styles from './EditListing.module.css'
 
 function EditListing(){
     const history = useHistory();
     const dispatch = useDispatch();
     const { listingId } = useParams();
+    const listing = useSelector( (state) => state.listing[listingId]);
 
-    const [ name, setName ] = useState('');
-    const [ description, setDescription ] = useState('');
-    const [ price, setPrice ] = useState(0);
-    const [ totalBedrooms, setTotalBedrooms ] = useState(0);
-    const [ totalBathrooms, setTotalBathrooms ] = useState(0);
-    const [ sqFt, setSqFt ] = useState(0);
+    const [ name, setName ] = useState(listing.name);
+    const [ description, setDescription ] = useState(listing.description);
+    const [ price, setPrice ] = useState(listing.price);
+    const [ totalBedrooms, setTotalBedrooms ] = useState(listing.total_bedrooms);
+    const [ totalBathrooms, setTotalBathrooms ] = useState(listing.total_bathrooms);
+    const [ sqFt, setSqFt ] = useState(listing.sq_ft);
     const [ hasKitchen, setHasKitchen ] = useState(false);
     const [ hasInternet, setHasInternet ] = useState(false);
     const [ imageLoading, setImageLoading ] = useState(false);
     const [ currentImages, setCurrentImages ] = useState([]);
 
-    // console.log("price:", typeof(parseInt(price), 10), "totalBedrooms:", typeof(totalBedrooms), "totalBathrooms:", totalBathrooms, "sqFt:", sqFt, "hasKitchen:", hasKitchen, "hasInternet:", hasInternet)
-    console.log("CurrentImgarray", currentImages)
-    console.log("listingId", listingId)
+    useEffect(() => {
+        dispatch(getListing(listingId))
+    }, [dispatch])
+
     const addImage = (e) => {
         const file = e.target.files[0];
         if (file){
@@ -66,7 +68,7 @@ function EditListing(){
 
     return (
         <div className={styles.newListingPage}>
-            <h1 className={styles.header}>New Listing</h1>
+            <h1 className={styles.header}>Edit {listing.name}</h1>
             <form className={styles.form} onSubmit={onSubmit}>
                 <div className={styles.formName}>
                     <label htmlFor="name">Name:</label>
@@ -110,7 +112,7 @@ function EditListing(){
                     <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <div className={styles.formImg}>
-                    <label htmlFor="images">Upload some images for your guests?</label>
+                    <label htmlFor="images">Upload more images for your guests?</label>
                     <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
                 </div>
                 <div className={styles.formBtn}>

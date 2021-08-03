@@ -72,7 +72,6 @@ export const getAllListingsUser = (userId) => async (dispatch) => {
 
 // add listing
 export const createListing = (listing, images, userId) => async (dispatch) => {
-    console.log("Is this working????", listing)
     const listingResponse = await fetch(`/api/listings/create/${userId}`, {
         method: 'POST',
         headers: {
@@ -80,8 +79,6 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
         },
         body: JSON.stringify(listing)
     });
-
-    console.log("listing:::::", listingResponse)
     
     if (listingResponse.ok) {
         const listing = await listingResponse.json();
@@ -90,8 +87,6 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
             method: 'POST',
             body: images
         });
-
-        console.log("img:::::", imageResponse)
         
         if (imageResponse.ok) {
             const newImages = await imageResponse.json();
@@ -99,7 +94,6 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
             dispatch(addListing(listingImg));
             return listingImg;
         }
-        
     }
     else {
         return ['An error occurred. Please try again.']
@@ -107,8 +101,8 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
 };
 
 // edit a listing
-export const editListing = (listing, listingId) => async (dispatch) => {
-    const response = await fetch(`/api/listings/update/${listingId}`, {
+export const editListing = (listing, images, listingId) => async (dispatch) => {
+    const listingResponse = await fetch(`/api/listings/update/${listingId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -116,13 +110,23 @@ export const editListing = (listing, listingId) => async (dispatch) => {
         body: JSON.stringify(listing)
     });
 
-    if (response.ok) {
-        const listing = await response.json();
-        dispatch(updateListing(listing));
-        return listing;
-    }
-    else {
-        return ['An error occurred. Please try again.']
+    if (listingResponse.ok) {
+        const listing = await listingResponse.json();
+        const listingId = listing.id;
+        const imageResponse = await fetch(`/api/images/${listingId}`, {
+            method: 'POST',
+            body: images
+        });
+
+        if (imageResponse.ok) {
+            const newImages = await imageResponse.json();
+            const listingImg = { ...listing, newImages };
+            dispatch(updateListing(listingImg));
+            return listingImg; 
+        }
+        else {
+            return ['An error occurred. Please try again.']
+        }
     }
 }
 

@@ -70,7 +70,6 @@ def update_listing(listing_id):
         listing.has_kitchen = form.has_kitchen.data
         listing.has_internet = form.has_internet.data
         listing.latlang = form.latlang.data
-        listing.user_id = form.user_id.data
         db.session.commit()
         return listing.to_dict()
     else:
