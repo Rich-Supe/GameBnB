@@ -40,7 +40,7 @@ function ListingCarousel(){
                     className={styles.swiperContainer}
                     navigation 
                     pagination 
-                    spaceBetween={0} 
+                    spaceBetween={15} 
                     slidesPerView={3}
                     // onInit={(swiper) => console.log('Swiper initialized', swiper)}
                     // onSlideChange={(swiper) => {

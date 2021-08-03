@@ -18,14 +18,21 @@
     height: 60%;
     width: 100%;
     /* background-color: rgba(0, 0, 255, 0.178); */
+    display: flex;
+    justify-content: center;
 }
 
-section {
+/* section {
     width: 80%;
+} */
+
+.listingCarousel {
+    width: 100%;
+    height: 70%;
 }
 
 .slide {
-    width: 400px;
+    width: 600px;
 }
 
 
@@ -33,8 +40,12 @@ section {
 .listingCard {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 100%;
+    height: 100%;
+    width: 90%;
+    border-radius: 20px;
+    /* box-shadow: 8px 4px 12px #F53240; */
+    /* box-shadow: 8px 4px 12px #02C8A7; */
+    box-shadow: 8px 4px 12px #7CDBD5;
     /* background-color: rgba(60, 60, 235, 0.212); */
 }
 
@@ -52,7 +63,9 @@ section {
 .listingCardImage {
     display: flex;
     height: 200px;
-    width: 300px;
+    width: 80%;
+    padding-top: 20px;
+    border-radius: 15px;
 }
 
 .listingCardInfoDiv {

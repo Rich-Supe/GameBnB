@@ -10,10 +10,12 @@ import Reviews from './Reviews';
 import styles from './IndividualListing.module.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {Navigation, Pagination} from 'swiper';
+import SwiperCore, {Navigation, Pagination, Autoplay} from 'swiper/core';
 import 'swiper/swiper-bundle.css'
+import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/navigation/navigation.min.css"
 
-SwiperCore.use([Navigation, Pagination])
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 function IndividualListing(){
     const dispatch = useDispatch();
@@ -36,7 +38,7 @@ function IndividualListing(){
         let i = 0;
         images.forEach(image => {
             slides.push(
-                <SwiperSlide key={i++}>
+                <SwiperSlide key={i++} className={styles.swiperSlide}>
                     <img src={image.image} alt={image.alt} className={styles.image}/>
                 </SwiperSlide> 
             )
@@ -52,10 +54,21 @@ function IndividualListing(){
                         tag="section" 
                         wrapperTag="ul" 
                         className={styles.swiperContainer}
-                        navigation 
-                        pagination 
+                        // pagination={{
+                        //     "type": "progressbar"
+                        // }} 
+                        // navigation={true}
+                        loop={true}
                         spaceBetween={0} 
                         slidesPerView={2}
+
+                        autoplay={{
+                            "delay": 2500,
+                            "disableOnInteraction": false
+                        }} pagination={{
+                            "clickable": true
+                        }} navigation={true}
+
                         // onInit={(swiper) => console.log('Swiper initialized', swiper)}
                         // onSlideChange={(swiper) => {
                         //     console.log('Swiper slide: ', swiper)

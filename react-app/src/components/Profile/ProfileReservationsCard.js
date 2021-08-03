@@ -8,10 +8,17 @@ import { FcDeleteDatabase } from 'react-icons/fc'
 import { BiEditAlt } from 'react-icons/bi'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {Navigation, Pagination} from 'swiper';
-import 'swiper/swiper-bundle.css'
+// import SwiperCore, {Navigation, Pagination} from 'swiper';
+import SwiperCore, {
+    EffectCube,Pagination
+} from 'swiper/core';
+// import 'swiper/swiper-bundle.css'
+import "swiper/swiper.min.css";
+import "swiper/components/effect-cube/effect-cube.min.css"
+import "swiper/components/pagination/pagination.min.css"
 
-SwiperCore.use([Navigation, Pagination])
+// SwiperCore.use([Navigation, Pagination])
+SwiperCore.use([EffectCube,Pagination]);
 
 function ProfileReservationsCard({user}) {
     const dispatch = useDispatch();
@@ -56,15 +63,16 @@ function ProfileReservationsCard({user}) {
                     tag="section" 
                     wrapperTag="ul" 
                     className={styles.swiperContainer}
-                    navigation 
-                    pagination 
-                    spaceBetween={0} 
-                    slidesPerView={1}
-                    // onInit={(swiper) => console.log('Swiper initialized', swiper)}
-                    // onSlideChange={(swiper) => {
-                    //     console.log('Swiper slide: ', swiper)
-                    // }}
-                    // onReachEnd={() => console.log("Swiper end")}
+                    // navigation 
+                    // pagination 
+                    // spaceBetween={} 
+                    // slidesPerView={1}
+                    effect={'cube'} grabCursor={true} cubeEffect={{
+                        "shadow": true,
+                        "slideShadows": true,
+                        "shadowOffset": 40,
+                        "shadowScale": 0.9,
+                    }} pagination={true}
                 >{slides}</Swiper>
             </div>
         </div>
