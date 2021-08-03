@@ -1,0 +1,12 @@
+
+.reviewsPage {
+    width: 100%;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.reviewsBox {
+    width: 80%;
+    border: 2px solid #ccc;
+}

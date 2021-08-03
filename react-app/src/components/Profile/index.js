@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getUser } from '../../store/session'
-
-
+import ProfileListingsCard from './ProfileListingsCard';
+import ProfileReservationsCard from './ProfileReservationsCard';
 import styles from './Profile.module.css'
 import demoImg from '../../assets/img/profilepicBowser.png'
 
@@ -37,10 +37,10 @@ function Profile(){
             </div>
             <div className={styles.infoContainer}>
                 <div className={styles.listingsCard}>
-                    <h2>Your Listings</h2>
+                    <ProfileListingsCard user={user}/>
                 </div>
                 <div className={styles.reservationCard}>
-                    <h2>Your Reservations</h2>
+                    <ProfileReservationsCard user={user}/>
                 </div>
             </div>
         </div>

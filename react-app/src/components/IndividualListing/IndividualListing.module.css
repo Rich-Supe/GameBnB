@@ -11,10 +11,14 @@
 .picturesContainer {
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    box-shadow: 15px 2px 20px #7CDBD5;
 }
 
 .image {
-    width: 400px;
+    width: 500px;
     height: 300px;
 }
 

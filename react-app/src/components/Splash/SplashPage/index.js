@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
+import Footer from '../../Footer'
 
 import styles from './SplashPage.module.css';
 import splashImg from '../../../assets/img/splash-zelda2.jpg'
@@ -19,6 +20,7 @@ function SplashPage() {
             {/* <div className={styles.imageContainer}>
                 <img src={splashImg} alt="Gamebnb" />
             </div> */}
+            <Footer/>
         </div>
     )
 }

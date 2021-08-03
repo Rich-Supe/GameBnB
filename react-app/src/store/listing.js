@@ -3,6 +3,7 @@ const SET_ALL_LISTINGS = 'listings/SET_ALL_LISTINGS';
 // const SET_ALL_LISTINGS_USER = 'listings/SET_ALL_LISTINGS_USER';
 const ADD_LISTING = 'listings/ADD_LISTING';
 const UPDATE_LISTING = 'listings/UPDATE_LISTING';
+const DELETE_LISTING = 'listings/DELETE_LISTING';
 const UNLOAD_LISTING = 'listings/UNLOAD_LISTING';
 const UNLOAD_LISTINGS = 'listings/UNLOAD_LISTINGS';
 
@@ -28,6 +29,11 @@ const addListing = (listing) => ({
 
 const updateListing = (listing) => ({
     type: UPDATE_LISTING,
+    listing
+});
+
+const removeListing = (listing) => ({
+    type: DELETE_LISTING,
     listing
 });
 
@@ -120,6 +126,21 @@ export const editListing = (listing, listingId) => async (dispatch) => {
     }
 }
 
+// delete a listing
+export const deleteListing = (listingId) => async (dispatch) => {
+    const response = await fetch(`/api/listings/delete/${listingId}`, {
+        method: 'DELETE'
+    });
+    if (response.ok) {
+        const listing = await response.json();
+        dispatch(removeListing(listing));
+        return listing;
+    }
+    else {
+        return ['An error occurred. Please try again.']
+    }
+};
+
 // export const unloadAListing = (listingId) => async (dispatch) => {
 //     return "unloaded!"
 // }
@@ -147,6 +168,10 @@ export default function Reducer(state = {}, action) {
             newState = { ...state };
             newState[action.listing.id] = action.listing;
             return newState;
+        case DELETE_LISTING: {}
+            // newState = { ...state };
+            // delete newState[action.listing.id];
+            // return newState;
         case UNLOAD_LISTING:
             newState = { ...state };
             return newState;

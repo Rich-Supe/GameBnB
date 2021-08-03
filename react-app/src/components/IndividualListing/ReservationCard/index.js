@@ -1,18 +1,23 @@
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { createReservation } from '../../../store/reservation';
 
-import DateTimeRangePicker from '@wojtekmaj/react-datetimerange-picker'
+import DateTimeRangePicker from '@wojtekmaj/react-datetimerange-picker';
 
-import styles from './ReservationCard.module.css'
+import styles from './ReservationCard.module.css';
 
 
 function ReservationCard({listing}) {
+    const user = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [value, onChange] = useState([new Date(), new Date()]);
     const [ numOfGuests, setNumOfGuests ] = useState(1);
-    // const [ totalPrice, setTotalPrice ] = useState(0);
-    // const [ startDay, setStartDay ] = useState('');
-    // const [ endDay, setEndDay ] = useState('');
+    console.log('currentUser:', user)
     console.log("date:", value)
+    console.log("guests:", numOfGuests)
     
     let startDay;
     let endDay;
@@ -22,7 +27,7 @@ function ReservationCard({listing}) {
     if (value[0] && value[1]) {
         startDay = value[0].getDate();
         endDay = value[1].getDate();
-        console.log(startDay, endDay)
+        console.log("start/end:", startDay, endDay)
         getDaysReserved();
     }
 
@@ -32,10 +37,31 @@ function ReservationCard({listing}) {
         } else {
             daysReserved = endDay + (30 - startDay);
         }
-        console.log(daysReserved)
+        console.log("days reserved:", daysReserved)
         totalPrice = daysReserved * listing.price;
-        console.log(totalPrice)
+        console.log("total price:", totalPrice)
     }
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        const payload = {
+            listing_id: listing.id,
+            user_id: user.id,
+            start_date: value[0],
+            end_date: value[1],
+            days: daysReserved,
+            guests: parseInt(numOfGuests, 10),
+            price: totalPrice
+        }
+
+        console.log("Reservation:", payload)
+        const reservation = await dispatch(createReservation(payload));
+        // if (reservation) {
+            history.push(`/users/${user.id}`)
+        // }
+    }
+
 
         //     sq_ft: 20000
         // total_bathrooms: 7
@@ -44,7 +70,7 @@ function ReservationCard({listing}) {
 
     return (
         <div className={styles.reservationCardContainer}>
-            <div className={styles.reservationCard}>
+            <form className={styles.reservationCard} onSubmit={onSubmit}>
                 <div className={styles.header}>
                     {/* <div className={styles.headerRight}> */}
                         <h4>${listing.price}.00/Night</h4>
@@ -61,7 +87,7 @@ function ReservationCard({listing}) {
                 </div>
                 <div className={styles.guests}>
                     <label htmlFor="guest" className={styles.guestLabel}>How Many Guests?</label>
-                    <select className={styles.selectGuests} id="guest">
+                    <select className={styles.selectGuests} id="guest" onChange={(e) => setNumOfGuests(e.target.value)}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -83,7 +109,14 @@ function ReservationCard({listing}) {
                         <span className={styles.labelSpan}>{listing.total_bedrooms}</span>
                     </div>
                 </div>
-            </div>
+                <div className={styles.price}>
+                    <h4 className={styles.priceLabel}>Total Price:</h4>
+                    <span className={styles.priceSpan}>${totalPrice}.00</span>
+                </div>
+                <div className={styles.submit}>
+                    <button className={styles.submitButton} type="submit">Reserve</button>
+                </div>
+            </form>
         </div>
 
 
