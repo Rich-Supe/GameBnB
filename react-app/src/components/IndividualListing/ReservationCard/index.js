@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createReservation } from '../../../store/reservation';
@@ -15,9 +15,9 @@ function ReservationCard({listing}) {
     const history = useHistory();
     const [value, onChange] = useState([new Date(), new Date()]);
     const [ numOfGuests, setNumOfGuests ] = useState(1);
-    console.log('currentUser:', user)
-    console.log("date:", value)
-    console.log("guests:", numOfGuests)
+    // console.log('currentUser:', user)
+    // console.log("date:", value)
+    // console.log("guests:", numOfGuests)
     
     let startDay;
     let endDay;
@@ -27,7 +27,7 @@ function ReservationCard({listing}) {
     if (value[0] && value[1]) {
         startDay = value[0].getDate();
         endDay = value[1].getDate();
-        console.log("start/end:", startDay, endDay)
+        // console.log("start/end:", startDay, endDay)
         getDaysReserved();
     }
 
@@ -37,9 +37,9 @@ function ReservationCard({listing}) {
         } else {
             daysReserved = endDay + (30 - startDay);
         }
-        console.log("days reserved:", daysReserved)
+        // console.log("days reserved:", daysReserved)
         totalPrice = daysReserved * listing.price;
-        console.log("total price:", totalPrice)
+        // console.log("total price:", totalPrice)
     }
 
     const onSubmit = async (e) => {
@@ -57,16 +57,11 @@ function ReservationCard({listing}) {
         }
 
         console.log("Reservation:", payload)
-        const reservation = await dispatch(createReservation(payload));
+        dispatch(createReservation(payload));
         // if (reservation) {
-            history.push(`/users/${user.id}`)
+        history.push(`/users/${user.id}`)
         // }
     }
-
-
-        //     sq_ft: 20000
-        // total_bathrooms: 7
-        // total_bedrooms: 10
 
 
     return (

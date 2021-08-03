@@ -5,10 +5,10 @@ const UPDATE_RESERVATION = 'UPDATE_RESERVATION';
 const DELETE_RESERVATION = 'DELETE_RESERVATION';
 const UNLOAD_RESERVATION = 'UNLOAD_RESERVATION';
 
-const setReservation = (reservation) => ({
-    type: SET_RESERVATION,
-    reservation
-});
+// const setReservation = (reservation) => ({
+//     type: SET_RESERVATION,
+//     reservation
+// });
 
 const setReservations = (reservations) => ({
     type: SET_RESERVATIONS,
@@ -20,14 +20,14 @@ const addReservation = (reservation) => ({
     reservation
 });
 
-const updateReservation = (reservation) => ({
-    type: UPDATE_RESERVATION,
-    reservation
-});
+// const updateReservation = (reservation) => ({
+//     type: UPDATE_RESERVATION,
+//     reservation
+// });
 
-const removeReservation = (reservation) => ({
+const removeReservation = (reservationId) => ({
     type: DELETE_RESERVATION,
-    reservation
+    reservationId
 });
 
 export const unloadReservation = () => ({
@@ -64,7 +64,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
     });
     if (response.ok) {
         const reservation = await response.json();
-        dispatch(removeReservation(reservation));
+        dispatch(removeReservation(reservationId));
         return reservation;
     }
     else {
@@ -73,7 +73,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
 };
 
 export default function Reducer(state = {}, action) {
-    let newState;
+    let newState = {};
     switch (action.type) {
         case SET_RESERVATION:
             newState = { ...state };
@@ -96,11 +96,11 @@ export default function Reducer(state = {}, action) {
             return newState;
         case DELETE_RESERVATION:
             newState = { ...state };
-            delete newState[action.reservation.id];
+            delete newState[action.reservationId];
             return newState;
         case UNLOAD_RESERVATION:
-            newState = { ...state };
-            return newState;
+            // newState = { ...state };
+            return { ...newState };
         default:
             return state;
     }

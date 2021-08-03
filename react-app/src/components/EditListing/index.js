@@ -24,7 +24,7 @@ function EditListing(){
 
     useEffect(() => {
         dispatch(getListing(listingId))
-    }, [dispatch])
+    }, [dispatch, listingId])
 
     const addImage = (e) => {
         const file = e.target.files[0];
@@ -41,9 +41,9 @@ function EditListing(){
             formData.append(`images`, currentImages[i]);
         }
         // });
-        for (var key of formData.keys()) {
-            console.log(key);
-         }
+        // for (var key of formData.keys()) {
+        //     console.log(key);
+        //  }
 
         setImageLoading(true);
 

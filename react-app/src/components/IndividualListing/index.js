@@ -1,6 +1,6 @@
 
 import { useParams } from 'react-router'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getListing,  } from '../../store/listing'
 import ListingInfo from './ListingInfo';
@@ -21,14 +21,14 @@ function IndividualListing(){
     const dispatch = useDispatch();
     const {listingId} = useParams();
     const listing = useSelector( (state) => state.listing[listingId])
-    console.log(listing)
+    // console.log(listing)
 
     useEffect(() => {
         // (async () => {
         dispatch(getListing(listingId))
 
         // })();
-    }, [dispatch])
+    }, [dispatch, listingId]);
 
     
     if (listing) {

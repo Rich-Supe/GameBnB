@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { getUser } from '../../store/session'
 import ProfileListingsCard from './ProfileListingsCard';
 import ProfileReservationsCard from './ProfileReservationsCard';
@@ -8,7 +8,7 @@ import styles from './Profile.module.css'
 import demoImg from '../../assets/img/profilepicBowser.png'
 
 function Profile(){
-    const history = useHistory();
+    // const history = useHistory();
     const dispatch = useDispatch();
     const {userId} = useParams();
 
@@ -17,13 +17,13 @@ function Profile(){
 
     useEffect(() => {
         dispatch(getUser(userId));
-    }, [userId]);
+    }, [dispatch, userId]);
 
     return (
         <div className={styles.profilePage}>
             <div className={styles.profileCard}>
                 <div className={styles.profileCardImage}>
-                    <img src={demoImg} alt="Profile Picture" className={styles.profileImg}/>
+                    <img src={demoImg} alt="Profile" className={styles.profileImg}/>
                 </div>
                 <div className={styles.profileCardContent}>
                     <div className={styles.profileName}>
