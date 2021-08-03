@@ -152,5 +152,25 @@
     box-shadow: 8px 8px 2px 1px #f7752b2f;
 }
 
+.noReservations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.noneBtn {
+    font-size: 1.1em;
+    border: none;
+    background-color: #02C8A7;
+    color: white;
+    padding: 10px;
+}
+
+.noneBtn:hover {
+    cursor: pointer;
+}
+
 
 

@@ -29,7 +29,7 @@ function ProfileReservationsCard({user}) {
     useEffect(() => {
         dispatch(getAllReservations(user.id));
         dispatch(unloadReservation)
-    }, [user.id]);
+    }, [dispatch]);
 
     const deleteReservationFunction = (id) => {
         console.log("Attemting to delete reservation!", id)
@@ -61,11 +61,11 @@ function ProfileReservationsCard({user}) {
         i++;
     });
 
-    return (
-        <div className={styles.profileListingsCard}>
-            <h2 className={styles.listingHeader}>Your Reservations</h2>
-            <div className={styles.listingCarousel}>
-                <Swiper id="main" 
+    let reservationSwiper;
+
+    if (reservations.length > 0) {
+        reservationSwiper = (
+            <Swiper id="main" 
                     tag="section" 
                     wrapperTag="ul" 
                     className={styles.swiperContainer}
@@ -80,6 +80,37 @@ function ProfileReservationsCard({user}) {
                         "shadowScale": 0.9,
                     }} pagination={true}
                 >{slides}</Swiper>
+        );
+    }
+    else {
+        reservationSwiper = (
+            <div className={styles.noReservations}>
+                <h3>No Reservations yet!</h3>
+                <button className={styles.noneBtn} onClick={() => {history.push('/listings')}}>Lets Add Some!</button>
+            </div>
+        );
+    }
+
+    return (
+        <div className={styles.profileListingsCard}>
+            <h2 className={styles.listingHeader}>Your Reservations</h2>
+            <div className={styles.listingCarousel}>
+                {reservationSwiper}
+                {/* <Swiper id="main" 
+                    tag="section" 
+                    wrapperTag="ul" 
+                    className={styles.swiperContainer}
+                    // navigation 
+                    // pagination 
+                    // spaceBetween={} 
+                    // slidesPerView={1}
+                    effect={'cube'} grabCursor={true} cubeEffect={{
+                        "shadow": true,
+                        "slideShadows": true,
+                        "shadowOffset": 40,
+                        "shadowScale": 0.9,
+                    }} pagination={true}
+                >{slides}</Swiper> */}
             </div>
         </div>
     )
