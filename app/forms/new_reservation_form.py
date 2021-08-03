@@ -10,6 +10,7 @@ class NewReservationForm(FlaskForm):
     end_date = StringField('end_date', validators=[DataRequired()])
     days = IntegerField('days', validators=[DataRequired()])
     guests = IntegerField('guests', validators=[DataRequired()])
+    name = StringField('name', validators=[DataRequired()])
     user_id = IntegerField('user_id', validators=[DataRequired()])
     listing_id = IntegerField('listing_id', validators=[DataRequired()])
     

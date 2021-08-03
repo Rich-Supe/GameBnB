@@ -59,14 +59,13 @@
     margin-top: 80px;
 }
 
-
 .listingsCard {
     height: 45%;
     width: 100%;
-    background-color: rgba(0, 255, 255, 0.05);
-    border: 2px solid #F53240;
+    background-color: rgba(0, 255, 255, 0.13);
+    border: 2px solid #7cdbd563;
     border-radius: 15px;
-    box-shadow: 8px 8px 2px 1px #7cdbd563;
+    box-shadow: 8px 8px 2px 1px #7cdbd51e;
     margin: 20px 0;
 }
 
@@ -77,6 +76,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
 }
 
 .listingHeader {
@@ -138,9 +138,9 @@
     height: 45%;
     width: 100%;
     background-color: rgba(255, 0, 0, 0.05);
-    border: 2px solid #F53240;
+    border: 1px solid rgba(255, 0, 0, 0.418);
     border-radius: 15px;
-    box-shadow: 8px 8px 2px 1px #7cdbd563;
+    box-shadow: 8px 8px 2px 1px #f7752b2f;
 }
 
 

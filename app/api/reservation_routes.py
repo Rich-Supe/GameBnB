@@ -30,7 +30,8 @@ def create_reservation():
             end_date = form.end_date.data,
             days = form.days.data,
             guests = form.guests.data,
-            price = form.price.data
+            price = form.price.data,
+            name = form.name.data,
         )
         db.session.add(reservation)
         db.session.commit()
