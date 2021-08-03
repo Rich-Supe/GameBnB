@@ -5,10 +5,10 @@ const UPDATE_RESERVATION = 'UPDATE_RESERVATION';
 const DELETE_RESERVATION = 'DELETE_RESERVATION';
 const UNLOAD_RESERVATION = 'UNLOAD_RESERVATION';
 
-// const setReservation = (reservation) => ({
-//     type: SET_RESERVATION,
-//     reservation
-// });
+const setReservation = (reservation) => ({
+    type: SET_RESERVATION,
+    reservation
+});
 
 const setReservations = (reservations) => ({
     type: SET_RESERVATIONS,
@@ -20,10 +20,10 @@ const addReservation = (reservation) => ({
     reservation
 });
 
-// const updateReservation = (reservation) => ({
-//     type: UPDATE_RESERVATION,
-//     reservation
-// });
+const updateReservation = (reservation) => ({
+    type: UPDATE_RESERVATION,
+    reservation
+});
 
 const removeReservation = (reservationId) => ({
     type: DELETE_RESERVATION,
@@ -34,6 +34,13 @@ export const unloadReservation = () => ({
     type: UNLOAD_RESERVATION
 });
 
+
+// get a reservation by id
+export const getReservation = (reservationId) => async (dispatch) => {
+    const response = await fetch(`/api/reservations/one/${reservationId}`);
+    const reservation = await response.json();
+    dispatch(setReservation(reservation));
+};
 
 // get reservations by user id
 export const getAllReservations = (userId) => async (dispatch) => {
@@ -56,6 +63,21 @@ export const createReservation = (reservation) => async (dispatch) => {
 }
 
 // update a reservation
+export const editReservation = (reservation, reservationId) => async (dispatch) => {
+    const response = await fetch(`/api/reservations/edit/${reservationId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reservation)
+    })
+
+    if (response.ok) {
+        const reservation = await response.json();
+        // const reservationId = reservation.id;
+        dispatch(updateReservation(reservation));
+    }
+};
 
 // delete a reservation
 export const deleteReservation = (reservationId) => async (dispatch) => {

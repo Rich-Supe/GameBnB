@@ -11,6 +11,7 @@ import Listings from './components/Listings';
 import Profile from './components/Profile';
 import NewListing from './components/NewListing';
 import EditListing from './components/EditListing';
+import EditReservation from './components/EditReservation';
 import Host from './components/Host';
 import NotHost from './components/Host/NotHost';
 import IndividualListing from './components/IndividualListing';
@@ -57,6 +58,9 @@ return (
         </Route>
         <Route path='/edit-listing/:listingId'>
             <EditListing />
+        </Route>
+        <Route path='/edit-reservation/:reservationId'>
+            <EditReservation />
         </Route>
         <Route path="/not-host/:userId">
             <NotHost />

@@ -32,7 +32,7 @@ function ProfileReservationsCard({user}) {
     }, [dispatch]);
 
     const deleteReservationFunction = (id) => {
-        console.log("Attemting to delete reservation!", id)
+        // console.log("Attemting to delete reservation!", id)
         dispatch(deleteReservation(id))
         history.push('/')
     }
