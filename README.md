@@ -93,11 +93,10 @@ export const createListing = (listing, images, userId) => async (dispatch) => {
             const listingImg = { ...listing, newImages };
             dispatch(addListing(listingImg));
             return listingImg;
-        }
-        
-    }
+        };
+    };
     else {
         return ['An error occurred. Please try again.']
-    }
+    };
 };
 ```
