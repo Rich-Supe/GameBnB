@@ -12,7 +12,7 @@ function EditReservation(){
     const history = useHistory();
     const { reservationId } = useParams();
     const reservation = useSelector((state) => state.reservation[reservationId]);
-    console.log(reservation);
+    // console.log(reservation);
 
     useEffect(() => {
         dispatch(getReservation(reservationId));
@@ -22,7 +22,7 @@ function EditReservation(){
 
     return (
         <div className={styles.editReservation}>
-            <h1>Edit Reservation</h1>
+            <h1 className={styles.header}>Edit your {reservation.name} listing</h1>
             <EditReservationCard reservation={reservation}/>
         </div>
     )
