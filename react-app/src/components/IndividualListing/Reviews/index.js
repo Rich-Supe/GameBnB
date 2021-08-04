@@ -1,9 +1,13 @@
 
+import { useHistory } from 'react-router-dom'
+
 import styles from './Reviews.module.css'
 
 function Reviews({listing}) {
+    const history = useHistory();
     console.log("listing from reviews", listing)
-    console.log(listing.reviews)
+    const listingId = listing.id
+    
     const reviews = listing.reviews
     // if (listing.reviews.length === 0) {
     //     return <div className={styles.noReviews}>No Reviews Yet!</div>
@@ -21,7 +25,7 @@ function Reviews({listing}) {
                         <span className={styles.reviewsBoxHeaderText}>
                             There are currently {reviews.length} total reviews on {listing.name}. Have you stayed here before?
                         </span>
-                        <button className={styles.addReviewBtn}>Add a review!</button>
+                        <button className={styles.addReviewBtn} onClick={() => {history.push(`/add-review/${listingId}`)}}>Add a review!</button>
                         </div>
                     </p>
                 </div>
