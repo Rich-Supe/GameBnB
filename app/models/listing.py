@@ -51,5 +51,6 @@ class Listing(db.Model):
             'latlang': self.latlang,
             'user_id': self.user_id,
             'sq_ft': self.sq_ft,
-            'images': [image.to_dict() for image in self.images]
+            'images': [image.to_dict() for image in self.images],
+            'reviews': [review.to_dict() for review in self.reviews], 
         }
