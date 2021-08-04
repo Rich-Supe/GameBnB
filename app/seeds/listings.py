@@ -45,12 +45,24 @@ def seed_listings():
         has_kitchen=True,
         has_internet=False,
         latlang='40.71589,-74.00597')
+    bilgewater_bay = Listing(
+        name='Bilgewater Bay',
+        user_id=1,
+        description='Bilgewater is a haven for smugglers, marauders, and the unscrupulous, where fortunes are made and ambitions shattered in the blink of an eye. For those fleeing justice, debt, or persecution, it is a city of new beginnings; no one on the twisted streets of Bilgewater cares about your past. It\'s a melting pot of cultures, races, and creeds, alive with activity at all hours. Watch out for fights over crabs, people have died for less.',
+        price=2999,
+        total_bedrooms='60',
+        total_bathrooms='5',
+        sq_ft='100000',
+        has_kitchen=True,
+        has_internet=False,
+        latlang='40.71589,-74.00597')
 
     
     db.session.add(bowsers_castle)
     db.session.add(peaches_castle)
     db.session.add(hyrule_castle)
     db.session.add(whiterun)
+    db.session.add(bilgewater_bay)
     db.session.commit()
 
 def undo_listings():

@@ -41,7 +41,8 @@ const NavBar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
+                    <NavLink to={`/new-listing/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
+                    {/* <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'></NavLink> */}
                         <p className={styles.navP}>HOSTING</p>
                     </NavLink>
                 </li>

@@ -10,7 +10,7 @@ import styles from './EditReservationCard.module.css';
 
 
 function EditReservationCard({reservation}) {
-    console.log(reservation)
+    console.log("reservation from edit:", reservation)
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -29,7 +29,7 @@ function EditReservationCard({reservation}) {
     
     if (listing) {
 
-    console.log("listing:", listing)
+    console.log("listing from edit:", listing)
 
     let startDay;
     let endDay;
@@ -68,7 +68,7 @@ function EditReservationCard({reservation}) {
             name: listing.name,
         }
 
-        console.log("Reservation:", payload)
+        console.log("Reservation on submit:", payload)
         dispatch(editReservation(payload, reservation.id));
         // if (reservation) {
         history.push(`/users/${user.id}`)
@@ -122,7 +122,7 @@ function EditReservationCard({reservation}) {
                     <span className={styles.priceSpan}>${totalPrice}.00</span>
                 </div>
                 <div className={styles.submit}>
-                    <button className={styles.submitButton} type="submit">Reserve</button>
+                    <button className={styles.submitButton} type="submit">Edit Reservation</button>
                 </div>
             </form>
         </div>

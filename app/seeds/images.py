@@ -55,6 +55,20 @@ def seed_images():
         db.session.add(whiterun)
         db.session.commit()
 
+    images=[
+        'https://gamebnb.s3.us-east-2.amazonaws.com/44298e7525354ca68e91b4a814412a76.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/1b865d76dce740e587e20310e58703b3.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/6b2bd15f22814a40819b0973acc71b19.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/a868441a8a9f44e38544a60fca24b972.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/7feb39ed1d7e4bba8fd415b366d5b822.jpg'
+    ]
+    for image in images:
+        bilgewater_bay = Image(
+            listing_id=5,
+            image=image)
+        db.session.add(bilgewater_bay)
+        db.session.commit()
+
 def undo_images():
     db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()

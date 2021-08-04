@@ -65,7 +65,7 @@ export const createReservation = (reservation) => async (dispatch) => {
 // update a reservation
 export const editReservation = (reservation, reservationId) => async (dispatch) => {
     const response = await fetch(`/api/reservations/edit/${reservationId}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
