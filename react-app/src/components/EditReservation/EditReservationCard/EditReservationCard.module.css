@@ -1,0 +1,119 @@
+
+
+
+
+
+.reservationCardContainer {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.reservationCard {
+    border-radius: 15px;
+    box-shadow: 8px 8px 8px 3px rgba(0, 0, 0, 0.2);
+    height: 90%;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.2em;
+    margin: 10px 0px;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.guests {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.guestLabel {
+    margin-right: 18px;
+    font-size: 1.1em;
+}
+
+.selectedGuests {
+    margin-left: 10px;
+}
+
+.extraInfo {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* width: 80%; */
+    height: 25%;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+
+}
+
+.infoLabel {
+    margin: 10px 0px;
+}
+
+.labelSpan {
+    margin: 10px 20px;
+}
+
+.infoDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.priceSpan {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton {
+    margin-top: 10px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f5323fe0;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.submitButton:hover {
+    background-color: #fd0919;
+    cursor: pointer;
+    border: 1px solid #e0000f;
+    /* border-radius: 15px; */
+}

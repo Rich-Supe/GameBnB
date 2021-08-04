@@ -28,11 +28,11 @@ function ProfileReservationsCard({user}) {
 
     useEffect(() => {
         dispatch(getAllReservations(user.id));
-        dispatch(unloadReservation)
+        // dispatch(unloadReservation)
     }, [dispatch]);
 
     const deleteReservationFunction = (id) => {
-        console.log("Attemting to delete reservation!", id)
+        // console.log("Attemting to delete reservation!", id)
         dispatch(deleteReservation(id))
         history.push('/')
     }

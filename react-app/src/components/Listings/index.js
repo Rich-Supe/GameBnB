@@ -1,7 +1,7 @@
 
 import styles from './Listings.module.css'
-import { useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react'
+// import { useDispatch } from 'react-redux'
+// import { useEffect, useState } from 'react'
 
 import ListingCarousel from './ListingCarousel'
 import Maps from './Maps'

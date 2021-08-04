@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 
 
@@ -11,7 +11,7 @@ const ListingCard = ({listing}) => {
 
 
     if (listing.images[0]?.image) {
-        imgDiv = <img src={listing.images[0].image} className={styles.listingCardImage}/>
+        imgDiv = <img src={listing.images[0].image} className={styles.listingCardImage} alt="listing"/>
     } else {
         imgDiv = 
             <div className={styles.listingCardImage}>

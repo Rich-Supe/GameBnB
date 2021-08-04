@@ -1,15 +1,16 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createReservation } from '../../../store/reservation';
+import { editReservation } from '../../../store/reservation';
+import { getListing } from '../../../store/listing';
 
 import DateTimeRangePicker from '@wojtekmaj/react-datetimerange-picker';
 
-import styles from './ReservationCard.module.css';
+import styles from './EditReservationCard.module.css';
 
 
-function ReservationCard({listing}) {
+function EditReservationCard({reservation}) {
+    console.log(reservation)
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -18,7 +19,18 @@ function ReservationCard({listing}) {
     // console.log('currentUser:', user)
     // console.log("date:", value)
     // console.log("guests:", numOfGuests)
+
+    // const listingId = reservation.listing_id;
+    // console.log("listingId:", listingId)
+    const listing = useSelector( (state) => state.listing[reservation.listing_id]);
+    useEffect(() => {
+        dispatch(getListing(reservation.listing_id))
+    }, [dispatch])
     
+    if (listing) {
+
+    console.log("listing:", listing)
+
     let startDay;
     let endDay;
     let daysReserved;
@@ -57,7 +69,7 @@ function ReservationCard({listing}) {
         }
 
         console.log("Reservation:", payload)
-        dispatch(createReservation(payload));
+        dispatch(editReservation(payload, reservation.id));
         // if (reservation) {
         history.push(`/users/${user.id}`)
         // }
@@ -117,6 +129,11 @@ function ReservationCard({listing}) {
 
 
     )
+} else {
+    return <div>Loading</div>
+}
 }
 
-export default ReservationCard
+
+
+export default EditReservationCard

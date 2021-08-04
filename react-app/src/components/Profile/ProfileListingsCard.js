@@ -29,12 +29,11 @@ function ProfileListingsCard({user}) {
     const deleteListingFunction = (id) => {
         console.log("Attemting to delete listing!", id)
         dispatch(deleteListing(id))
-        history.push('/profile/listings')
     }
 
     useEffect(() => {
         dispatch(getAllListingsUser(user.id));
-        dispatch(unloadListings());
+        // return () => dispatch(unloadListings());
     }, [dispatch]);
 
     const slides = [];

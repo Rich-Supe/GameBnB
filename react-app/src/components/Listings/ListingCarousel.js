@@ -21,12 +21,12 @@ function ListingCarousel(){
     const dispatch = useDispatch();
     const listings = useSelector((state) => Object.values(state.listing));
 
-    console.log("frontend listings:", listings);
+    // console.log("frontend listings:", listings);
     
     useEffect(() => {
         dispatch(getAllListings());
-        dispatch(unloadListings());
-    }, []);
+        return () => dispatch(unloadListings());
+    }, [dispatch]);
 
     const slides = [];
     let i = 0;

@@ -25,15 +25,22 @@ const updateReservation = (reservation) => ({
     reservation
 });
 
-const removeReservation = (reservation) => ({
+const removeReservation = (reservationId) => ({
     type: DELETE_RESERVATION,
-    reservation
+    reservationId
 });
 
 export const unloadReservation = () => ({
     type: UNLOAD_RESERVATION
 });
 
+
+// get a reservation by id
+export const getReservation = (reservationId) => async (dispatch) => {
+    const response = await fetch(`/api/reservations/one/${reservationId}`);
+    const reservation = await response.json();
+    dispatch(setReservation(reservation));
+};
 
 // get reservations by user id
 export const getAllReservations = (userId) => async (dispatch) => {
@@ -56,6 +63,21 @@ export const createReservation = (reservation) => async (dispatch) => {
 }
 
 // update a reservation
+export const editReservation = (reservation, reservationId) => async (dispatch) => {
+    const response = await fetch(`/api/reservations/edit/${reservationId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reservation)
+    })
+
+    if (response.ok) {
+        const reservation = await response.json();
+        // const reservationId = reservation.id;
+        dispatch(updateReservation(reservation));
+    }
+};
 
 // delete a reservation
 export const deleteReservation = (reservationId) => async (dispatch) => {
@@ -64,7 +86,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
     });
     if (response.ok) {
         const reservation = await response.json();
-        dispatch(removeReservation(reservation));
+        dispatch(removeReservation(reservationId));
         return reservation;
     }
     else {
@@ -73,7 +95,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
 };
 
 export default function Reducer(state = {}, action) {
-    let newState;
+    let newState = {};
     switch (action.type) {
         case SET_RESERVATION:
             newState = { ...state };
@@ -96,11 +118,11 @@ export default function Reducer(state = {}, action) {
             return newState;
         case DELETE_RESERVATION:
             newState = { ...state };
-            delete newState[action.reservation.id];
+            delete newState[action.reservationId];
             return newState;
         case UNLOAD_RESERVATION:
-            newState = { ...state };
-            return newState;
+            // newState = { ...state };
+            return { ...newState };
         default:
             return state;
     }

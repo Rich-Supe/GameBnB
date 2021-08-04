@@ -10,14 +10,15 @@ function Host() {
 
     useEffect(() => {
         dispatch(getUser(userId));
-    }, [userId]);
+    });
 
     const user = useSelector(state => state.session.user);
-    if (user.host != true){
+    if (user) {
+    if (user.host !== true){
         history.push(`/not-host/${userId}`);
-    }
+    }}
 
-    console.log(user)
+    // console.log(user)
 
     return (
         <div className="hostPage">

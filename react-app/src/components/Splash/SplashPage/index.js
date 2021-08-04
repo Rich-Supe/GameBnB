@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import Footer from '../../Footer'
 
 import styles from './SplashPage.module.css';
-import splashImg from '../../../assets/img/splash-zelda2.jpg'
+// import splashImg from '../../../assets/img/splash-zelda2.jpg'
 
 
 function SplashPage() {

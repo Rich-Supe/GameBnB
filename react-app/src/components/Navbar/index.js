@@ -27,7 +27,7 @@ const NavBar = () => {
         {user ? (
             <ul className={styles.navUl}>
                 <li className={styles.home}>
-                    <img src={icon} className={styles.icon} onClick={() => {home()}}></img>
+                    <img src={icon} className={styles.icon} onClick={() => {home()}} alt="home"></img>
                     {/* <p>Gamebnb</p> */}
                 </li>
                 <li>

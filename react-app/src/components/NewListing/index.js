@@ -12,10 +12,10 @@ function NewListing(){
 
     const [ name, setName ] = useState('');
     const [ description, setDescription ] = useState('');
-    const [ price, setPrice ] = useState(0);
-    const [ totalBedrooms, setTotalBedrooms ] = useState(0);
-    const [ totalBathrooms, setTotalBathrooms ] = useState(0);
-    const [ sqFt, setSqFt ] = useState(0);
+    const [ price, setPrice ] = useState(1);
+    const [ totalBedrooms, setTotalBedrooms ] = useState(1);
+    const [ totalBathrooms, setTotalBathrooms ] = useState(1);
+    const [ sqFt, setSqFt ] = useState(1);
     const [ hasKitchen, setHasKitchen ] = useState(false);
     const [ hasInternet, setHasInternet ] = useState(false);
     const [ imageLoading, setImageLoading ] = useState(false);
@@ -38,9 +38,9 @@ function NewListing(){
             formData.append(`images`, currentImages[i]);
         }
         // });
-        for (var key of formData.keys()) {
-            console.log(key);
-         }
+        // for (var key of formData.keys()) {
+        //     console.log(key);
+        //  }
 
         setImageLoading(true);
 
@@ -58,7 +58,8 @@ function NewListing(){
         console.log('submitted!', payload, formData, userId)
         const listing = await dispatch(createListing(payload, formData, userId));
         setImageLoading(false);
-        if (listing) {
+        if (!Array.isArray(listing)) {
+            console.log('LISTING', listing)
             history.push('/listings')
         }
     };
@@ -69,29 +70,29 @@ function NewListing(){
             <form className={styles.form} onSubmit={onSubmit}>
                 <div className={styles.formName}>
                     <label htmlFor="name">Name:</label>
-                    <input type="text" className={styles.formInput} id="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input type="text" className={styles.formInput} id="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required/>
                 </div>
                 <div className={styles.formNums}>
                     <div className={styles.formPrice}>
                     <label htmlFor="price">Price:</label>
-                    <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} />
+                    <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} required/>
                     </div>
                     <div className={styles.formPrice}>
                     <label htmlFor="sqFt">Square Foot:</label>
-                    <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} />
+                    <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} required/>
                     </div>
                 </div>
 
                 <div className={styles.formNums}>
                     <div className={styles.formPrice}>
                     <label htmlFor="totalBedrooms">Total Bedrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} />
+                    <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} required/>
                     </div>
                 {/* </div>
                 <div className={styles.formGroup}> */}
                     <div className={styles.formPrice}>
                     <label htmlFor="totalBathrooms">Total Bathrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} />
+                    <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} required/>
                     </div>
                 </div>
                 <div className={styles.formCheck}>
@@ -106,7 +107,7 @@ function NewListing(){
                 </div>
                 <div className={styles.formDescription}>
                     <label htmlFor="description">Description:</label>
-                    <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
                 </div>
                 <div className={styles.formImg}>
                     <label htmlFor="images">Upload some images for your guests?</label>
