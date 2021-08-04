@@ -20,15 +20,14 @@ function EditReservationCard({reservation}) {
     // console.log("date:", value)
     // console.log("guests:", numOfGuests)
 
-    const listingId = reservation.listing_id;
-    console.log("listingId:", listingId)
-    const listing = useSelector( (state) => state.listing[listingId]);
-
+    // const listingId = reservation.listing_id;
+    // console.log("listingId:", listingId)
+    const listing = useSelector( (state) => state.listing[reservation.listing_id]);
     useEffect(() => {
-        (async () => {
-        return dispatch(getListing(listingId))
-        })();
-    }, [listingId, dispatch])
+        dispatch(getListing(reservation.listing_id))
+    }, [dispatch])
+    
+    if (listing) {
 
     console.log("listing:", listing)
 
@@ -75,6 +74,7 @@ function EditReservationCard({reservation}) {
         history.push(`/users/${user.id}`)
         // }
     }
+
 
     return (
         <div className={styles.reservationCardContainer}>
@@ -129,6 +129,11 @@ function EditReservationCard({reservation}) {
 
 
     )
+} else {
+    return <div>Loading</div>
 }
+}
+
+
 
 export default EditReservationCard

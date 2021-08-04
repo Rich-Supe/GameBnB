@@ -10,6 +10,7 @@ function EditListing(){
     const dispatch = useDispatch();
     const { listingId } = useParams();
     const listing = useSelector( (state) => state.listing[listingId]);
+    console.log("listing:", listing)
 
     const [ name, setName ] = useState(listing.name);
     const [ description, setDescription ] = useState(listing.description);
@@ -22,9 +23,10 @@ function EditListing(){
     const [ imageLoading, setImageLoading ] = useState(false);
     const [ currentImages, setCurrentImages ] = useState([]);
 
+
     useEffect(() => {
         dispatch(getListing(listingId))
-    }, [dispatch, listingId])
+    }, [dispatch, listingId]);
 
     const addImage = (e) => {
         const file = e.target.files[0];

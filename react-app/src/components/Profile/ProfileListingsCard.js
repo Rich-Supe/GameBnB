@@ -33,7 +33,7 @@ function ProfileListingsCard({user}) {
 
     useEffect(() => {
         dispatch(getAllListingsUser(user.id));
-        return () => dispatch(unloadListings());
+        // return () => dispatch(unloadListings());
     }, [dispatch]);
 
     const slides = [];
