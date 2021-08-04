@@ -70,7 +70,7 @@ def create_images(listing_id):
     db.session.commit()
     return {"urls": urls}
 ```
-##### Thunk that will hit the above route and create the listing itself hitting a different API route. This thunk will dispatch the create listing action creator and related reducer (in Javascript):
+##### Thunk that will hit the above route and create the listing itself hitting a different API route. This thunk will dispatch the create listing action creator and related reducer (in Javascript). After creating the listing it will post the images to AWS and attatch them to the listing that was just created:
 ```javascript
 export const createListing = (listing, images, userId) => async (dispatch) => {
     const listingResponse = await fetch(`/api/listings/create/${userId}`, {
