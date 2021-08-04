@@ -66,5 +66,5 @@ def seed_listings():
     db.session.commit()
 
 def undo_listings():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE listings RESTART IDENTITY CASCADE;')
     db.session.commit()
