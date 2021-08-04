@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getListing } from '../../../../store/listing';
+import { createReview } from '../../../../store/review';
 
 import styles from './AddReviewForm.module.css'
 
@@ -15,12 +16,13 @@ function AddReviewForm() {
     const history = useHistory();
     const { listingId } = useParams();
     const listing = useSelector( (state) => state.listing[listingId]);
-    console.log('listing from review form', listing)
+    // console.log('listing from review form', listing)
 
-    // const [ rating, setRating ] = useState(1);
     const [ comment, setComment ] = useState('');
     const [value, setValue] = useState(2);
     const [hover, setHover] = useState(-1);
+
+    console.log("rating:", value, "review:", comment)
     
     const labels = {
         0.5: 'Terrible',
@@ -49,23 +51,24 @@ function AddReviewForm() {
         dispatch(getListing(listingId));
     }, [dispatch, listingId]);
 
+    if (listing) {
+
     const onSubmit = async(e) => {
-        e.preventDefualt();
+        e.preventDefault();
         console.log("submitted!")
 
-        // const payload = {
-        //     listing_id = listing.id,
-        //     user_id = user.id,
-        //     rating = rating,
-        //     comment = comment,
-        // };
+        const payload = {
+            // listing_id: listing.id,
+            user_id: user.id,
+            rating: value,
+            comment: comment,
+        };
 
-        // console.log("review:;", payload)
-        // dispatch(createReview(payload));
-        // history.push("/listings/" + listing.id);
+        console.log("review:;", payload)
+        dispatch(createReview(payload, listingId));
+        history.push("/individual-listing/" + listing.id);
     };
 
-    if (listing) {
 
     return (
         <div className={styles.reviewFormPage}>
@@ -91,12 +94,12 @@ function AddReviewForm() {
                         </div>
                         <div className={styles.formComment}>
                             <label htmlFor="comment" className={styles.label}>Review here:</label>
-                            <textarea name="comment" id="comment" className={styles.area}/>
+                            <textarea name="comment" id="comment" className={styles.area} onChange={(e) => setComment(e.target.value)}/>
                         </div>
                     </div>
                     <div className={styles.formFooter}>
-                        <button className={styles.button} type="submit">Submit</button>
                         <button className={styles.return} onClick={() => history.push("/individual-listing/" + listing.id)}>Return</button>
+                        <button className={styles.button} type="submit">Submit</button>
                     </div>
                 </form>
             </div>
