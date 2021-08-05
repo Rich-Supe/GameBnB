@@ -25,8 +25,9 @@ const removeReview = (reviewId) => ({
 
 // get a review by id
 export const getReview = (reviewId) => async (dispatch) => {
-    const response = await fetch(`/api/review/${reviewId}`);
+    const response = await fetch(`/api/reviews/${reviewId}`);
     const review = await response.json();
+    console.log('review from thunk:', review);
     dispatch(setReview(review));
 };
 
