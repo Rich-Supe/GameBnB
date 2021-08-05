@@ -23,6 +23,12 @@ def validation_errors_to_error_messages(validation_errors):
 #     reviews = Review.query.filter_by(user_id=user_id).all()
 #     return ([review.to_dict() for review in reviews])
 
+# get a review by id
+@review_routes.route('/<int:review_id>', methods=['GET'])
+def get_review_by_id(review_id):
+    review = Review.query.get(review_id)
+    return review.to_dict()
+
 #create a new review
 @review_routes.route('/<int:listing_id>', methods=['POST'])
 def create_review(listing_id):

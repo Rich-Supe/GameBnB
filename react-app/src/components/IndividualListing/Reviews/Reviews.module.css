@@ -21,6 +21,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0px 20px 0px;
+    font-size: 1.1em;
+    /* font-weight: 500; */
 }
 
 .header {
@@ -57,12 +60,63 @@
     cursor: pointer;
 }
 
-
-
 .reviewsBoxRowHeader {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin: 10px 10px; */
+    /* background-color: aquamarine; */
+}
+
+.reviewDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 10px 10px 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.deleteDiv {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.editDiv {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewsEdit {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.editDiv:hover {
+    color: #7cdbd5;
+    cursor: pointer;
+}
+
+.deleteDiv:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.reviewsDelete {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.deleteTag {
+    font-size: 15px;
+}
+
+.editTag {
+    font-size: 15px;
 }
 
 .reviewsBoxRowBody {
@@ -75,5 +129,6 @@
     justify-content: flex-start;
     align-items: center;
     width: 80%;
+    margin-bottom: 10px;
     border-bottom: 1px solid #f5323fb6;
 }

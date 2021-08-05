@@ -64,7 +64,7 @@ return (
         <Route path='/edit-reservation/:reservationId'>
             <EditReservation />
         </Route>
-        <Route path='/dit-review/:listingId'>
+        <Route path='/edit-review/:listingId'>
             <EditReviewForm />
         </Route>
         <Route path='/add-review/:listingId'>

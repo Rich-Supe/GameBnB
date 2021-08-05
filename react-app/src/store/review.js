@@ -1,6 +1,12 @@
+const SET_REVIEW = 'SET_REVIEW';
 const ADD_REVIEW = 'CREATE_REVIEW';
 const UPDATE_REVIEW = 'UPDATE_REVIEW';
 const DELETE_REVIEW = 'DELETE_REVIEW';
+
+const setReview = (review) => ({
+    type: SET_REVIEW,
+    review
+});
 
 const updateReview = (review) => ({
     type: UPDATE_REVIEW,
@@ -12,10 +18,17 @@ const addReview = (review) => ({
     review
 });
 
-const removeReview = (review) => ({
+const removeReview = (reviewId) => ({
     type: DELETE_REVIEW,
-    review
+    reviewId
 });
+
+// get a review by id
+export const getReview = (reviewId) => async (dispatch) => {
+    const response = await fetch(`/api/review/${reviewId}`);
+    const review = await response.json();
+    dispatch(setReview(review));
+};
 
 // create a new review
 export const createReview = (review, listingId) => async (dispatch) => {
@@ -69,6 +82,10 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 export default function Reducer(state={}, action) {
     let newState = {};
     switch (action.type) {
+        case SET_REVIEW:
+            newState = { ...state };
+            newState.review = action.review;
+            return newState;
         case ADD_REVIEW:
             newState = { ...state };
             newState[action.review.id] = action.review;
@@ -79,7 +96,8 @@ export default function Reducer(state={}, action) {
             return newState;
         case DELETE_REVIEW:
             newState = { ...state };
-            delete newState[action.review];
+            console.log("State from reducer", newState)
+            delete newState[action.reviewId];
             return newState;
         default:
             return state;
