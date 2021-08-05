@@ -12,6 +12,8 @@ import Profile from './components/Profile';
 import NewListing from './components/NewListing';
 import EditListing from './components/EditListing';
 import EditReservation from './components/EditReservation';
+import AddReviewForm from './components/IndividualListing/Reviews/AddReviewForm';
+import EditReviewForm from './components/IndividualListing/Reviews/EditReviewForm';
 import Host from './components/Host';
 import NotHost from './components/Host/NotHost';
 import IndividualListing from './components/IndividualListing';
@@ -61,6 +63,12 @@ return (
         </Route>
         <Route path='/edit-reservation/:reservationId'>
             <EditReservation />
+        </Route>
+        <Route path='/edit-review/:listingId'>
+            <EditReviewForm />
+        </Route>
+        <Route path='/add-review/:listingId'>
+            <AddReviewForm />
         </Route>
         <Route path="/not-host/:userId">
             <NotHost />

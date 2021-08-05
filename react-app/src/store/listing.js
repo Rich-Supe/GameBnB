@@ -145,6 +145,8 @@ export const deleteListing = (listingId) => async (dispatch) => {
     }
 };
 
+// Delete review from specific listing.
+
 // export const unloadAListing = (listingId) => async (dispatch) => {
 //     return "unloaded!"
 // }

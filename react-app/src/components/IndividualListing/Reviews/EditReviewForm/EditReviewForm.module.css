@@ -1,0 +1,144 @@
+
+
+
+.reviewFormPage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #fafafa; */
+}
+
+.formContainer {
+    width: 45%;
+    height: 100%;
+    /* min-height: 600px; */
+    /* border: 2px solid #140808; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 80%;
+    height: 70%;
+    border: 2px solid #F53240;
+    box-shadow: 0px 0px 20px 3px #F53240;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #7CDBD5;
+    margin-bottom: 10px;
+}
+
+.formBody {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.formRating {
+    width: 100%;
+    height: 20%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.formComment {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.label {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    /* color: #7CDBD5; */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.area {
+    width: 90%;
+    height: 100%;
+    border: 2px solid #7CDBD5;
+}
+
+.formFooter {
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    font-size: 20px;
+    padding: 10px 30px;
+    border: 2px solid #7CDBD5;
+    border-radius: 5px;
+    background-color: #7CDBD5;
+    height: 50%;
+    color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    border: 2px solid #0000007a;
+}
+
+.return {
+    font-size: 20px;
+    padding: 10px 30px;
+    border: 2px solid #F53240;
+    border-radius: 5px;
+    background-color: #F53240;
+    height: 50%;
+    color: white;
+}
+
+.return:hover {
+    cursor: pointer;
+    border: 2px solid #0000007a;
+}
+
+.imageContainer {
+    width: 45%;
+    height: 100%;
+    /* min-height: 600px; */
+    /* border: 2px solid #140808; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageCard {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid #140808; */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid #F53240; */
+    box-shadow: 0px 0px 20px 3px #F53240;
+}

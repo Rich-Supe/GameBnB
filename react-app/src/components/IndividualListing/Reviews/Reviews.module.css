@@ -1,12 +1,134 @@
 
 .reviewsPage {
     width: 100%;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
     display: flex;
     justify-content: center;
 }
 
 .reviewsBox {
     width: 80%;
-    border: 2px solid #ccc;
+    min-height: 750px;
+    border-radius: 15px;
+    border: 1px solid #7cdbd5be;
+    box-shadow: 15px 2px 20px #7CDBD5;
+    margin-bottom: 30px;
+}
+
+.reviewsBoxHeader {
+    border-bottom: 22px solid #f5323fb6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px 20px 0px;
+    font-size: 1.1em;
+    /* font-weight: 500; */
+}
+
+.header {
+    margin-bottom: 10px;
+    width: 80%;
+    border-bottom: 1px solid #f5323fb6;
+    display: flex;
+    justify-content: center;
+}
+
+.reviewsBoxHeaderTextDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.addReviewBtn {
+    margin-left: 30px;
+    border: 1px solid #41fdf1d5;
+    background-color: #7cdbd5;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+}
+
+.reviewsBoxHeaderText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addReviewBtn:hover {
+    background-color: #f5323fb6;
+    border: 1px solid #ff2735;
+    cursor: pointer;
+}
+
+.reviewsBoxRowHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px 10px; */
+    /* background-color: aquamarine; */
+}
+
+.reviewDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 10px 10px 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.deleteDiv {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.editDiv {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewsEdit {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.editDiv:hover {
+    color: #7cdbd5;
+    cursor: pointer;
+}
+
+.deleteDiv:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.reviewsDelete {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.deleteTag {
+    font-size: 15px;
+}
+
+.editTag {
+    font-size: 15px;
+}
+
+.reviewsBoxRowBody {
+    display: flex;
+    justify-content: center;
+}
+
+.reviewsBoxRowBodyText {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f5323fb6;
 }
