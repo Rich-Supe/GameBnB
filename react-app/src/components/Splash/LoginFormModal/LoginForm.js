@@ -38,6 +38,9 @@ const LoginForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
+      <h2 className={styles.header}>
+          Log In:
+      </h2>
       <div>
         <input
           name='email'
@@ -45,6 +48,7 @@ const LoginForm = () => {
           placeholder='Email'
           value={email}
           onChange={updateEmail}
+          required
         />
       </div>
       <div>
@@ -54,10 +58,11 @@ const LoginForm = () => {
           placeholder='Password'
           value={password}
           onChange={updatePassword}
+          required
         />
       </div>
       <div className='wrapper'>
-        <button type='submit'>LOG IN</button>
+        <button className={styles.submit} type='submit'>LOG IN</button>
       </div>
     </form>
   );

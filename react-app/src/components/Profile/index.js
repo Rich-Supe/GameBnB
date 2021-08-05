@@ -27,10 +27,10 @@ function Profile(){
                 </div>
                 <div className={styles.profileCardContent}>
                     <div className={styles.profileName}>
-                        <h2>Demo User</h2>
+                        <h2>{user.username}</h2>
                     </div>
                     <div className={styles.profileBio}>
-                        <p>Bio here:</p>
+                        <p>{user.biography}</p>
                     </div>
                 </div>
 

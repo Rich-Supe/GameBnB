@@ -59,6 +59,9 @@ const SignupForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
+      <h2 className={styles.header}>
+          Sign up
+      </h2>
       <div>
         <input
           type='text'
@@ -66,6 +69,7 @@ const SignupForm = () => {
           placeholder='Name'
           onChange={updateName}
           value={name}
+          required
         ></input>
       </div>
       <div>
@@ -75,6 +79,7 @@ const SignupForm = () => {
           placeholder='Username'
           onChange={updateUsername}
           value={username}
+          required
         ></input>
       </div>
       <div>
@@ -84,6 +89,7 @@ const SignupForm = () => {
           placeholder='Email'
           onChange={updateEmail}
           value={email}
+          required
         ></input>
       </div>
       <div>
@@ -93,6 +99,7 @@ const SignupForm = () => {
           placeholder='Password'
           onChange={updatePassword}
           value={password}
+          required
         ></input>
       </div>
       <div>
@@ -106,7 +113,7 @@ const SignupForm = () => {
         ></input>
       </div>
       <div className={styles.wrapper}>
-        <button type='submit'>SIGN UP</button>
+        <button type='submit' className={styles.submit}>Create Account</button>
       </div>
     </form>
   );

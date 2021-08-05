@@ -49,7 +49,7 @@ const NavBar = () => {
                 <li className={styles.logoutBtnDiv}><LogoutButton /></li>
             </ul>
         ) : (
-            <ul className={styles.navUl}>
+            <ul className={styles.splashNav}>
                 <li><DemoFormModal /></li>
                 <li><LoginFormModal /></li>
                 <li><SignupFormModal /></li>
