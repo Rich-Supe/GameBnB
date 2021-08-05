@@ -19,8 +19,16 @@ function Profile(){
         dispatch(getUser(userId));
     }, [dispatch, userId]);
 
+    if (user) {
+
     return (
         <div className={styles.profilePage}>
+            <div className={styles.listingContainer}>
+                <div className={styles.listingsCard}>
+                    <ProfileListingsCard user={user}/>
+                </div>
+            </div>
+            
             <div className={styles.profileCard}>
                 <div className={styles.profileCardImage}>
                     <img src={demoImg} alt="Profile" className={styles.profileImg}/>
@@ -35,16 +43,18 @@ function Profile(){
                 </div>
 
             </div>
-            <div className={styles.infoContainer}>
-                <div className={styles.listingsCard}>
-                    <ProfileListingsCard user={user}/>
-                </div>
+            <div className={styles.reservationContainer}>
                 <div className={styles.reservationCard}>
                     <ProfileReservationsCard user={user}/>
                 </div>
             </div>
         </div>
     )
+    } else {
+        return (
+            <div>Loading...</div>
+        )
+    }
 }
 
 export default Profile;

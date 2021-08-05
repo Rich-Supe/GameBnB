@@ -4,7 +4,7 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo', email='demo@aa.io', password='password', biography='I am a Demo user', host=True)
+        username='Demo', email='demo@aa.io', password='password', biography='Welcome to GameBnb Demo User! Grab your listing cube on the left or reservations on the right to filter through them and edit or delete them! Navigate to the listings page and plan your next exciting adventure! If you would rather host someone elses adventure, click on Hosting in the navbar to get started! GLHF!', host=True)
     bowser = User(
         username='Bowser', email='marnie@aa.io', password='password', biography='Real estate mogul and princess kidnapper', host=True)
     zelda = User(

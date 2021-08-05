@@ -69,6 +69,20 @@ def seed_images():
         db.session.add(bilgewater_bay)
         db.session.commit()
 
+    images=[
+        'https://gamebnb.s3.us-east-2.amazonaws.com/7b6f7c009cc1473e8016762456497ad8.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/65fab29eaca64228a6352f2a59059d87.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/631cdfdd98cf4ce193fae9d12a1ea2c7.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/285958c5ecdd4afbbc003af7faaa8e7e.jpg',
+        'https://gamebnb.s3.us-east-2.amazonaws.com/d03bcd2d2dc54443a4cfb12dda58b8cc.jpeg'
+    ]
+    for image in images:
+        lothric_castle = Image(
+            listing_id=6,
+            image=image)
+        db.session.add(lothric_castle)
+        db.session.commit()
+
 def undo_images():
     db.session.execute('TRUNCATE images RESTART IDENTITY CASCADE;')
     db.session.commit()
