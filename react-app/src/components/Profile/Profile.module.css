@@ -15,7 +15,7 @@
     margin-top: 80px;
     border: 2px solid #F53240;
     border-radius: 15px;
-    box-shadow: 10px 10px 2px 1px #7cdbd563;
+    box-shadow: 0px 0px 10px 1px #00000063;
 }
 
 .profileCardImage {
@@ -41,7 +41,7 @@
     width: 100%;
     color: black;
     /* background-color: #7CDBD5; */
-    border-bottom: 1px solid #7CDBD5;
+    border-bottom: 50px solid #7CDBD5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,22 +51,50 @@
     margin: 0px;
 }
 
-.infoContainer {
+/* .infoContainer {
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 75%;
     margin-top: 80px;
+} */
+.listingContainer {
+    width: 33%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .listingsCard {
     height: 45%;
     width: 100%;
-    background-color: rgba(0, 255, 255, 0.13);
-    border: 2px solid #7cdbd563;
+    /* background-color: rgba(0, 255, 255, 0.13);
+    border: 2px solid #7cdbd563; */
     border-radius: 15px;
-    box-shadow: 8px 8px 2px 1px #7cdbd51e;
-    margin: 20px 0;
+    /* box-shadow: 8px 8px 2px 1px #7cdbd51e; */
+    /* margin: 20px 0; */
+}
+
+.reservationCard {
+    height: 45%;
+    width: 100%;
+    /* background-color: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.418); */
+    border-radius: 15px;
+    /* box-shadow: 8px 8px 2px 1px #f7752b2f; */
+}
+
+.reservationContainer {
+    width: 33%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profileListingsCard {
@@ -76,7 +104,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .listingHeader {
@@ -97,6 +124,7 @@
     /* box-shadow: 1px solid #F53240; */
     width: 55%;
     height: 60%;
+    
 }
 
 .slideL {
@@ -104,6 +132,8 @@
     justify-content: center;
     /* border: 2px solid #02C8A7; */
     box-shadow: 1px 1px 2px 1px #02c8a780;
+    background-color: rgba(0, 255, 255, 0.13);
+    border: 2px solid #7cdbd563;
 }
 
 .slideR {
@@ -111,6 +141,8 @@
     justify-content: center;
     /* border: 2px solid #02C8A7; */
     box-shadow: 1px 1px 2px 1px #f5323f6b;
+    background-color: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.418);
 }
 
 .listingName {
@@ -143,14 +175,6 @@
     color: #02C8A7;
 }
 
-.reservationCard {
-    height: 45%;
-    width: 100%;
-    background-color: rgba(255, 0, 0, 0.05);
-    border: 1px solid rgba(255, 0, 0, 0.418);
-    border-radius: 15px;
-    box-shadow: 8px 8px 2px 1px #f7752b2f;
-}
 
 .noReservations{
     display: flex;

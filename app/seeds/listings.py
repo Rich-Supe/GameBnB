@@ -56,6 +56,17 @@ def seed_listings():
         has_kitchen=True,
         has_internet=False,
         latlang='40.71589,-74.00597')
+    lothric_castle = Listing(
+        name='Lothric Castle',
+        user_id=1,
+        description='A beautiful and mysterious castle, one should tread lightly when walking through it\'s corridors. When in sight, enemies attack ruthlessly, although rolling on the ground is an effective way to travel. Actually, we reccommend that you roll as your only means of travel while staying here.',
+        price=5000,
+        total_bedrooms='10',
+        total_bathrooms='7',
+        sq_ft='20000',
+        has_kitchen=True,
+        has_internet=False,
+        latlang='40.71589,-74.00597')
 
     
     db.session.add(bowsers_castle)
@@ -63,6 +74,7 @@ def seed_listings():
     db.session.add(hyrule_castle)
     db.session.add(whiterun)
     db.session.add(bilgewater_bay)
+    db.session.add(lothric_castle)
     db.session.commit()
 
 def undo_listings():

@@ -1,4 +1,5 @@
 from app.models import db, Review
+import random
 
 def seed_reviews():
     reviews = [
@@ -12,7 +13,7 @@ def seed_reviews():
             listing_id=1,
             user_id=2,
             comment=review,
-            rating=5,
+            rating=random.randint(2, 5),
         )
         db.session.add(bowser_castle)
         db.session.commit()
@@ -28,7 +29,7 @@ def seed_reviews():
             listing_id=2,
             user_id=3,
             comment=review,
-            rating=4,
+            rating=random.randint(2, 5),
         )
         db.session.add(peach_castle)
         db.session.commit()
@@ -44,7 +45,7 @@ def seed_reviews():
             listing_id=3,
             user_id=2,
             comment=review,
-            rating=5,
+            rating=random.randint(2, 5),
         )
         db.session.add(hyrule_castle)
         db.session.commit()
@@ -60,7 +61,7 @@ def seed_reviews():
             listing_id=4,
             user_id=3,
             comment=review,
-            rating=4,
+            rating=random.randint(2, 5),
         )
         db.session.add(whiterun)
         db.session.commit()
@@ -76,9 +77,25 @@ def seed_reviews():
             listing_id=5,
             user_id=2,
             comment=review,
-            rating=5,
+            rating=random.randint(2, 5),
         )
         db.session.add(bilgewater_bay)
+        db.session.commit()
+
+    reviews = [
+        'Very difficult and intimidating area to stay at first, but you will grow to love dying over and over again!',
+        'Illusury wall ahead!! Try swinging your sword at any wall, there are secrets everywhere!',
+        'Be careful of the treasure chests, they can be really moody sometimes. And watch out for rats too!',
+        'Not many negative things to say, great stay overall if you enjoy a challenge!',
+    ]
+    for review in reviews:
+        lothric_castle = Review(
+            listing_id=6,
+            user_id=3,
+            comment=review,
+            rating=random.randint(2, 5),
+        )
+        db.session.add(lothric_castle)
         db.session.commit()
 
 def undo_reviews():

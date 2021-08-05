@@ -76,7 +76,7 @@ function ProfileReservationsCard({user}) {
                     effect={'cube'} grabCursor={true} cubeEffect={{
                         "shadow": true,
                         "slideShadows": true,
-                        "shadowOffset": 40,
+                        "shadowOffset": 60,
                         "shadowScale": 0.9,
                     }} pagination={true}
                 >{slides}</Swiper>

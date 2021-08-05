@@ -85,8 +85,8 @@ function ProfileListingsCard({user}) {
                     effect={'cube'} grabCursor={true} cubeEffect={{
                         "shadow": true,
                         "slideShadows": true,
-                        "shadowOffset": 40,
-                        "shadowScale": 0.94
+                        "shadowOffset": 60,
+                        "shadowScale": 0.9
                     }} pagination={true}
                 >{slides}</Swiper>
         );

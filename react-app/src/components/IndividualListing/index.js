@@ -20,6 +20,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 function IndividualListing(){
     const dispatch = useDispatch();
     const {listingId} = useParams();
+    const user = useSelector(state => state.session.user);
     const listing = useSelector( (state) => state.listing[listingId])
     // console.log(listing)
 
@@ -31,7 +32,7 @@ function IndividualListing(){
     }, [dispatch, listingId]);
 
     
-    if (listing) {
+    if (listing && user) {
 
         const images = listing.images
         const slides = [];
@@ -43,7 +44,6 @@ function IndividualListing(){
                 </SwiperSlide> 
             )
         })
-
 
 
     return (
