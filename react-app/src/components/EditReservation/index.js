@@ -22,7 +22,7 @@ function EditReservation(){
 
     return (
         <div className={styles.editReservation}>
-            <h1 className={styles.header}>Edit your {reservation.name} listing</h1>
+            <h1 className={styles.header}>Edit your {reservation.name} reservation</h1>
             <EditReservationCard reservation={reservation}/>
         </div>
     )

@@ -26,7 +26,7 @@ def seed_reviews():
     for review in reviews:
         peach_castle = Review(
             listing_id=2,
-            user_id=1,
+            user_id=3,
             comment=review,
             rating=4,
         )
@@ -42,7 +42,7 @@ def seed_reviews():
     for review in reviews:
         hyrule_castle = Review(
             listing_id=3,
-            user_id=1,
+            user_id=2,
             comment=review,
             rating=5,
         )
@@ -58,7 +58,7 @@ def seed_reviews():
     for review in reviews:
         whiterun = Review(
             listing_id=4,
-            user_id=1,
+            user_id=3,
             comment=review,
             rating=4,
         )
@@ -74,7 +74,7 @@ def seed_reviews():
     for review in reviews:
         bilgewater_bay = Review(
             listing_id=5,
-            user_id=1,
+            user_id=2,
             comment=review,
             rating=5,
         )
