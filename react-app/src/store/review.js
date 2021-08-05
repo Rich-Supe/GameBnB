@@ -73,7 +73,8 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     });
 
     if (response.ok) {
-        dispatch(removeReview(reviewId));
+        // dispatch(removeReview(reviewId));
+        console.log("removed delete from review store")
     } else {
         throw new Error(response.statusText);
     }

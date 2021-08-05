@@ -6,6 +6,7 @@ const UPDATE_LISTING = 'listings/UPDATE_LISTING';
 const DELETE_LISTING = 'listings/DELETE_LISTING';
 const UNLOAD_LISTING = 'listings/UNLOAD_LISTING';
 const UNLOAD_LISTINGS = 'listings/UNLOAD_LISTINGS';
+const DELETE_REVIEW_FROM_LISTING = 'listings/DELETE_REVIEW_FROM_LISTING';
 
 const setListing = (listing) => ({
     type: SET_LISTING,
@@ -43,6 +44,12 @@ export const unloadListing = () => ({
 
 export const unloadListings = () => ({
     type: UNLOAD_LISTINGS,
+});
+
+export const removeReviewFromListing = (reviewId, listingId) => ({
+    type: DELETE_REVIEW_FROM_LISTING,
+    listingId,
+    reviewId,
 });
 
 
@@ -147,6 +154,8 @@ export const deleteListing = (listingId) => async (dispatch) => {
 
 // Delete review from specific listing.
 
+
+
 // export const unloadAListing = (listingId) => async (dispatch) => {
 //     return "unloaded!"
 // }
@@ -184,6 +193,19 @@ export default function Reducer(state = {}, action) {
             return { ...newState };
         case UNLOAD_LISTINGS:
             return { ...newState };
+        case DELETE_REVIEW_FROM_LISTING:
+            newState = { ...state };
+            const indexOfReview = action.listingId.reviews.indexOf(action.listingId.reviews.find(review => review.id === action.reviewId));
+            const removed = action.listingId.reviews.splice(indexOfReview, 1)
+            // console.log("reducer breakdown, the review:", action.listingId.reviews)
+            // console.log("reducer breakdown, index of the review:", indexOfReview)
+            // console.log("reducer delete attempt:", action.listingId.reviews.splice(indexOfReview, 1))
+            // const removed = newState[action.listingId.reviews.splice(indexOfReview, 1)]
+            // console.log("reducer delete attempt, the removed:", removed)
+            // console.log("reducer delete attempt, the removed:", removed)
+            // delete newState[action.listingId.reviews[indexOfReview]];
+            // delete newState[action.listingId.reviews[action.listingId.reviews.indexOf(action.listingId.reviews.comment.id === action.reviewId)].action.reviewId];
+            return newState;
         default:
             return state;
     }
