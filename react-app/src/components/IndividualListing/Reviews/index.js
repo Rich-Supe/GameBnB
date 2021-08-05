@@ -2,6 +2,7 @@
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteReview } from '../../../store/review'
+import { removeReviewFromListing} from '../../../store/listing'
 
 import styles from './Reviews.module.css'
 import { GiCrossMark } from 'react-icons/gi'
@@ -19,19 +20,21 @@ function Reviews({listing}) {
     // }
     let rating;
 
-    const handleDelete = async (listingId) => {
-        const del = await dispatch(deleteReview(listingId))
-        console.log(del)
+    const handleDelete = async (reviewId, listingId) => {
+        const del = await dispatch(deleteReview(reviewId))
+        const rmvReviewFromListing = await dispatch(removeReviewFromListing(reviewId, listingId))
+        console.log(del, rmvReviewFromListing)
+        history.push(`/individual-listing/${listingId.id}`);
     }
 
-    const reviewOwnershipCheck = (reviewsUserId, review) => {
+    const reviewOwnershipCheck = (reviewsUserId, review, listingId) => {
         if (user.id === reviewsUserId) {
             rating = (
                 <div className={styles.reviewDiv}>
                     <span className={styles.reviewsBoxRowHeaderText}>
                         Rating: {review.rating}/5
                     </span>
-                    <div className={styles.deleteDiv} onClick={() => handleDelete(review.id)}>
+                    <div className={styles.deleteDiv} onClick={() => handleDelete(review.id, listingId)}>
                         <GiCrossMark className={styles.reviewsDelete} />
                         <p className={styles.deleteTag}>Delete?</p>
                     </div>
@@ -78,7 +81,7 @@ function Reviews({listing}) {
                                         Rating: {review.rating}/5
                                     </span>
                                 </h3> */}
-                                {reviewOwnershipCheck(review.user_id, review)}
+                                {reviewOwnershipCheck(review.user_id, review, listing)}
                             </div>
                             <div className={styles.reviewsBoxRowBody}>
                                 <div className={styles.reviewsBoxRowBodyText}>

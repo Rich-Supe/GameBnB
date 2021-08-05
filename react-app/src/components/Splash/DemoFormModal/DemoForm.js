@@ -18,8 +18,8 @@ const DemoForm = () => {
 
   return (
     <div className={styles.demoFormContainer} onClick={onLogin}>
-      <h1> Sign in as a Demo user?</h1>
-      <button onClick={onLogin}>Yes!</button>
+      <h1 className={styles.header}> Sign in as a Demo user?</h1>
+      <button className={styles.submit} onClick={onLogin}>Yes!</button>
     </div>
   )
 }

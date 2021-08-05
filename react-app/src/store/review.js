@@ -25,8 +25,9 @@ const removeReview = (reviewId) => ({
 
 // get a review by id
 export const getReview = (reviewId) => async (dispatch) => {
-    const response = await fetch(`/api/review/${reviewId}`);
+    const response = await fetch(`/api/reviews/${reviewId}`);
     const review = await response.json();
+    console.log('review from thunk:', review);
     dispatch(setReview(review));
 };
 
@@ -73,7 +74,8 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     });
 
     if (response.ok) {
-        dispatch(removeReview(reviewId));
+        // dispatch(removeReview(reviewId));
+        console.log("removed delete from review store")
     } else {
         throw new Error(response.statusText);
     }
