@@ -10,7 +10,7 @@ function Host() {
 
     useEffect(() => {
         dispatch(getUser(userId));
-    });
+    }, [userId, dispatch]);
 
     const user = useSelector(state => state.session.user);
     if (user) {

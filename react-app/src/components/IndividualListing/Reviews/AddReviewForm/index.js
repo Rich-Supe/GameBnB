@@ -22,7 +22,7 @@ function AddReviewForm() {
     const [value, setValue] = useState(2);
     const [hover, setHover] = useState(-1);
 
-    console.log("rating:", value, "review:", comment)
+    // console.log("rating:", value, "review:", comment)
     
     const labels = {
         0.5: 'Terrible',
@@ -55,7 +55,7 @@ function AddReviewForm() {
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        console.log("submitted!")
+        // console.log("submitted!")
 
         const payload = {
             // listing_id: listing.id,
@@ -64,7 +64,7 @@ function AddReviewForm() {
             comment: comment,
         };
 
-        console.log("review:;", payload)
+        // console.log("review:;", payload)
         dispatch(createReview(payload, listingId));
         history.push("/individual-listing/" + listing.id);
     };

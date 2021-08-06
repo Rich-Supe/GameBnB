@@ -9,6 +9,17 @@
     align-items: center;
 }
 
+.sticky {
+    top: 0%;
+    height: 10%;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: rgba(2, 2, 2, 0.6);
+}
+
+.navAside {
+    width: 100%;
+}
 
 .navUl {
     display: inline-flex;

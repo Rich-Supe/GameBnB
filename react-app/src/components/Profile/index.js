@@ -7,7 +7,7 @@ import ProfileReservationsCard from './ProfileReservationsCard';
 import styles from './Profile.module.css'
 import demoImg from '../../assets/img/profilepicBowser.png'
 import { Backdrop } from '@material-ui/core'
-import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
+// import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
 
 function Profile(){
     // const history = useHistory();
@@ -40,7 +40,7 @@ function Profile(){
                         <h2>{user.username}</h2>
                     </div>
                     <div className={styles.profileBio}>
-                        <p>{user.biography}</p>
+                        <p className={styles.bio}>{user.biography}</p>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@ function Profile(){
     } else {
         return (
             <>
-                <Backdrop />
+                <Backdrop open={true}/>
             </>
         )
     }

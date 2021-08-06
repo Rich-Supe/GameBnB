@@ -58,7 +58,7 @@ export const removeReviewFromListing = (reviewId, listingId) => ({
 export const getAllListings = () => async (dispatch) => {
     const response = await fetch(`/api/listings/`);
     const listings = await response.json();
-    console.log(listings)
+    // console.log(listings)
     dispatch(setAllListings(listings));
 };
 
@@ -66,7 +66,7 @@ export const getAllListings = () => async (dispatch) => {
 export const getListing = (id) => async (dispatch) => {
     const response = await fetch(`/api/listings/${id}`);
     const listing = await response.json();
-    console.log("listing in thunk:", listing)
+    // console.log("listing in thunk:", listing)
     dispatch(setListing(listing));
 }
 
@@ -197,6 +197,7 @@ export default function Reducer(state = {}, action) {
             newState = { ...state };
             const indexOfReview = action.listingId.reviews.indexOf(action.listingId.reviews.find(review => review.id === action.reviewId));
             const removed = action.listingId.reviews.splice(indexOfReview, 1)
+            // console.log('removed:', removed)
             // console.log("reducer breakdown, the review:", action.listingId.reviews)
             // console.log("reducer breakdown, index of the review:", indexOfReview)
             // console.log("reducer delete attempt:", action.listingId.reviews.splice(indexOfReview, 1))

@@ -28,6 +28,7 @@
 
 ## Material UI:
 * I use material UI's library for basic styling such as for reviews etc.
+* Added backdrop loading animation while some pages are loading
 
 
 # Stack Explanation:
