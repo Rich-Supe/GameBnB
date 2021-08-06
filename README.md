@@ -20,6 +20,14 @@
 | Alembic | Google Maps API |
 | Docker | SwiperJs |
 | AWS S3 |  Heroku(deployment)  |
+||  MaterialUI  |
+
+# User Experience:
+## Info tabs:
+* I created info links next to many of the features throughout the site to give direction and ease of use for newer users
+
+## Material UI:
+* I use material UI's library for basic styling such as for reviews etc.
 
 
 # Stack Explanation:
