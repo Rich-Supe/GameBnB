@@ -8,6 +8,7 @@ import ReservationCard from './ReservationCard';
 import Reviews from './Reviews';
 
 import styles from './IndividualListing.module.css'
+import { Backdrop } from '@material-ui/core'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Navigation, Pagination, Autoplay} from 'swiper/core';
@@ -88,7 +89,7 @@ function IndividualListing(){
         </div>
     )}
     else {
-        return <div>Loading...</div>
+        return <Backdrop open={true}/>
     }
 }
 

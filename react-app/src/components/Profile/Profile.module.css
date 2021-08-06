@@ -51,6 +51,10 @@
     margin: 0px;
 }
 
+.bio {
+    padding: 0px 10px 10px 10px;
+}
+
 /* .infoContainer {
     display: flex;
     flex-direction: column;
