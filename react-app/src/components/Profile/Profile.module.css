@@ -66,13 +66,14 @@
     margin-top: 80px;
 } */
 .listingContainer {
-    width: 33%;
+    width: 34%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 30px;
 }
 
 .listingsCard {
@@ -95,13 +96,14 @@
 }
 
 .reservationContainer {
-    width: 33%;
+    width: 34%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 30px;
 }
 
 .profileListingsCard {
@@ -111,6 +113,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    /* border: 1px solid #000000; */
+    /* margin-right: 50px; */
 }
 
 .listingHeader {
@@ -136,32 +140,46 @@
 .listingCarousel {
     display: flex;
     justify-content: center;
-    border: 1px solid #F53240;
-    width: 65%;
+    /* border: 1px solid #F53240; */
+    width: 75%;
     height: 70%;
     
 }
 
-/* .slideL {
-    display: flex;
+/* .image {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+} */
+
+.slideL {
+    /* border: 10px solid rgb(180, 14, 14) */
+    /* display: flex;
     justify-content: center;
     box-shadow: 1px 1px 2px 1px #02c8a780;
     background-color: rgba(0, 255, 255, 0.13);
-    border: 2px solid #7cdbd563;
-} */
+    border: 2px solid #7cdbd563; */
+}
 
-.slideR {
+/* .slideR {
     display: flex;
     justify-content: center;
-    /* border: 2px solid #02C8A7; */
     box-shadow: 1px 1px 2px 1px #f5323f6b;
     background-color: rgba(255, 0, 0, 0.05);
     border: 1px solid rgba(255, 0, 0, 0.418);
-}
+} */
 
-.listingName {
-    margin-top: 0px;
-    margin-bottom: 25px;
+.profilePage h3 {
+    padding: 20px;
+    margin: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'MedievalSharp', cursive;
+    text-shadow: 1px 1px 4px black;
 }
 
 .listingButtons {

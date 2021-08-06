@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllListingsUser, unloadListings, deleteListing } from '../../store/listing'
 import styles from './Profile.module.css'
-import { FcDeleteDatabase } from 'react-icons/fc'
+import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
 
@@ -42,14 +42,34 @@ function ProfileListingsCard({user}) {
     let i = 0;
     listings?.forEach((listing) => {
         const listingId = listing.id;
+        const bkgImage = listing.images[0].image
         const styles = {
             // backgroundColor: 'black',
-            backgroundImage: listing.images[1]?.image,
+            backgroundImage: 'url(' + bkgImage + ')',
             backgroundSize: 'cover',
             height: '98%',
             width: '98%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            border: '3px ridge #F53240',
+            boxShadow: '0px 0px 10px 3px #F53240',
         }
-        console.log(styles);
+
+        const btnStyles = {
+            display: 'flex',
+            justifyContent: 'space-between',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '1.3em',
+            margin: '30px 5px',
+        }
+
+        const btns = {
+            margin: '60px',
+            fontSize: '1.4em',
+        }
 
         slides.push(
         <SwiperSlide key={`slide:${i}`} className={styles.slideL}>
@@ -57,12 +77,12 @@ function ProfileListingsCard({user}) {
                 <div className={styles.listingHeader}>
                     <h3 className={styles.listingName}>{listing.name}</h3>
                 </div>
-                <div className={styles.listingButtons}>
+                <div className={styles.listingButtons} style={btnStyles}>
                     <div className={styles.deleteButton} onClick={() => {deleteListingFunction(listingId)}}>
-                        <FcDeleteDatabase className={styles.deleteIcon}/>
+                        <MdDeleteForever className={styles.deleteIcon} style={btns}/>
                     </div>
                     <div className={styles.editButton} onClick={() => {history.push(`/edit-listing/${listingId}`)}}>
-                        <BiEditAlt className={styles.editIcon}/>
+                        <BiEditAlt className={styles.editIcon} style={btns} onClick={() => {history.push(`/edit-listing/${listingId}`)}}/>
                     </div>
                 </div>
             </div>

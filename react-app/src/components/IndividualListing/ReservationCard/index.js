@@ -23,6 +23,9 @@ function ReservationCard({listing}) {
     let endDay;
     let daysReserved;
     let totalPrice;
+    console.log("image from reservations:", listing.images[0].image)
+    const image = listing.images[0].image;
+
 
     if (value[0] && value[1]) {
         startDay = value[0].getDate();
@@ -54,6 +57,7 @@ function ReservationCard({listing}) {
             guests: parseInt(numOfGuests, 10),
             price: totalPrice,
             name: listing.name,
+            image: image,
         }
 
         console.log("Reservation:", payload)

@@ -25,7 +25,7 @@ function EditReservationCard({reservation}) {
     const listing = useSelector( (state) => state.listing[reservation.listing_id]);
     useEffect(() => {
         dispatch(getListing(reservation.listing_id))
-    }, [dispatch])
+    }, [dispatch, reservation.listing_id])
     
     if (listing) {
 
