@@ -15,17 +15,17 @@ function Footer(){
                 <ul className={styles.footer__socials}>
                     <li className={styles.liLink}>
                         <a className={styles.aLink} href="https://linkedin.com/in/richard-supe">
-                            <AiFillLinkedin />
+                            <AiFillLinkedin className={styles.linkedIcon}/>
                         </a>
                     </li>
                     <li className={styles.liGit}>
                         <a className={styles.aGit} href="https://github.com/Rich-Supe">
-                            <FiTwitter />
+                            <FaGithubAlt className={styles.gitIcon}/>
                         </a>
                     </li>
                     <li className={styles.liTwit}>
                         <a className={styles.aTwit} href="https://twitter.com/supe_richard">
-                            <FaGithubAlt />
+                            <FiTwitter className={styles.twitIcon}/>
                         </a>
                     </li>
                     {/* <li className={styles.liPort}>
