@@ -73,15 +73,15 @@ function ProfileListingsCard({user}) {
     let listingSwiper;
 
     const info = (
-            <>
-                <h2 id="simple-modal-title">Listings</h2>
-                    <p id="simple-modal-description">
-                        These are all of your listings! Click the delete button to remove them,
-                        or click the edit button to edit them. If you want to add another listing for others to expolore
-                        click the hosting tab!
-                    </p>
-            </>
-            );
+    <>
+        <h2 id="simple-modal-title">Listings</h2>
+            <p id="simple-modal-description">
+                These are all of your listings! Click the delete button to remove them,
+                or click the edit button to edit them. If you want to add another listing for others to expolore
+                click the hosting tab!
+            </p>
+    </>
+    );
 
     if (listings.length > 0) {
         listingSwiper = (

@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'transparent',
       color: '#02B4FF',
       cursor: 'pointer',
+      marginLeft: '10px',
   },
 }));
 
