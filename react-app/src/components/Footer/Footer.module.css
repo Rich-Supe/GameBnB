@@ -3,7 +3,7 @@
     bottom: 0 !important;
     left: 0;
     right: 0;
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.671);
     height: auto;
     width: 100%;
     font-family: "Teko", sans-serif;
@@ -40,7 +40,8 @@
     align-items: center;
     justify-content: space-evenly;
     list-style-type: none;
-    font-size: 2em;
+    font-size: 1.8em;
+    width: 30%;
 }
 
 .footer__socials li {
@@ -85,6 +86,20 @@
     /* font-family: 'Monoton', cursive; */
 }
 
+.linkedIcon:hover {
+    color:rgb(87, 160, 255);
+    background-color: white;
+}
+
+.gitIcon:hover {
+    color:rgb(0, 0, 0);
+    background-color: white;
+}
+
+.twitIcon:hover {
+    color:rgb(42, 152, 255);
+    background-color: rgb(255, 255, 255);
+}
 
 .aLink:visited {
     text-decoration: none;

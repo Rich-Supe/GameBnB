@@ -63,6 +63,17 @@
     border-bottom: 1px solid #F53240;
 }
 
+.navlink {
+    /* text-decoration: none; */
+    color: #F53240;
+    /* border-bottom: 1px solid rgb(12, 8, 8); */
+}
+
+/* .navlink:hover {
+    border-bottom: 1px solid #F53240;
+    cursor: pointer;
+} */
+
 .home p {
     font-size: 1.3em;
     margin-top: 10px;

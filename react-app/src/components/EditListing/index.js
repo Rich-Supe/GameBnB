@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { editListing, getListing } from '../../store/listing'
 import styles from './EditListing.module.css'
+import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
 
 function EditListing(){
     const history = useHistory();
@@ -68,6 +69,16 @@ function EditListing(){
         }
     };
 
+    const info = (
+        <>
+            <h2 id="simple-modal-title">Images</h2>
+                <p id="simple-modal-description">
+                    Upload your images to make your listing stand out! Users generally prefer clean pictures
+                    to give a good first impression. Upload up to 6 images! Well, you can do more but most users probably won't see!
+                </p>
+        </>
+    );
+
     return (
         <div className={styles.newListingPage}>
             <h1 className={styles.header}>Edit {listing.name}</h1>
@@ -116,6 +127,7 @@ function EditListing(){
                 <div className={styles.formImg}>
                     <label htmlFor="images">Upload more images for your guests?</label>
                     <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
+                    <SimpleModal info={info}/>
                 </div>
                 <div className={styles.formBtn}>
                     <button type="submit" className={styles.button}>Submit</button>
