@@ -6,6 +6,8 @@ import ProfileListingsCard from './ProfileListingsCard';
 import ProfileReservationsCard from './ProfileReservationsCard';
 import styles from './Profile.module.css'
 import demoImg from '../../assets/img/profilepicBowser.png'
+import { Backdrop } from '@material-ui/core'
+import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
 
 function Profile(){
     // const history = useHistory();
@@ -13,7 +15,7 @@ function Profile(){
     const {userId} = useParams();
 
     const user = useSelector(state => state.session.user);
-    console.log(user)
+    // console.log(user)
 
     useEffect(() => {
         dispatch(getUser(userId));
@@ -52,7 +54,9 @@ function Profile(){
     )
     } else {
         return (
-            <div>Loading...</div>
+            <>
+                <Backdrop />
+            </>
         )
     }
 }

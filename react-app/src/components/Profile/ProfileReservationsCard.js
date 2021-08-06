@@ -6,6 +6,7 @@ import { getAllReservations, deleteReservation, unloadReservation } from '../../
 import styles from './Profile.module.css'
 import { FcDeleteDatabase } from 'react-icons/fc'
 import { BiEditAlt } from 'react-icons/bi'
+import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -61,6 +62,17 @@ function ProfileReservationsCard({user}) {
         i++;
     });
 
+    const info = (
+        <>
+            <h2 id="simple-modal-title">Reservations</h2>
+                <p id="simple-modal-description">
+                    These are all of your Reservations! Click the delete button to remove them,
+                    or click the edit button to edit them. If you want to add another reservation
+                    go to the listings tab and explore all of the options!
+                </p>
+        </>
+        );
+
     let reservationSwiper;
 
     if (reservations.length > 0) {
@@ -93,7 +105,10 @@ function ProfileReservationsCard({user}) {
 
     return (
         <div className={styles.profileListingsCard}>
-            <h2 className={styles.listingHeader}>Your Reservations</h2>
+            <h2 className={styles.listingHeader}>
+                Your Reservations
+                <SimpleModal info={info}/>
+                </h2>
             <div className={styles.listingCarousel}>
                 {reservationSwiper}
                 {/* <Swiper id="main" 
