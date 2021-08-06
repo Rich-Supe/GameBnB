@@ -29,6 +29,7 @@
 .listingCarousel {
     width: 100%;
     height: 70%;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .slide {

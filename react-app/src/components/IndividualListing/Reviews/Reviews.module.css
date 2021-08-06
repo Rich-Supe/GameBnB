@@ -4,10 +4,12 @@
     /* border: 2px solid #ccc; */
     display: flex;
     justify-content: center;
+    font-family: 'Roboto';
+    min-height: 1000px;
 }
 
 .reviewsBox {
-    width: 80%;
+    width: 70%;
     min-height: 750px;
     border-radius: 15px;
     border: 1px solid #7cdbd5be;
@@ -52,6 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.2em;
 }
 
 .addReviewBtn:hover {
@@ -119,6 +122,11 @@
     font-size: 15px;
 }
 
+.reviewsBoxRow {
+    margin: 5px;
+    padding: 10px 20px;
+}
+
 .reviewsBoxRowBody {
     display: flex;
     justify-content: center;
@@ -131,4 +139,8 @@
     width: 80%;
     margin-bottom: 10px;
     border-bottom: 1px solid #f5323fb6;
+}
+
+.ending {
+    height: 60px;
 }

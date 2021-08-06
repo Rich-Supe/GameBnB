@@ -49,7 +49,7 @@ function IndividualListing(){
 
     return (
         <div className={styles.page}>
-            <h1>{listing.name}</h1> 
+            <h1 className={styles.header}>{listing.name}</h1> 
             <div className={styles.picturesContainer}>
                 <Swiper id="main" 
                         tag="section" 
@@ -60,7 +60,7 @@ function IndividualListing(){
                         // }} 
                         // navigation={true}
                         loop={true}
-                        spaceBetween={0} 
+                        spaceBetween={100} 
                         slidesPerView={2}
 
                         autoplay={{
@@ -68,7 +68,7 @@ function IndividualListing(){
                             "disableOnInteraction": false
                         }} pagination={{
                             "clickable": true
-                        }} navigation={true}
+                        }} navigation={false}
 
                         // onInit={(swiper) => console.log('Swiper initialized', swiper)}
                         // onSlideChange={(swiper) => {

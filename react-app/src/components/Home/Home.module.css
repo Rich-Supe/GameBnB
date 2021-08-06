@@ -19,7 +19,7 @@
 .explore {
     width: 100%;
     min-height: 500px;
-    background-color: rgba(127, 255, 212, 0.295);
+    /* background-color: rgba(127, 255, 212, 0.295); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,10 @@
 .exploreHeader {
     width: 80%;
     height: 10%;
-    border-bottom: solid 1px #89dffc;
+    border-bottom: solid 1px #000000;
+    color: #000000;
+    text-shadow: 1px 1px 1px #969696;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .imageContainer {
@@ -80,7 +83,7 @@
 .randomListingDiv {
     width: 100%;
     min-height: 600px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-image: url('../../assets/img/exploreBanner.jpg');
     background-size: cover;
     display: flex;
@@ -93,6 +96,7 @@
     margin-left: 50px;
     display: flex;
     justify-content: center;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .randomDiv {

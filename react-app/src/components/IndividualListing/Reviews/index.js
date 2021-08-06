@@ -96,10 +96,14 @@ function Reviews({listing}) {
     }
 
     return (
-        <div className={styles.reviewsPage}>
-            {/* <h2>Reviews</h2> */}
-            {reviewsBox()}
-        </div>
+        <>
+            <div className={styles.reviewsPage}>
+                {/* <h2>Reviews</h2> */}
+                {reviewsBox()}
+            </div>
+            <div className={styles.ending}>
+            </div>
+        </>
     )
 }
 

@@ -21,33 +21,49 @@ const NavBar = () => {
         history.push('/home');
     }
 
+    // const stickySearch = (
+    //     <script type="text/javascript">
+    //             {
+    //             window.addEventListener("scroll", () => {
+    //                 console.log("is this working?")
+    //                 let aside = document.querySelector("aside");
+    //                 if (aside) {
+    //                     aside.classList.toggle(`${styles.sticky}`, window.scrollY > 0)
+    //                 }
+    //             })
+    //             }
+    //     </script>
+    // )
+
     
     return (
         <nav className={styles.navbarContainer}>
         {user ? (
-            <ul className={styles.navUl}>
-                <li className={styles.home}>
-                    <img src={icon} className={styles.icon} onClick={() => {home()}} alt="home"></img>
-                    {/* <p>Gamebnb</p> */}
-                </li>
-                <li>
-                    <NavLink to={`/users/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
-                    <p className={styles.navP}>PROFILE</p>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to={`/listings`} exact={true} className={styles.navlink} activeClassName='active'>
-                    <p className={styles.navP}>LISTINGS</p>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to={`/new-listing/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
-                    {/* <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'></NavLink> */}
-                        <p className={styles.navP}>HOSTING</p>
-                    </NavLink>
-                </li>
-                <li className={styles.logoutBtnDiv}><LogoutButton /></li>
-            </ul>
+            // <aside >
+                <ul className={styles.navUl}>
+                    <li className={styles.home}>
+                        <img src={icon} className={styles.icon} onClick={() => {home()}} alt="home"></img>
+                        {/* <p>Gamebnb</p> */}
+                    </li>
+                    <li>
+                        <NavLink to={`/users/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
+                        <p className={styles.navP}>PROFILE</p>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`/listings`} exact={true} className={styles.navlink} activeClassName='active'>
+                        <p className={styles.navP}>LISTINGS</p>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`/new-listing/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>
+                        {/* <NavLink to={`/host/${userId}`} exact={true} className={styles.navlink} activeClassName='active'></NavLink> */}
+                            <p className={styles.navP}>HOSTING</p>
+                        </NavLink>
+                    </li>
+                    <li className={styles.logoutBtnDiv}><LogoutButton /></li>
+                </ul>
+            // </aside>
         ) : (
             <ul className={styles.splashNav}>
                 <li><DemoFormModal /></li>
@@ -55,6 +71,7 @@ const NavBar = () => {
                 <li><SignupFormModal /></li>
             </ul>
         )}
+        {/* {stickySearch} */}
         </nav>
     );
     }

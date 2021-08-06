@@ -37,13 +37,23 @@ function ProfileListingsCard({user}) {
         // return () => dispatch(unloadListings());
     }, [dispatch]);
 
+    
     const slides = [];
     let i = 0;
     listings?.forEach((listing) => {
         const listingId = listing.id;
+        const styles = {
+            // backgroundColor: 'black',
+            backgroundImage: listing.images[1]?.image,
+            backgroundSize: 'cover',
+            height: '98%',
+            width: '98%',
+        }
+        console.log(styles);
+
         slides.push(
         <SwiperSlide key={`slide:${i}`} className={styles.slideL}>
-            <div className={styles.slideContent}>
+            <div className={styles.slideContent} style={styles}>
                 <div className={styles.listingHeader}>
                     <h3 className={styles.listingName}>{listing.name}</h3>
                 </div>

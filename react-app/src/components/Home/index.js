@@ -16,6 +16,9 @@ function Home(){
         if (num > 6) {
             num = (num - 4)
         }
+        if (num === 0) {
+            num = 5
+        }
         console.log(num)
 
         history.push(`individual-listing/${num}`)
@@ -29,7 +32,7 @@ function Home(){
                 <img src={banner} alt="banner" className={styles.bannerImg}/>
             </div>
             <div className={styles.explore}>
-                <h1 className={styles.exploreHeader}>Explore and Create New Worlds!</h1>
+                <h1 className={styles.exploreHeader}>Explore and Create New Worlds</h1>
                 <div className={styles.imageContainer}>
                     <div className={styles.imageBox1}>
 
