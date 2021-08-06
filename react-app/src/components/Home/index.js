@@ -11,6 +11,7 @@ function Home(){
             <div className={styles.banner}>
                 <img src={banner} alt="banner" className={styles.bannerImg}/>
             </div>
+            <div className={styles.randomListingDiv}></div>
             <Footer/>
         </div>
     )
