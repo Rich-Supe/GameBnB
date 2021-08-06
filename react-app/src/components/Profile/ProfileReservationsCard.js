@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllReservations, deleteReservation, unloadReservation } from '../../store/reservation'
+import { getAllReservations, deleteReservation } from '../../store/reservation'
 import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
@@ -25,12 +25,12 @@ function ProfileReservationsCard({user}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const reservations = useSelector((state) => Object.values(state.reservation));
-    console.log("reservations:", reservations)
+    // console.log("reservations:", reservations)
 
     useEffect(() => {
         dispatch(getAllReservations(user.id));
         // dispatch(unloadReservation)
-    }, [dispatch]);
+    }, [dispatch, user.id]);
 
     const deleteReservationFunction = (id) => {
         // console.log("Attemting to delete reservation!", id)

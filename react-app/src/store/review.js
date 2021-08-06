@@ -27,7 +27,7 @@ const removeReview = (reviewId) => ({
 export const getReview = (reviewId) => async (dispatch) => {
     const response = await fetch(`/api/reviews/${reviewId}`);
     const review = await response.json();
-    console.log('review from thunk:', review);
+    // console.log('review from thunk:', review);
     dispatch(setReview(review));
 };
 
@@ -98,7 +98,7 @@ export default function Reducer(state={}, action) {
             return newState;
         case DELETE_REVIEW:
             newState = { ...state };
-            console.log("State from reducer", newState)
+            // console.log("State from reducer", newState)
             delete newState[action.reviewId];
             return newState;
         default:

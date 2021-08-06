@@ -23,7 +23,7 @@ function NewListing(){
     const [ currentImages, setCurrentImages ] = useState([]);
 
     // console.log("price:", typeof(parseInt(price), 10), "totalBedrooms:", typeof(totalBedrooms), "totalBathrooms:", totalBathrooms, "sqFt:", sqFt, "hasKitchen:", hasKitchen, "hasInternet:", hasInternet)
-    console.log("CurrentImgarray", currentImages)
+    // console.log("CurrentImgarray", currentImages)
     const addImage = (e) => {
         const file = e.target.files[0];
         if (file){
@@ -56,11 +56,11 @@ function NewListing(){
             hasInternet,
         };
 
-        console.log('submitted!', payload, formData, userId)
+        // console.log('submitted!', payload, formData, userId)
         const listing = await dispatch(createListing(payload, formData, userId));
         setImageLoading(false);
         if (!Array.isArray(listing)) {
-            console.log('LISTING', listing)
+            // console.log('LISTING', listing)
             history.push('/listings')
         }
     };

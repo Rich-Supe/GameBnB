@@ -55,7 +55,7 @@ function Profile(){
     } else {
         return (
             <>
-                <Backdrop />
+                <Backdrop open={true}/>
             </>
         )
     }

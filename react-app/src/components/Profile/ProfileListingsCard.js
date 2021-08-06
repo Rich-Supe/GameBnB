@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllListingsUser, unloadListings, deleteListing } from '../../store/listing'
+import { getAllListingsUser, deleteListing } from '../../store/listing'
 import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
@@ -25,17 +25,17 @@ function ProfileListingsCard({user}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const listings = useSelector((state) => Object.values(state.listing));
-    console.log("frontend listings:", listings);
+    // console.log("frontend listings:", listings);
 
     const deleteListingFunction = (id) => {
-        console.log("Attemting to delete listing!", id)
+        // console.log("Attemting to delete listing!", id)
         dispatch(deleteListing(id))
     }
 
     useEffect(() => {
         dispatch(getAllListingsUser(user.id));
         // return () => dispatch(unloadListings());
-    }, [dispatch]);
+    }, [dispatch, user.id]);
 
     
     const slides = [];

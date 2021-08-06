@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { getReservation } from '../../store/reservation'
 import EditReservationCard from './EditReservationCard';
 
@@ -9,7 +9,7 @@ import styles from './EditReservation.module.css'
 
 function EditReservation(){
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
     const { reservationId } = useParams();
     const reservation = useSelector((state) => state.reservation[reservationId]);
     // console.log(reservation);

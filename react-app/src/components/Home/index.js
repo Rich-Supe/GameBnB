@@ -12,14 +12,14 @@ function Home(){
     const handleRandom = (e) => {
         e.preventDefault();
         let num = Math.floor(Math.random() * 10)
-        console.log(num)
+        // console.log(num)
         if (num > 6) {
             num = (num - 4)
         }
         if (num === 0) {
             num = 5
         }
-        console.log(num)
+        // console.log(num)
 
         history.push(`individual-listing/${num}`)
     }

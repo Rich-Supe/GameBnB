@@ -29,7 +29,7 @@ function EditReservationCard({reservation}) {
     
     if (listing) {
 
-    console.log("listing from edit:", listing)
+    // console.log("listing from edit:", listing)
 
     let startDay;
     let endDay;
@@ -68,7 +68,7 @@ function EditReservationCard({reservation}) {
             name: listing.name,
         }
 
-        console.log("Reservation on submit:", payload)
+        // console.log("Reservation on submit:", payload)
         dispatch(editReservation(payload, reservation.id));
         // if (reservation) {
         history.push(`/users/${user.id}`)

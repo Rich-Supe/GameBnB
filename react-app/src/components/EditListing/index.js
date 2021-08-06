@@ -11,7 +11,7 @@ function EditListing(){
     const dispatch = useDispatch();
     const { listingId } = useParams();
     const listing = useSelector( (state) => state.listing[listingId]);
-    console.log("listing:", listing)
+    // console.log("listing:", listing)
 
     const [ name, setName ] = useState(listing.name);
     const [ description, setDescription ] = useState(listing.description);
@@ -61,7 +61,7 @@ function EditListing(){
             hasInternet,
         };
 
-        console.log('submitted!', payload, formData, listingId)
+        // console.log('submitted!', payload, formData, listingId)
         const listing = await dispatch(editListing(payload, formData, listingId));
         setImageLoading(false);
         if (listing) {

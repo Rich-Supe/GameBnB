@@ -19,7 +19,7 @@ function EditPage({review}) {
     const [ comment, setComment ] = useState(review.comment);
     const [value, setValue] = useState(review.rating);
     const [hover, setHover] = useState(-1);
-    console.log("review from edit prop:", review)
+    // console.log("review from edit prop:", review)
     const listingId = review.listing_id
     const listing = useSelector( (state) => state.listing[listingId]);
 
@@ -62,7 +62,7 @@ function EditPage({review}) {
     // console.log('listing from review form', listing)
     
 
-    console.log("rating:", value, "review:", comment)
+    // console.log("rating:", value, "review:", comment)
     
     
 
@@ -71,7 +71,7 @@ function EditPage({review}) {
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        console.log("submitted!")
+        // console.log("submitted!")
 
         const payload = {
             listing_id: listingId,
@@ -80,7 +80,7 @@ function EditPage({review}) {
             comment: comment,
         };
 
-        console.log("review: after edit:", payload)
+        // console.log("review: after edit:", payload)
         dispatch(editReview(payload, review.id));
         history.push("/individual-listing/" + listing.id);
     };

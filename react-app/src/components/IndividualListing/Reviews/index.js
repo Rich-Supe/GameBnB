@@ -11,7 +11,7 @@ import { RiEdit2Fill } from 'react-icons/ri'
 function Reviews({listing}) {
     const history = useHistory();
     const dispatch = useDispatch();
-    console.log("listing from reviews", listing)
+    // console.log("listing from reviews", listing)
     const listingId = listing.id
     const user = useSelector(state => state.session.user);
     const reviews = listing.reviews
@@ -23,7 +23,7 @@ function Reviews({listing}) {
     const handleDelete = async (reviewId, listingId) => {
         const del = await dispatch(deleteReview(reviewId))
         const rmvReviewFromListing = await dispatch(removeReviewFromListing(reviewId, listingId))
-        console.log(del, rmvReviewFromListing)
+        // console.log(del, rmvReviewFromListing)
         history.push(`/individual-listing/${listingId.id}`);
     }
 

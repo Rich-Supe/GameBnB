@@ -6,7 +6,7 @@ import { GiCastle, GiAnimalSkull, GiBooze, GiBrute, GiCandleHolder, GiChest,
     GiChicken, GiChewedSkull, GiCutDiamond, GiFarmer, GiFemaleLegs, GiHealthPotion } from 'react-icons/gi';
 
 function ListingInfo({listing}){
-    console.log(listing.user_id)
+    // console.log(listing.user_id)
     // Should I get the owner's info??
 
     return (

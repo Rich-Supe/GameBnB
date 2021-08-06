@@ -41,6 +41,10 @@
     justify-content: space-around;
 }
 
+.reviewsBoxHeaderTextDiv {
+    font-size: .8em;
+}
+
 .addReviewBtn {
     margin-left: 30px;
     border: 1px solid #41fdf1d5;
