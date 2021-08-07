@@ -23,12 +23,15 @@
 ||  MaterialUI  |
 
 # User Experience:
-## Info tabs:
+### Info tabs:
 * I created info links next to many of the features throughout the site to give direction and ease of use for newer users
 
-## Material UI:
+### Material UI:
 * I use material UI's library for basic styling such as for reviews etc.
-* Added backdrop loading animation while some pages are loading
+* Added backdrop api loading animation while some pages are loading
+
+### Splash/Home page:
+* Error handling, interactive home page give users somewhere to start
 
 
 # Stack Explanation:
