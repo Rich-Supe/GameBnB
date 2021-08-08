@@ -62,16 +62,19 @@
     align-items: flex-start;
     margin: 0;
     color: #F53240;
+    margin-bottom: -15px;
 }
 
 .icon {
-    height: 50px;
+    height: 40px;
     width: 50px;
+    margin-top: 5px;
 }
 
-.icon:hover {
+.home:hover {
     cursor: pointer;
-    border-bottom: 1px solid #F53240;
+    color: #02C8A7;
+    /* border-bottom: 1px solid #F53240; */
 }
 
 .navlink {

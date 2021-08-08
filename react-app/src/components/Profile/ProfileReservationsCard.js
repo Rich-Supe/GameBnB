@@ -119,14 +119,15 @@ function ProfileReservationsCard({user}) {
                         "slideShadows": true,
                         "shadowOffset": 60,
                         "shadowScale": 0.9,
-                    }} pagination={true}
+                    }} 
+                    // pagination={true}
                 >{slides}</Swiper>
         );
     }
     else {
         reservationSwiper = (
             <div className={styles.noReservations}>
-                <h3>No Reservations yet!</h3>
+                <h3 className={styles.noResHeader}>No Reservations yet!</h3>
                 <button className={styles.noneBtn} onClick={() => {history.push('/listings')}}>Lets Add Some!</button>
             </div>
         );
@@ -135,7 +136,7 @@ function ProfileReservationsCard({user}) {
     return (
         <div className={styles.profileListingsCard}>
             <h2 className={styles.listingHeader}>
-                Your Reservations
+                Your Reservations ({reservations.length})
                 <SimpleModal info={info}/>
                 </h2>
             <div className={styles.listingCarousel}>

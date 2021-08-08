@@ -18,12 +18,12 @@
     box-shadow: 8px 8px 8px 3px rgba(0, 0, 0, 0.87);
     height: 90%;
     width: 80%;
-    background-color: rgba(3, 3, 3, 0.164);
+    background-color: rgba(3, 3, 3, 0.377);
     color: white;
 }
 
 .reservationCard:hover {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
 }
 
