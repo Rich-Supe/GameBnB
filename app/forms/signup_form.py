@@ -19,6 +19,7 @@ def username_exists(form, field):
     if user:
         raise ValidationError('Username is already in use.')
 
+# def same_password
 
 class SignUpForm(FlaskForm):
     username = StringField(

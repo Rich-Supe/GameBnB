@@ -1,13 +1,15 @@
 
-.editReservation{
+/* .editReservation{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url("../../assets/img/splash-gif.gif");
     background-size: cover;
     height: 100%;
-}
+} */
 
 .header {
     color: white;
+    font-family: 'MedievalSharp', cursive;
+    text-shadow: 1px 1px 4px black;
 }

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 
 import styles from './Home.module.css'
-import banner from '../../assets/img/bannerGame.jpg'
+// import banner from '../../assets/img/splashBanner.png'
 import Footer from '../Footer'
 
 function Home(){
@@ -29,7 +29,10 @@ function Home(){
     return (
         <div className={styles.homePage}>
             <div className={styles.banner}>
-                <img src={banner} alt="banner" className={styles.bannerImg}/>
+                <div className={styles.bannerHeader}>
+                    <h1 className={styles.headerText}>Gamebnb</h1>
+                </div>
+                {/* <img src={banner} alt="banner" className={styles.bannerImg}/> */}
             </div>
             <div className={styles.explore}>
                 <h1 className={styles.exploreHeader}>Explore and Create New Worlds</h1>

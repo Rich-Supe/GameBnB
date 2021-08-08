@@ -70,7 +70,7 @@ function NewListing(){
             <h2 id="simple-modal-title">Images</h2>
                 <p id="simple-modal-description">
                     Upload your images to make your listing stand out! Users generally prefer clean pictures
-                    to give a good first impression. Upload up to 6 images! Well, you can do more but most users probably won't see!
+                    to give a good first impression. Upload up to 6 images! Accepts pdf, png, jpg, jpeg, gif, jfif, webp, svg, bmp, tiff and tif.
                 </p>
         </>
     );

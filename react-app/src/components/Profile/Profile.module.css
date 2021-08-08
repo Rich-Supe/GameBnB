@@ -134,7 +134,7 @@
 
 .swiperContainer {
     width: 100%;
-    height: 100%;
+    height: 110%;
 }
 
 .listingCarousel {
@@ -180,6 +180,13 @@
     justify-content: center;
     font-family: 'MedievalSharp', cursive;
     text-shadow: 1px 1px 4px black;
+}
+
+.noResHeader {
+    display: flex;
+    color: black !important;
+    font-family: 'Roboto', sans-serif !important;
+    text-shadow: none !important;
 }
 
 .listingButtons {

@@ -129,13 +129,14 @@ function ProfileListingsCard({user}) {
                         "slideShadows": true,
                         "shadowOffset": 60,
                         "shadowScale": 0.9
-                    }} pagination={true}
+                    }}
+                    // pagination={true}
                 >{slides}</Swiper>
         );
     } else {
         listingSwiper = (
             <div className={styles.noReservations}>
-                <h3>No Listings yet!</h3>
+                <h3 className={styles.noResHeader}>No Listings yet!</h3>
                 <button className={styles.noneBtn} onClick={() => {history.push(`/new-listing/${user.id}`)}}>Lets Create One!</button>
             </div>
         );
@@ -144,7 +145,7 @@ function ProfileListingsCard({user}) {
     return (
         <div className={styles.profileListingsCard}>
             <h2 className={styles.listingHeader}>
-                Your Listings
+                Your Listings ({listings.length})
                 <SimpleModal info={info}/>
             </h2>
             <div className={styles.listingCarousel}>

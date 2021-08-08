@@ -9,7 +9,7 @@ import DemoFormModal from '../Splash/DemoFormModal'
 
 import { useHistory } from 'react-router-dom'
 import styles from './Navbar.module.css'
-import icon from '../../assets/img/favicon4.jpg'
+import icon from '../../assets/img/newIcon.png'
 
 
 const NavBar = () => {
@@ -41,9 +41,9 @@ const NavBar = () => {
         {user ? (
             // <aside >
                 <ul className={styles.navUl}>
-                    <li className={styles.home}>
-                        <img src={icon} className={styles.icon} onClick={() => {home()}} alt="home"></img>
-                        {/* <p>Gamebnb</p> */}
+                    <li className={styles.home} onClick={() => {home()}}>
+                        <img src={icon} className={styles.icon} alt="home"></img>
+                        <p>Gamebnb</p>
                     </li>
                     <li>
                         <NavLink to={`/users/${userId}`} exact={true} className={styles.navlink} activeClassName='active'>

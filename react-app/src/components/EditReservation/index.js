@@ -19,9 +19,17 @@ function EditReservation(){
     }, [dispatch, reservationId]);
 
     if (reservation) {
+        const stylePage = {
+            backgroundImage: `url(${reservation.image})`,
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            height: '100%',
+        }
 
     return (
-        <div className={styles.editReservation}>
+        <div className={styles.editReservation} style={stylePage}>
             <h1 className={styles.header}>Edit your {reservation.name} reservation</h1>
             <EditReservationCard reservation={reservation}/>
         </div>
