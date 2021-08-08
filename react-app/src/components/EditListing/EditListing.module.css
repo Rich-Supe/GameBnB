@@ -12,6 +12,7 @@
 
 .header {
     color: white;
+    text-shadow: 0px 0px 10px #000;
 }
 
 .form {
@@ -22,12 +23,13 @@
     justify-content: space-around;
     border: 3px solid rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.842);
+    font-family: "Roboto", sans-serif;
 }
 
-.form > div {
+/* .form > div {
     margin: 5px;
 
-}
+} */
 
 .formGroup {
     display: flex;
@@ -99,7 +101,7 @@
 
 .formDescription textarea {
     width: 50%;
-    height: 50px;
+    height: 90px;
 }
 
 .formBtn {

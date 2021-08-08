@@ -13,6 +13,8 @@ const SignupForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   // const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  console.log(errors);
+  console.log(password, repeatPassword);
 
   const host = false;
 
@@ -24,6 +26,9 @@ const SignupForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+        console.log('this isnt working...')
+        setErrors(['Passwords do not match!']);
     }
   };
 
