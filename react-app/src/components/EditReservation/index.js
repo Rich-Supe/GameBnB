@@ -12,7 +12,7 @@ function EditReservation(){
     // const history = useHistory();
     const { reservationId } = useParams();
     const reservation = useSelector((state) => state.reservation[reservationId]);
-    console.log(reservation);
+    // console.log(reservation);
 
     useEffect(() => {
         dispatch(getReservation(reservationId));

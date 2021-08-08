@@ -66,9 +66,10 @@
 }
 
 .icon {
-    height: 40px;
-    width: 50px;
-    margin-top: 5px;
+    height: 30px;
+    width: 40px;
+    margin-top: 10px;
+    margin-right: 8px;
 }
 
 .home:hover {

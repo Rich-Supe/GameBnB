@@ -9,7 +9,7 @@ import DemoFormModal from '../Splash/DemoFormModal'
 
 import { useHistory } from 'react-router-dom'
 import styles from './Navbar.module.css'
-import icon from '../../assets/img/favicon4.png'
+import icon from '../../assets/img/newIcon.png'
 
 
 const NavBar = () => {
