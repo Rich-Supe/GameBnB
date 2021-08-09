@@ -22,12 +22,10 @@ const SignupForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       const data = await dispatch(signUp(name, username, email, password, host));
-    //   console.log(data);
       if (data) {
         setErrors(data)
       }
     } else {
-        console.log('this isnt working...')
         setErrors(['Passwords do not match!']);
     }
   };

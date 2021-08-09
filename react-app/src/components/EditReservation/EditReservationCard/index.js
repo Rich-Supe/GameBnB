@@ -10,7 +10,7 @@ import styles from './EditReservationCard.module.css';
 
 
 function EditReservationCard({reservation}) {
-    console.log("reservation from edit:", reservation)
+    // console.log("reservation from edit:", reservation)
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
