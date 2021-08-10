@@ -45,7 +45,7 @@
 ### Redux(with flux architecture): 
 ##### Similar to Docker, Redux can be easily replaced with other methods such as modern react context. My choice to go with Redux to manage our application's state is simply to continue to learn/practice how to create and maintain scalable applications
 
-### Google Maps Api ( Currently down while building to prevent needless api calls.)
+### Google Maps Api ( Currently down while building to prevent needless api calls.):
 * All current residences are in Tokyo, but feel free to place yours anywhere! 
 
 ### AWS S3
