@@ -7,6 +7,7 @@ import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
+import bkgImgNone from '../../assets/img/newIcon.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -41,8 +42,15 @@ function ProfileListingsCard({user}) {
     const slides = [];
     let i = 0;
     listings?.forEach((listing) => {
+        console.log(listing);
         const listingId = listing.id;
-        const bkgImage = listing.images[0].image
+
+        let bkgImage;
+        if (listing.images && listing.images.length > 0) {
+            bkgImage = listing.images[0].image
+        } else {  
+            bkgImage = bkgImgNone;
+        }
         const styles = {
             // backgroundColor: 'black',
             backgroundImage: 'url(' + bkgImage + ')',
@@ -59,16 +67,25 @@ function ProfileListingsCard({user}) {
 
         const btnStyles = {
             display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             justifyContent: 'space-between',
             color: 'white',
             cursor: 'pointer',
             fontSize: '1.3em',
-            margin: '30px 5px',
+            margin: '30px',
         }
 
         const btns = {
-            margin: '60px',
+            // margin: '60px',
             fontSize: '1.4em',
+        }
+
+        const listingInfo = {
+            color: 'white',
+            fontSize: '1.2em',
+            textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+            margin: '20px 20px',
         }
 
         slides.push(
@@ -76,6 +93,17 @@ function ProfileListingsCard({user}) {
             <div className={styles.slideContent} style={styles}>
                 <div className={styles.listingHeader}>
                     <h3 className={styles.listingName}>{listing.name}</h3>
+                </div>
+                <div className={styles.listingInfo} style={listingInfo}>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Price/Day: {listing.price}</div>
+                    </div>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Total Reviews: {listing.reviews.length}</div>
+                    </div>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Total Images: {listing.images.length}</div>
+                    </div>
                 </div>
                 <div className={styles.listingButtons} style={btnStyles}>
                     <div className={styles.deleteButton} onClick={() => {deleteListingFunction(listingId)}}>
