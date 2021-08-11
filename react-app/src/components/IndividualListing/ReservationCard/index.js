@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createReservation } from '../../../store/reservation';
+import bkgImgNone from '../../../assets/img/newIcon.png'
 
 import DateTimeRangePicker from '@wojtekmaj/react-datetimerange-picker';
 
@@ -24,8 +25,13 @@ function ReservationCard({listing}) {
     let daysReserved;
     let totalPrice;
     // console.log("image from reservations:", listing.images[0].image)
-    const image = listing.images[0].image;
 
+    let image
+    if (listing.images[0]) {
+        image = listing.images[0].image;
+    } else {
+        image = bkgImgNone;
+    }
 
     if (value[0] && value[1]) {
         startDay = value[0].getDate();

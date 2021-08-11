@@ -7,6 +7,7 @@ import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
+import bkgImgNone from '../../assets/img/newIcon.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -41,8 +42,15 @@ function ProfileReservationsCard({user}) {
     const slides = [];
     let i = 0;
     reservations?.forEach((reservation) => {
+        // console.log(reservation);
         const reservationId = reservation.id;
-        const bkgImage = reservation.image;
+        let bkgImage;
+        if (reservation.image) {
+            bkgImage = reservation.image
+        } else {  
+            bkgImage = bkgImgNone;
+        }
+
         const styles = {
             // backgroundColor: 'black',
             backgroundImage: 'url(' + bkgImage + ')',
@@ -59,16 +67,28 @@ function ProfileReservationsCard({user}) {
 
         const btnStyles = {
             display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
             justifyContent: 'space-between',
             color: 'white',
             cursor: 'pointer',
             fontSize: '1.3em',
-            margin: '30px 5px',
+            margin: '30px',
         }
 
         const btns = {
-            margin: '60px',
+            // margin: '20px, 50px, 10px, 50px',
             fontSize: '1.4em',
+        }
+
+        const listingInfo = {
+            color: 'white',
+            fontSize: '1.2em',
+            textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+            margin: '20px 20px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
         }
 
         slides.push(
@@ -76,6 +96,17 @@ function ProfileReservationsCard({user}) {
             <div className={styles.slideContent} style={styles}>
                 <div className={styles.listingHeader}>
                     <h3 className={styles.listingName}>{reservation.name}</h3>
+                </div>
+                <div className={styles.listingInfo} style={listingInfo}>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Days: {reservation.days}</div>
+                    </div>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Guests: {reservation.guests}</div>
+                    </div>
+                    <div className={styles.listingInfoRow}>
+                        <div className={styles.listingInfoRowLabel}>Price: ${reservation.price}.00</div>
+                    </div>
                 </div>
                 <div className={styles.listingButtons} style={btnStyles}>
                     <div className={styles.deleteButton} onClick={() => {deleteReservationFunction(reservationId)}}>
