@@ -130,9 +130,18 @@ function ProfileListingsCard({user}) {
 
     let listingSwiper;
 
+    const infoHeaderStyles = {
+        fontSize: '2em',
+        // textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+        borderBottom: '1px solid black',
+        padding: '5px', 
+        marginBottom: '5px',
+        marginTop: '5px',
+    }
+
     const info = (
     <>
-        <h2 id="simple-modal-title">Listings</h2>
+        <h2 id="simple-modal-title" style={infoHeaderStyles}>Listings</h2>
             <p id="simple-modal-description">
                 These are all of your listings! Click the delete button to remove them,
                 or click the edit button to edit them. If you want to add another listing for others to expolore

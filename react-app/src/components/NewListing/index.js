@@ -83,9 +83,18 @@ function NewListing(){
             }
     };
 
+    const infoHeaderStyles = {
+        fontSize: '2em',
+        // textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+        padding: '5px', 
+        marginBottom: '5px',
+        marginTop: '5px',
+        borderBottom: '1px solid black',
+    }
+
     const info = (
         <>
-            <h2 id="simple-modal-title">Images</h2>
+            <h2 id="simple-modal-title" style={infoHeaderStyles}>Images</h2>
                 <p id="simple-modal-description">
                     Upload your images to make your listing stand out! Users generally prefer clean pictures
                     to give a good first impression. Upload up to 6 images! Accepts pdf, png, jpg, jpeg, gif, jfif, webp, svg, bmp, tiff and tif.

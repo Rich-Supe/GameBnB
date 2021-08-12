@@ -58,7 +58,7 @@
     transition: color .4s ease;
 }
 
-.footer__socials i:hover {
+.footer__socials li:hover {
     border-bottom: 3px solid white;
 }
 
@@ -93,8 +93,8 @@
 }
 
 .gitIcon:hover {
-    color:rgb(0, 0, 0);
-    background-color: white;
+    /* color:rgb(0, 0, 0);
+    background-color: white; */
 }
 
 .twitIcon:hover {
@@ -129,4 +129,9 @@
 .aTwit:visited {
     text-decoration: none;
     color: rgb(250, 253, 255);
+}
+
+.aAngel:visited {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }

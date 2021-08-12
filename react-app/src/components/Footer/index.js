@@ -2,7 +2,7 @@
 import styles from './Footer.module.css'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { FiTwitter } from 'react-icons/fi'
-import { FaGithubAlt } from 'react-icons/fa'
+import { FaGithubAlt, FaAngellist } from 'react-icons/fa'
 
 function Footer(){
 
@@ -28,10 +28,11 @@ function Footer(){
                             <FiTwitter className={styles.twitIcon}/>
                         </a>
                     </li>
-                    {/* <li className={styles.liPort}>
-                        <i className="fas fa-grin-beam-sweat"></i>
-                        Portfolio
-                    </li> */}
+                    <li className={styles.liPort}>
+                        <a className={styles.aAngel} href="https://angel.co/u/rich-supe">
+                            <FaAngellist className={styles.angelIcon}/>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div className={styles.footer__bottom}>
