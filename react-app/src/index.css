@@ -10,6 +10,9 @@ body {
     margin: 0;
     font-size: 1.3em;
     overflow: hidden;
+    -moz-transform: scale(0.9, 0.9);
+    zoom: 0.9;
+    zoom: 90%;
 }
 
 #root {

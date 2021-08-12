@@ -59,7 +59,7 @@ function ProfileReservationsCard({user}) {
             width: '98%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-start',
+            justifyContent: 'space-between',
             alignItems: 'center',
             border: '3px ridge #02C8A7',
             boxShadow: '0px 0px 10px 3px #02C8A7',
@@ -73,7 +73,7 @@ function ProfileReservationsCard({user}) {
             color: 'white',
             cursor: 'pointer',
             fontSize: '1.3em',
-            margin: '30px',
+            // margin: '30px',
         }
 
         const btns = {
@@ -122,9 +122,18 @@ function ProfileReservationsCard({user}) {
         i++;
     });
 
+    const infoHeaderStyles = {
+        fontSize: '2em',
+        // textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+        padding: '5px', 
+        marginBottom: '5px',
+        marginTop: '5px',
+        borderBottom: '1px solid black',
+    }
+
     const info = (
         <>
-            <h2 id="simple-modal-title">Reservations</h2>
+            <h2 id="simple-modal-title" style={infoHeaderStyles}>Reservations</h2>
                 <p id="simple-modal-description">
                     These are all of your Reservations! Click the delete button to remove them,
                     or click the edit button to edit them. If you want to add another reservation

@@ -12,7 +12,7 @@ function EditListing(){
     const { listingId } = useParams();
     const listing = useSelector( (state) => state.listing[listingId]);
     // console.log("listing:", listing)
-
+    const [errors, setErrors] = useState([]);
     const [ name, setName ] = useState(listing.name);
     const [ description, setDescription ] = useState(listing.description);
     const [ price, setPrice ] = useState(listing.price);
@@ -69,9 +69,18 @@ function EditListing(){
         }
     };
 
+    const infoHeaderStyles = {
+        fontSize: '2em',
+        // textShadow: '2px 1px 9px rgba(0, 0, 0, 1)',
+        padding: '5px', 
+        marginBottom: '5px',
+        marginTop: '5px',
+        borderBottom: '1px solid black',
+    }
+
     const info = (
         <>
-            <h2 id="simple-modal-title">Images</h2>
+            <h2 id="simple-modal-title" style={infoHeaderStyles}>Images</h2>
                 <p id="simple-modal-description">
                     Upload your images to make your listing stand out! Users generally prefer clean pictures
                     to give a good first impression. Upload up to 6 images! Accepts pdf, png, jpg, jpeg, gif, jfif, webp, svg, bmp, tiff and tif.
@@ -83,56 +92,63 @@ function EditListing(){
         <div className={styles.newListingPage}>
             <h1 className={styles.header}>Edit {listing.name}</h1>
             <form className={styles.form} onSubmit={onSubmit}>
-                <div className={styles.formName}>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" className={styles.formInput} id="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                </div>
-                <div className={styles.formNums}>
-                    <div className={styles.formPrice}>
-                    <label htmlFor="price">Price:</label>
-                    <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} />
+                <div className={styles.formGroup}>
+                <div className={styles.signupFormErrors}>
+                    {errors.map((error, ind) => (
+                    <div key={ind} className={styles.errors}>{error}</div>
+                    ))}
                     </div>
-                    <div className={styles.formPrice}>
-                    <label htmlFor="sqFt">Square Foot:</label>
-                    <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} />
+                    <div className={styles.formName}>
+                        <label htmlFor="name">Name:</label>
+                        <input type="text" className={styles.formInput} id="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
-                </div>
+                    <div className={styles.formNums}>
+                        <div className={styles.formPrice}>
+                        <label htmlFor="price">Price:</label>
+                        <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} />
+                        </div>
+                        <div className={styles.formPrice}>
+                        <label htmlFor="sqFt">Square Foot:</label>
+                        <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} />
+                        </div>
+                    </div>
 
-                <div className={styles.formNums}>
-                    <div className={styles.formPrice}>
-                    <label htmlFor="totalBedrooms">Total Bedrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} />
+                    <div className={styles.formNums}>
+                        <div className={styles.formPrice}>
+                        <label htmlFor="totalBedrooms">Total Bedrooms:</label>
+                        <input type="number" className={styles.formInput} id="totalBedrooms" placeholder="Total Bedrooms" value={totalBedrooms} onChange={(e) => setTotalBedrooms(e.target.value)} />
+                        </div>
+                    {/* </div>
+                    <div className={styles.formGroup}> */}
+                        <div className={styles.formPrice}>
+                        <label htmlFor="totalBathrooms">Total Bathrooms:</label>
+                        <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} />
+                        </div>
                     </div>
-                {/* </div>
-                <div className={styles.formGroup}> */}
-                    <div className={styles.formPrice}>
-                    <label htmlFor="totalBathrooms">Total Bathrooms:</label>
-                    <input type="number" className={styles.formInput} id="totalBathrooms" placeholder="Total Bathrooms" value={totalBathrooms} onChange={(e) => setTotalBathrooms(e.target.value)} />
+                    <div className={styles.formCheck}>
+                        <div>
+                        <label htmlFor="hasKitchen">Has Kitchen:</label>
+                        <input type="checkbox" className={styles.formInput} id="hasKitchen" placeholder="Has Kitchen" value={hasKitchen} onChange={() => setHasKitchen(!hasKitchen)} />
+                        </div>
+                        <div>
+                        <label htmlFor="hasInternet">Has Internet:</label>
+                        <input type="checkbox" className={styles.formInput} id="hasInternet" placeholder="Has Internet" value={hasInternet} onChange={() => setHasInternet(!hasInternet)} />
+                        </div>
                     </div>
-                </div>
-                <div className={styles.formCheck}>
-                    <div>
-                    <label htmlFor="hasKitchen">Has Kitchen:</label>
-                    <input type="checkbox" className={styles.formInput} id="hasKitchen" placeholder="Has Kitchen" value={hasKitchen} onChange={() => setHasKitchen(!hasKitchen)} />
+                    <div className={styles.formDescription}>
+                        <label htmlFor="description">Description:</label>
+                        <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
-                    <div>
-                    <label htmlFor="hasInternet">Has Internet:</label>
-                    <input type="checkbox" className={styles.formInput} id="hasInternet" placeholder="Has Internet" value={hasInternet} onChange={() => setHasInternet(!hasInternet)} />
+                    <div className={styles.formImg}>
+                        <label htmlFor="images">Upload more images for your guests?</label>
+                        <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
+                        <SimpleModal info={info}/>
                     </div>
+                    <div className={styles.formBtn}>
+                        <button type="submit" className={styles.button}>Submit</button>
+                    </div>
+                    {(imageLoading)&& <p>Loading...</p>}
                 </div>
-                <div className={styles.formDescription}>
-                    <label htmlFor="description">Description:</label>
-                    <textarea className={styles.formInput} id="description" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-                </div>
-                <div className={styles.formImg}>
-                    <label htmlFor="images">Upload more images for your guests?</label>
-                    <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
-                    <SimpleModal info={info}/>
-                </div>
-                <div className={styles.formBtn}>
-                    <button type="submit" className={styles.button}>Submit</button>
-                </div>
-                {(imageLoading)&& <p>Loading...</p>}
             </form>
         </div>
     )

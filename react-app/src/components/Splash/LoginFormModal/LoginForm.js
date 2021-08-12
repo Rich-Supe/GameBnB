@@ -35,7 +35,7 @@ const LoginForm = () => {
     <form className={styles.loginForm} onSubmit={onLogin}>
       <div className={styles.loginFormErrors}>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div key={ind} className={styles.errors}>{error}</div>
         ))}
       </div>
       <h2 className={styles.header}>
