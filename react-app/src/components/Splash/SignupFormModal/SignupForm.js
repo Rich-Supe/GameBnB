@@ -13,10 +13,10 @@ const SignupForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   // const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  console.log(errors);
-  console.log(password, repeatPassword);
+//   console.log(errors);
+//   console.log(password, repeatPassword);
 
-  const host = false;
+  const host = true;
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ const SignupForm = () => {
     <form className={styles.signupForm} onSubmit={onSignUp}>
       <div className={styles.signupFormErrors}>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div key={ind} className={styles.errors}>{error}</div>
         ))}
       </div>
       <h2 className={styles.header}>

@@ -21,6 +21,12 @@
     /* padding: 10px; */
 }
 
+.errors {
+    font-size: 80%;
+    color: #ff0000;
+    margin-left: 2em;
+}
+
 .header {
     margin: 0px;
     justify-self: flex-start;

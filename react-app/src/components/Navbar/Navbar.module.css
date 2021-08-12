@@ -2,7 +2,8 @@
 .navbarContainer {
     width: 100%;
     background-color: rgb(255, 255, 255);
-    min-height: 6.5%;
+    min-height: 7.0%;
+    height: 55px;
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -80,7 +81,7 @@
 }
 
 .navlink {
-    /* text-decoration: none; */
+    text-decoration: none;
     color: #F53240;
     /* border-bottom: 1px solid rgb(12, 8, 8); */
 }
@@ -96,8 +97,15 @@
 }
 
 .navP {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-top: 10px;
+    /* text-decoration: none; */
+}
+
+.navP:hover {
+    color: #02C8A7;
+    cursor: pointer;
+    /* border-bottom: 1px solid #F53240; */
 }
 
 .logoutBtnDiv {
