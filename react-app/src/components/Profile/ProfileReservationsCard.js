@@ -59,7 +59,7 @@ function ProfileReservationsCard({user}) {
             width: '98%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-start',
+            justifyContent: 'space-between',
             alignItems: 'center',
             border: '3px ridge #02C8A7',
             boxShadow: '0px 0px 10px 3px #02C8A7',
@@ -73,7 +73,7 @@ function ProfileReservationsCard({user}) {
             color: 'white',
             cursor: 'pointer',
             fontSize: '1.3em',
-            margin: '30px',
+            // margin: '30px',
         }
 
         const btns = {

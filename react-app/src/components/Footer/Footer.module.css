@@ -68,7 +68,7 @@
 
 .footer__bottom {
     background: rgb(2, 2, 2,);
-    width: 100vw;
+    width: 100%;
     text-align: center;
     max-height: 20px;
 }
@@ -78,6 +78,7 @@
     word-spacing: 2px;
     text-transform: capitalize;
     margin: 0;
+    width: 100%;
 }
 
 .footer__bottom span{
@@ -87,8 +88,8 @@
 }
 
 .linkedIcon:hover {
-    color:rgb(87, 160, 255);
-    background-color: white;
+    color:rgb(56, 149, 255);
+    /* background-color: white; */
 }
 
 .gitIcon:hover {
@@ -98,7 +99,7 @@
 
 .twitIcon:hover {
     color:rgb(42, 152, 255);
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
 .aLink:visited {
