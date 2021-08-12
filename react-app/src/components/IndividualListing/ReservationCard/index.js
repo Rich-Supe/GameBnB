@@ -25,6 +25,7 @@ function ReservationCard({listing}) {
     let daysReserved;
     let totalPrice;
     // console.log("image from reservations:", listing.images[0].image)
+
     let image
     if (listing.images[0]) {
         image = listing.images[0].image;
@@ -65,7 +66,7 @@ function ReservationCard({listing}) {
             image: image,
         }
 
-        console.log("Reservation:", payload)
+        // console.log("Reservation:", payload)
         dispatch(createReservation(payload));
         // if (reservation) {
         history.push(`/users/${user.id}`)
