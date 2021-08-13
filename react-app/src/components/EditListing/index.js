@@ -108,7 +108,7 @@ function EditListing(){
                         <input type="number" className={styles.formInput} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} />
                         </div>
                         <div className={styles.formPrice}>
-                        <label htmlFor="sqFt">Square Foot:</label>
+                        <label htmlFor="sqFt">Square Feet:</label>
                         <input type="number" className={styles.formInput} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} />
                         </div>
                     </div>

@@ -123,7 +123,7 @@ function NewListing(){
                     <input type="number" className={styles.formInputNum} id="price" placeholder="Price" value={price} onChange={(e) => parseInt(setPrice(e.target.value), 10)} required/>
                     </div>
                     <div className={styles.formPrice}>
-                    <label htmlFor="sqFt">Square Foot:</label>
+                    <label htmlFor="sqFt">Square Feet:</label>
                     <input type="number" className={styles.formInputNum} id="sqFt" placeholder="Square Foot" value={sqFt} onChange={(e) => setSqFt(e.target.value)} required/>
                     </div>
                 </div>
