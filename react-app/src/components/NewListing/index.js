@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { createListing } from '../../store/listing'
 import styles from './NewListing.module.css'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
+import loadingGif from '../../assets/img/loadingGif.gif'
 
 function NewListing(){
     const history = useHistory();
@@ -157,10 +158,15 @@ function NewListing(){
                     <input type="file" className={styles.formInput} id="images" placeholder="Images" onChange={addImage} multiple/>
                     <SimpleModal info={info}/>
                 </div>
-                <div className={styles.formBtn}>
-                    <button type="submit" className={styles.button}>Submit</button>
-                </div>
-                {(imageLoading)&& <p>Loading...</p>}
+                <div className={styles.formBtns}>
+                    <div className={styles.formBtn}>
+                        <button className={styles.buttonC} onClick={() => history.push('/home')}>Cancel</button>
+                    </div>
+                    <div className={styles.formBtn}>
+                        <button type="submit" className={styles.button}>Submit</button>
+                    </div>
+                    </div>
+                    {(imageLoading)&& <img src={loadingGif} alt="Loading" className={styles.loading}></img>}
                 </div>
             </form>
         </div>

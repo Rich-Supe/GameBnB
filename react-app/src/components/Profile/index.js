@@ -40,7 +40,8 @@ function Profile(){
                         <h2>{user.username}</h2>
                     </div>
                     <div className={styles.profileBio}>
-                        <p className={styles.bio}>{user.biography}</p>
+                        {/* <p className={styles.bio}>{user.biography}</p> */}
+                        <p className={styles.bio}>Welcome to GameBnb! Grab your listing cube on the left or reservations on the right to filter through them and edit or delete them! Navigate to the listings page and plan your next exciting adventure! If you would rather host someone elses adventure, click on Hosting in the navbar to get started! Good luck and have fun!</p>
                     </div>
                 </div>
 

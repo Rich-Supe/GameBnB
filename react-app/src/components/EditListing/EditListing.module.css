@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-image: url('../../assets/img/splash-castle.jpg');
+    background-image: url('../../assets/img/BKG3.jpg');
     background-size: cover;
 }
 
@@ -18,7 +18,7 @@
 
 .form {
     height: 70%;
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +120,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 120%;
+    width: 130%;
     align-self: center;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .formDescription textarea {
-    width: 50%;
+    width: 70%;
     height: 90px;
 }
 
@@ -148,6 +148,12 @@
     /* margin-top: 100px; */
     width: 100%;
     margin: 0px;
+}
+
+.formBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
 }
 
 
@@ -165,6 +171,39 @@
     margin-top: 20px;
     margin-bottom: 0px;
     /* padding-bottom: 0px; */
-    width: 30%;
+    width: 40%;
 }
 
+.button:hover {
+    background-color: #55d35a;
+}
+
+.buttonC {
+    background-color: #e43535;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    /* padding-bottom: 0px; */
+    width: 40%;
+}
+
+.buttonC:hover {
+    background-color: #ff1f1f;
+}
+
+.loading {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
