@@ -71,8 +71,9 @@
 }
 
 .exploreHeader {
-    width: 50%;
+    width: 40%;
     height: 10%;
+    padding-left: 200px;
     /* border-bottom: solid 1px #000000; */
     color: #000000;
     text-shadow: 1px 1px 1px #969696;
