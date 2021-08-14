@@ -79,6 +79,14 @@ function ProfileListingsCard({user}) {
         const btns = {
             // margin: '60px',
             fontSize: '1.4em',
+            // border: '1px solid black',
+            color: '#F53240'
+        }
+
+        const btns2 = {
+            // margin: '60px',
+            fontSize: '1.4em',
+            // border: '1px solid black',
         }
 
         const listingInfo = {
@@ -110,7 +118,7 @@ function ProfileListingsCard({user}) {
                         <MdDeleteForever className={styles.deleteIcon} style={btns}/>
                     </div>
                     <div className={styles.editButton} onClick={() => {history.push(`/edit-listing/${listingId}`)}}>
-                        <BiEditAlt className={styles.editIcon} style={btns} onClick={() => {history.push(`/edit-listing/${listingId}`)}}/>
+                        <BiEditAlt className={styles.editIcon} style={btns2} onClick={() => {history.push(`/edit-listing/${listingId}`)}}/>
                     </div>
                 </div>
             </div>
