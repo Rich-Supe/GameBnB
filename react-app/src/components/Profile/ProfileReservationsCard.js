@@ -79,6 +79,13 @@ function ProfileReservationsCard({user}) {
         const btns = {
             // margin: '20px, 50px, 10px, 50px',
             fontSize: '1.4em',
+            color: '#F53240'
+        }
+
+        const btns2 = {
+            // margin: '60px',
+            fontSize: '1.4em',
+            // border: '1px solid black',
         }
 
         const listingInfo = {
@@ -113,7 +120,7 @@ function ProfileReservationsCard({user}) {
                         <MdDeleteForever className={styles.deleteIcon} style={btns}/>
                     </div>
                     <div className={styles.editButton} onClick={() => {history.push(`/edit-reservation/${reservationId}`)}}>
-                        <BiEditAlt className={styles.editIcon} style={btns} onClick={() => {history.push(`/edit-reservation/${reservationId}`)}}/>
+                        <BiEditAlt className={styles.editIcon} style={btns2} onClick={() => {history.push(`/edit-reservation/${reservationId}`)}}/>
                     </div>
                 </div>
             </div>
