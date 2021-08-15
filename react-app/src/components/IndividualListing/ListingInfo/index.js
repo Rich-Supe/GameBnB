@@ -13,7 +13,7 @@ function ListingInfo({listing}){
         <div className={styles.listingInfo}>
             <div className={styles.listingInfoCard}>
                 <div className={styles.header}>
-                    <h2>Listing Card</h2>
+                    <h2>Info</h2>
                 </div>
                 <div className={styles.basicInfo}>
                     <ul className={styles.infoList}>
