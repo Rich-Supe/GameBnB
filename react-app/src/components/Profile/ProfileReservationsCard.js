@@ -7,7 +7,7 @@ import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
-import bkgImgNone from '../../assets/img/newIcon.png'
+import bkgImgNone from '../../assets/img/BKGBlank.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -45,8 +45,9 @@ function ProfileReservationsCard({user}) {
         // console.log(reservation);
         const reservationId = reservation.id;
         let bkgImage;
-        if (reservation.image) {
+        if (reservation.image && reservation.image.length > 0) {
             bkgImage = reservation.image
+            console.log("bkgImage:", bkgImage)
         } else {  
             bkgImage = bkgImgNone;
         }
@@ -79,7 +80,7 @@ function ProfileReservationsCard({user}) {
         const btns = {
             // margin: '20px, 50px, 10px, 50px',
             fontSize: '1.4em',
-            color: '#F53240'
+            color: 'white'
         }
 
         const btns2 = {
@@ -142,7 +143,7 @@ function ProfileReservationsCard({user}) {
         <>
             <h2 id="simple-modal-title" style={infoHeaderStyles}>Reservations</h2>
                 <p id="simple-modal-description">
-                    These are all of your Reservations! Click the delete button to remove them,
+                    These are all of your Reservations! Drag the cube from left to right to view them! Click the delete button to remove them,
                     or click the edit button to edit them. If you want to add another reservation
                     go to the listings tab and explore all of the options!
                 </p>
