@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createReservation } from '../../../store/reservation';
-import bkgImgNone from '../../../assets/img/newIcon.png'
+import bkgImgNone from '../../../assets/img/BKGBlank.jpg'
 
 import DateTimeRangePicker from '@wojtekmaj/react-datetimerange-picker';
 

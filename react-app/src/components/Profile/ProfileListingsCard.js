@@ -7,7 +7,7 @@ import styles from './Profile.module.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import SimpleModal from '../../assets/javascript/SimpleModal/SimpleModal';
-import bkgImgNone from '../../assets/img/newIcon.png'
+import bkgImgNone from '../../assets/img/BKGBlank.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -80,7 +80,7 @@ function ProfileListingsCard({user}) {
             // margin: '60px',
             fontSize: '1.4em',
             // border: '1px solid black',
-            color: '#F53240'
+            color: 'white'
         }
 
         const btns2 = {
@@ -151,8 +151,8 @@ function ProfileListingsCard({user}) {
     <>
         <h2 id="simple-modal-title" style={infoHeaderStyles}>Listings</h2>
             <p id="simple-modal-description">
-                These are all of your listings! Click the delete button to remove them,
-                or click the edit button to edit them. If you want to add another listing for others to expolore
+                These are all of your listings! Drag the cube from left to right to see them, Click the delete button to remove them,
+                or click the edit button to edit them. If you want to add another listing for others to explore
                 click the hosting tab!
             </p>
     </>
