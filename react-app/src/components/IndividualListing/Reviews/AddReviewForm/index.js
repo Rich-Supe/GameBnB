@@ -9,6 +9,7 @@ import styles from './AddReviewForm.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import loadingGif from '../../../../assets/img/loadingGif.gif'
 
 function AddReviewForm() {
     const user = useSelector(state => state.session.user);
@@ -112,7 +113,9 @@ function AddReviewForm() {
         </div>
     )
     } else {
-        return <div>Loading...</div>
+        return <>
+            <img src={loadingGif} alt="loading" className={styles.loading}/>
+        </>
     }
 }
 
