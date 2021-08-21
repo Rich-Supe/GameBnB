@@ -61,7 +61,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0.790651294697
     background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0.7682423311121324) 85%, rgba(38,79,26,0.6365896700477065) 100%);
     margin: 0px;
-    box-shadow: 2px 3px 20px #eefd1d;
+    /* box-shadow: 2px 3px 2px #eefd1d; */
     /* color: #F53240; */
 }
 
