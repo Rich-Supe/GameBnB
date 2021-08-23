@@ -57,4 +57,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* background-image: url('../../assets/img/BKG14.png');
+    background-size: cover; */
 }
