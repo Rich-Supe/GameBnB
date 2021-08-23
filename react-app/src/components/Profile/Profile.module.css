@@ -5,7 +5,10 @@
     justify-content: space-around;
     height: 100%;
     width: 100%;
-    /* background-color: rgba(255, 255, 255, 0.342); */
+    background-image: url('../../assets/img/BKG13.jpeg');
+    background-size: cover;
+    background-position: bottom;
+    /* background-color: rgba(117, 107, 107, 0.342); */
 }
 
 .profileCard {
@@ -15,6 +18,7 @@
     height: 75%;
     margin-top: 80px;
     /* border: 2px solid #000000; */
+    background-color: rgba(255, 255, 255, 0.842);
     border-radius: 15px;
     box-shadow: 5px 10px 20px 10px #00000063;
 }
@@ -115,6 +119,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    /* color: white; */
     /* border: 1px solid #000000; */
     /* margin-right: 50px; */
 }
@@ -128,7 +133,8 @@
     width: 80%;
     padding-left: 25px;
     font-family: 'Roboto', cursive;
-    text-shadow: 2px 1px 9px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 1px 9px rgba(0, 0, 0, 0.781);
+    color: rgb(255, 255, 255);
     /* border-bottom: 1px solid #00000017; */
 }
 
