@@ -6,6 +6,8 @@
     justify-content: center;
     font-family: 'Roboto';
     min-height: 1000px;
+    /* background-color: black; */
+    /* background-image: url('../../../assets/img/BKGBlank.jpg'); */
 }
 
 .reviewsBox {
