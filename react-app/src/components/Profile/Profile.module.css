@@ -160,14 +160,14 @@
     overflow: hidden;
 } */
 
-.slideL {
+/* .slideL { */
     /* border: 10px solid rgb(180, 14, 14) */
     /* display: flex;
     justify-content: center;
     box-shadow: 1px 1px 2px 1px #02c8a780;
     background-color: rgba(0, 255, 255, 0.13);
     border: 2px solid #7cdbd563; */
-}
+/* } */
 
 /* .slideR {
     display: flex;
@@ -192,7 +192,7 @@
 
 .noResHeader {
     display: flex;
-    color: black !important;
+    color: rgb(255, 247, 247) !important;
     font-family: 'Roboto', sans-serif !important;
     text-shadow: none !important;
 }

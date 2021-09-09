@@ -1,8 +1,8 @@
 
 .listingsPage {
     display: flex;
-    flex-direction: column;
-    justify-self: flex-start;
+    /* flex-direction: column; */
+    justify-self: center;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -11,10 +11,10 @@
 }
 
 .mapsComponent {
-    margin-top: 50px;
+    margin: 50px;
     height: 40%;
     width: 80%;
-    background-image: url('../../assets/img/mapImg.png');
+    background-image: url('../../assets/img/banner1.jpg');
     background-size: cover;
     box-shadow: 0px 0px 16px 5px #7CDBD5;
 }

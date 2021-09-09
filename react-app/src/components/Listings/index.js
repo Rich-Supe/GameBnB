@@ -11,9 +11,9 @@ function Listings() {
     return (
         <div className={styles.listingsPage}>
             {/* <h1>Listings</h1> */}
-            <div className={styles.mapsComponent}>
+            {/* <div className={styles.mapsComponent}>
                 <Maps />
-            </div>
+            </div> */}
             <div className={styles.listingsComponent}>
                 <ListingCarousel />
             </div>
