@@ -1,5 +1,5 @@
 # Welcome to Gamebnb!
-### https://game-bnb.herokuapp.com/
+# [Live](https://game-bnb.herokuapp.com/)
 ## An Airbnb with a creative twist, fantasy rentals only! Make your first reservation today, or build your own listing for others to stay!
 
 ## For a deeper dive, check the following:
@@ -44,9 +44,6 @@
 
 ### Redux(with flux architecture): 
 ##### Similar to Docker, Redux can be easily replaced with other methods such as modern react context. My choice to go with Redux to manage our application's state is simply to continue to learn/practice how to create and maintain scalable applications
-
-### Google Maps Api ( Currently down while building to prevent needless api calls.):
-* All current residences are in Tokyo, but feel free to place yours anywhere! 
 
 ### AWS S3
 * I use S3 buckets primarily for storing all of the images that users add to their listings and their profiles.
