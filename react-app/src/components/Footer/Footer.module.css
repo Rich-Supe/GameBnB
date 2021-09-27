@@ -17,6 +17,7 @@
     flex-direction: column;
     text-align: center;
     height: 55px;
+    color: white;
 }
 
 .footer__content header {
@@ -25,6 +26,7 @@
     text-transform: capitalize;
     margin-top: none;
     /* line-height: 3rem; */
+    color: white;
 }
 
 .footer__content p {
@@ -42,10 +44,12 @@
     list-style-type: none;
     font-size: 1.8em;
     width: 30%;
+    color: white;
 }
 
 .footer__socials li {
     margin: 0 10px;
+    color: white
 }
 
 .footer_socials a {
@@ -56,15 +60,16 @@
 .footer__socials a i {
     font-size: 1.5 rem;
     transition: color .4s ease;
+    color: white;
 }
 
 .footer__socials li:hover {
     border-bottom: 3px solid white;
 }
 
-.footer_socials a:hover i{
+/* .footer_socials a:hover i{
     color: aqua;
-}
+} */
 
 .footer__bottom {
     background: rgb(2, 2, 2,);
@@ -90,6 +95,14 @@
 .linkedIcon:hover {
     color:rgb(56, 149, 255);
     /* background-color: white; */
+}
+
+.portIcon {
+    color: white;
+}
+
+.portIcon:visited {
+    color: white;
 }
 
 .gitIcon:hover {
